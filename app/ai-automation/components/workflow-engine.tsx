@@ -28,16 +28,16 @@ import {
   Play,
 } from "lucide-react";
 
-type ThemeColor = "green" | "red" | "blue" | "white" | "orange" | "purple" | "yellow" | "cyan";
+export type ThemeColor = "green" | "red" | "blue" | "white" | "orange" | "purple" | "yellow" | "cyan";
 
-type ProcessStep = {
+export type ProcessStep = {
   icon: ReactNode;
   label: string;
   sub: string;
   theme: ThemeColor;
 };
 
-type UseCase = {
+export type UseCase = {
   id: string;
   navTitle: string;
   title: string;
@@ -51,10 +51,21 @@ type UseCase = {
   };
 };
 
+export type WorkflowCopy = {
+  panelTitle: string;
+  activeWorkflow: string;
+  simulate: string;
+  replay: string;
+  processing: string;
+  complete: string;
+  proven: string;
+};
+
 type WorkflowEngineProps = {
   className?: string;
   useCases?: UseCase[];
   autoStartDelayMs?: number;
+  copy?: WorkflowCopy;
 };
 
 const DEFAULT_USE_CASES: UseCase[] = [
@@ -137,6 +148,16 @@ const DEFAULT_USE_CASES: UseCase[] = [
     successMessage: { icon: <Zap size={14} />, text: "Deal Unblocked" },
   },
 ];
+
+const DEFAULT_COPY: WorkflowCopy = {
+  panelTitle: "Automation Examples",
+  activeWorkflow: "Active Workflow",
+  simulate: "Simulate Workflow",
+  replay: "Replay",
+  processing: "Processing...",
+  complete: "Complete",
+  proven: "PROVEN",
+};
 
 function getStepStatus(stepIndex: number, currentStep: number, totalSteps: number) {
   if (currentStep === stepIndex) return "active";
@@ -227,7 +248,12 @@ function Connector({ active }: { active: boolean }) {
   );
 }
 
-export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_CASES, autoStartDelayMs = 800 }: WorkflowEngineProps) {
+export default function WorkflowEngine({
+  className = "",
+  useCases = DEFAULT_USE_CASES,
+  autoStartDelayMs = 800,
+  copy = DEFAULT_COPY,
+}: WorkflowEngineProps) {
   const [pipelineStep, setPipelineStep] = useState(0);
   const [useCaseIndex, setUseCaseIndex] = useState(0);
   const [hasRun, setHasRun] = useState(false);
@@ -269,7 +295,9 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50" />
           </div>
-          <span className="text-[10px] text-white/30 tracking-widest uppercase font-bold ml-2">Automation Examples</span>
+          <span className="text-[10px] text-white/30 tracking-widest uppercase font-bold ml-2">
+            {copy.panelTitle}
+          </span>
         </div>
 
         <div className="px-6 pt-6 pb-2">
@@ -310,7 +338,7 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
             >
               <div className="mb-2">
                 <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded border border-green-500/20 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-widest mb-4">
-                  <Zap size={10} fill="currentColor" /> Active Workflow
+                  <Zap size={10} fill="currentColor" /> {copy.activeWorkflow}
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-4 leading-tight tracking-tight">{currentUseCase.title}</h2>
                 <p className="text-neutral-400 text-sm leading-relaxed border-l-2 border-white/10 pl-4">{currentUseCase.description}</p>
@@ -325,7 +353,9 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
                     <div className="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-0.5">{currentUseCase.roiLabel}</div>
                     <div className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
                       {currentUseCase.roiValue}
-                      <span className="text-[10px] bg-green-500 text-black px-1.5 py-0.5 rounded font-bold">PROVEN</span>
+                      <span className="text-[10px] bg-green-500 text-black px-1.5 py-0.5 rounded font-bold">
+                        {copy.proven}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -340,15 +370,15 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
                   <div className="relative z-10 flex items-center justify-center gap-2">
                     {pipelineStep === 0 ? (
                       <>
-                        <Play size={14} fill="currentColor" /> Simulate Workflow
+                        <Play size={14} fill="currentColor" /> {copy.simulate}
                       </>
                     ) : pipelineStep > totalSteps ? (
                       <>
-                        <RotateCcw size={14} /> Replay
+                        <RotateCcw size={14} /> {copy.replay}
                       </>
                     ) : (
                       <>
-                        <RotateCcw size={14} className="animate-spin" /> Processing...
+                        <RotateCcw size={14} className="animate-spin" /> {copy.processing}
                       </>
                     )}
                   </div>
@@ -398,7 +428,9 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
                         <CheckCircle2 size={14} />
                       </div>
                       <div>
-                        <div className="text-[10px] text-green-400 font-bold uppercase tracking-wider">Complete</div>
+                        <div className="text-[10px] text-green-400 font-bold uppercase tracking-wider">
+                          {copy.complete}
+                        </div>
                         <div className="text-xs text-white font-medium">{currentUseCase.successMessage.text}</div>
                       </div>
                     </div>

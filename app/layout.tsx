@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HubSpotTracking from "./ai-automation/components/hubspot-tracking";
+import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,18 +15,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Rundown | AI Automation Studio",
-  description:
-    "Ops-as-a-service and automation studio for GTM, Sales, and CX teams.",
+  metadataBase: new URL("https://rundown.digital"),
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default async function RootLayout(props: any) {
+  const { children, params } = props as Readonly<{
+    children: React.ReactNode;
+    params?: Promise<{ locale?: Locale }>;
+  }>;
+
+  const resolvedParams = params ? await params : undefined;
+  const locale = isLocale(resolvedParams?.locale) ? resolvedParams?.locale : defaultLocale;
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
