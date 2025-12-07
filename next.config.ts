@@ -9,12 +9,12 @@ const securityHeaders = [
       "default-src 'self'",
       // Allow dev tooling (inline/eval/ws/blob) in development to unblock Next/Turbopack
       isDev
-        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:"
-        : "script-src 'self' 'unsafe-inline'",
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://js.hs-scripts.com https://js.hs-analytics.net https://js.hs-banner.com"
+        : "script-src 'self' 'unsafe-inline' https://js.hs-scripts.com https://js.hs-analytics.net https://js.hs-banner.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data:",
+      "img-src 'self' data: https://track.hubspot.com https://forms.hubspot.com",
       "font-src 'self'",
-      "connect-src 'self' ws: wss:",
+      "connect-src 'self' ws: wss: https://api.hubspot.com https://forms.hubspot.com https://api.hsforms.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

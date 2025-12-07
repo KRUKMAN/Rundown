@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Terminal, Box, Check, ChevronRight, CheckCircle2, Zap, Cpu, Users, LayoutTemplate } from "lucide-react";
 import Link from "next/link";
 import WorkflowEngine from "./components/workflow-engine";
+import Cookies from "js-cookie";
 
 const services = [
   {
@@ -43,6 +44,7 @@ const stack = ["Salesforce", "HubSpot", "Zendesk", "Intercom", "LiveChat", "Tray
 
 export default function AIAutomationClient() {
   const [typedText, setTypedText] = useState("");
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const fullText =
     `> System Check: THE RUNDOWN v2.0\n` +
@@ -68,9 +70,37 @@ export default function AIAutomationClient() {
 
   const currentYear = new Date().getFullYear();
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // TODO: wire this form to a backend endpoint or external form service.
+    setFormStatus("loading");
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const payload = {
+        firstname: formData.get("firstname"),
+        email: formData.get("email"),
+        company: formData.get("company"),
+        message: formData.get("message"),
+        hutk: Cookies.get("hubspotutk"),
+        pageUri: window.location.href,
+        pageName: document.title,
+      };
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      setFormStatus("success");
+      (event.target as HTMLFormElement).reset();
+    } catch (e) {
+      console.error(e);
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -285,24 +315,36 @@ export default function AIAutomationClient() {
           <form className="grid md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase tracking-[0.18em] text-white/60">Name</label>
-              <input required type="text" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Your name" />
+              <input required name="firstname" type="text" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Your name" />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase tracking-[0.18em] text-white/60">Email</label>
-              <input required type="email" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="you@company.com" />
+              <input required name="email" type="email" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="you@company.com" />
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase tracking-[0.18em] text-white/60">Company</label>
-              <input type="text" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Company name" />
+              <input name="company" type="text" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Company name" />
             </div>
             <div className="flex flex-col gap-2 md:col-span-2">
               <label className="text-xs uppercase tracking-[0.18em] text-white/60">What do you need help with?</label>
-              <textarea required rows={4} className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Tell us about systems, workflows, or metrics you want fixed." />
+              <textarea required name="message" rows={4} className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Tell us about systems, workflows, or metrics you want fixed." />
             </div>
-            <div className="md:col-span-2 flex justify-end">
-              <button type="submit" className="px-8 py-3 bg-green-600 hover:bg-green-500 text-black font-bold rounded-lg transition-all flex items-center gap-2">
-                Submit
-                <ArrowRight className="w-4 h-4" />
+            <div className="md:col-span-2 flex items-center justify-between gap-4">
+              {formStatus === "success" && (
+                <p className="text-green-400 text-sm font-bold flex items-center gap-2">
+                  <CheckCircle2 size={16} /> Received. We&apos;ll be in touch.
+                </p>
+              )}
+              {formStatus === "error" && (
+                <p className="text-red-400 text-sm">Something went wrong. Please email us directly.</p>
+              )}
+              <button
+                type="submit"
+                disabled={formStatus === "loading" || formStatus === "success"}
+                className="px-8 py-3 bg-green-600 hover:bg-green-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold rounded-lg transition-all flex items-center gap-2 ml-auto"
+              >
+                {formStatus === "loading" ? "Sending..." : "Submit"}
+                {formStatus !== "loading" && <ArrowRight className="w-4 h-4" />}
               </button>
             </div>
           </form>
