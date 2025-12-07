@@ -203,7 +203,13 @@ function PipelineNode({
         <div className={`text-xs font-bold tracking-wide truncate transition-colors duration-300 ${isLit ? "text-white" : "text-neutral-500"}`}>{label}</div>
         <div className={`text-[10px] uppercase tracking-wider truncate transition-colors duration-300 ${isLit ? "text-white/40" : "text-neutral-600"}`}>{sub}</div>
       </div>
-      {isActive && <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,197,94,0.9)]" />}
+      {isActive && (
+        <motion.div
+          layoutId="active-led"
+          className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_12px_rgba(34,197,94,0.9)]"
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        />
+      )}
     </div>
   );
 }

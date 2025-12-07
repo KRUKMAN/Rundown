@@ -320,7 +320,7 @@ export default function AIAutomationClient() {
                   Jakub Krukowski
                 </a>
               </p>
-              <p className="text-xs text-neutral-500 mt-0.5">Sales & RevOps leadership across Tidio, Coloplast, LiveChat, Prezi - now building calm systems for growing teams.</p>
+              <p className="text-xs text-neutral-500 mt-0.5">Sales & RevOps leadership & consulting across LiveChat, Callstack, Prezi and others.</p>
             </div>
           </div>
         </div>
