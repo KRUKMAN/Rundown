@@ -255,8 +255,7 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
 
   return (
     <div className={`w-full h-[700px] md:h-[620px] rounded-2xl border border-white/10 bg-[#0A0A0A] shadow-2xl overflow-hidden flex flex-col md:flex-row relative ${className}`}>
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.3)_50%)] bg-[size:100%_4px] pointer-events-none opacity-20 z-20" />
-
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none animate-scan" />
       <div className="w-full md:w-[380px] lg:w-[420px] bg-[#0c0c0c] flex flex-col border-b md:border-b-0 md:border-r border-white/5 relative z-10 shrink-0">
         <div className="h-14 border-b border-white/5 flex items-center px-6 gap-3 shrink-0">
           <div className="flex gap-1.5">
@@ -264,7 +263,7 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/20 border border-green-500/50" />
           </div>
-          <span className="text-[10px] text-white/30 tracking-widest uppercase font-bold ml-2">Workflow_Engine_v2.0</span>
+          <span className="text-[10px] text-white/30 tracking-widest uppercase font-bold ml-2">Automation Examples</span>
         </div>
 
         <div className="px-6 pt-6 pb-2">
@@ -335,11 +334,11 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
                   <div className="relative z-10 flex items-center justify-center gap-2">
                     {pipelineStep === 0 ? (
                       <>
-                        <Play size={14} fill="currentColor" /> Visualize Process
+                        <Play size={14} fill="currentColor" /> Simulate Workflow
                       </>
                     ) : pipelineStep > totalSteps ? (
                       <>
-                        <RotateCcw size={14} /> Replay Animation
+                        <RotateCcw size={14} /> Replay
                       </>
                     ) : (
                       <>
@@ -355,7 +354,6 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
       </div>
 
       <div className="flex-1 bg-[#080808] relative overflow-hidden flex flex-col items-center justify-center p-6 md:p-12">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808]/50" />
 
         <div className="relative z-10 w-full max-w-[340px]">
