@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal, Box, Check, ChevronRight, CheckCircle2, Zap, Cpu, Users, LayoutTemplate } from "lucide-react";
 import Link from "next/link";
@@ -65,6 +65,13 @@ export default function AIAutomationClient() {
     }, 30);
     return () => clearInterval(typing);
   }, [fullText]);
+
+  const currentYear = new Date().getFullYear();
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // TODO: wire this form to a backend endpoint or external form service.
+  };
 
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-green-500/30 font-sans">
@@ -245,7 +252,7 @@ export default function AIAutomationClient() {
 
       <section id="process" className="py-24 px-6 text-center bg-gradient-to-b from-[#050505] to-[#0a0a0a] border-t border-white/5">
         <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Ready to turn chaos into clarity?</h2>
-        <p className="text-neutral-400 max-w-xl mx-auto mb-10 text-lg">Let&apos;s design a GTM engine that runs calmly, predictably, and efficiently — even during the rush.</p>
+        <p className="text-neutral-400 max-w-xl mx-auto mb-10 text-lg">Let&apos;s design a GTM engine that runs calmly, predictably, and efficiently - even during the rush.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a href="#contact" className="px-10 py-5 bg-white text-black text-lg font-bold rounded hover:bg-neutral-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)]">
             Book an Intro
@@ -266,16 +273,16 @@ export default function AIAutomationClient() {
               <div>
                 <p className="text-white font-medium">
                   Led by{" "}
-                  <Link href="/" className="underline decoration-dotted underline-offset-4 hover:text-green-400">
+                  <a href="#contact" className="underline decoration-dotted underline-offset-4 hover:text-green-400">
                     Jakub Krukowski
-                  </Link>
+                  </a>
                 </p>
                 <p className="text-xs text-neutral-500">Sales & RevOps leadership across Tidio, Coloplast, LiveChat, Prezi.</p>
               </div>
             </div>
           </div>
 
-          <form className="grid md:grid-cols-2 gap-4">
+          <form className="grid md:grid-cols-2 gap-4" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label className="text-xs uppercase tracking-[0.18em] text-white/60">Name</label>
               <input required type="text" className="w-full rounded-lg bg-white/5 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/30 focus:border-green-500 focus:outline-none" placeholder="Your name" />
@@ -309,9 +316,9 @@ export default function AIAutomationClient() {
             <div>
               <p className="text-sm text-white font-medium">
                 Led by{" "}
-                <Link href="/" className="underline decoration-dotted underline-offset-4 hover:text-green-400">
+                <a href="#contact" className="underline decoration-dotted underline-offset-4 hover:text-green-400">
                   Jakub Krukowski
-                </Link>
+                </a>
               </p>
               <p className="text-xs text-neutral-500 mt-0.5">Sales & RevOps leadership across Tidio, Coloplast, LiveChat, Prezi - now building calm systems for growing teams.</p>
             </div>
@@ -337,7 +344,7 @@ export default function AIAutomationClient() {
               </span>
             ))}
           </div>
-          <div className="mt-12 text-xs text-neutral-800">(c) {new Date().getFullYear()} The Rundown. Calm operations in a noisy world.</div>
+          <div className="mt-12 text-xs text-neutral-800">(c) {currentYear} The Rundown. Calm operations in a noisy world.</div>
         </div>
       </footer>
     </main>

@@ -62,7 +62,7 @@ const DEFAULT_USE_CASES: UseCase[] = [
     id: "sales-crm",
     navTitle: "CRM Hygiene",
     title: "CRM Auto-Fill",
-    description: "Clean data without slowing down your reps. We convert messy call notes into structured Salesforce intelligence — automatically and reliably.",
+    description: "Clean data without slowing down your reps. We convert messy call notes into structured Salesforce intelligence - automatically and reliably.",
     roiLabel: "Efficiency Gain",
     roiValue: "15h+ saved / mo",
     steps: [
@@ -78,9 +78,9 @@ const DEFAULT_USE_CASES: UseCase[] = [
     id: "lead-flow",
     navTitle: "Inbound Leads",
     title: "Lead Workflow Automation",
-    description: "Fast, consistent, territory-aware lead handling. Instant routing, enrichment, and outreach — no manual admin, no delays.",
+    description: "Fast, consistent, territory-aware lead handling. Instant routing, enrichment, and outreach - no manual admin, no delays.",
     roiLabel: "Speed to Lead",
-    roiValue: "4h → 2min",
+    roiValue: "4h -> 2min",
     steps: [
       { icon: <UserPlus size={14} />, label: "New Website Lead", sub: "Captured instantly", theme: "green" },
       { icon: <Database size={14} />, label: "Enrich Lead Profile", sub: "Firmographics + intent", theme: "cyan" },
@@ -343,7 +343,7 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
                       </>
                     ) : (
                       <>
-                        <span className="animate-spin">⟳</span> Processing...
+                        <RotateCcw size={14} className="animate-spin" /> Processing...
                       </>
                     )}
                   </div>
@@ -408,3 +408,4 @@ export default function WorkflowEngine({ className = "", useCases = DEFAULT_USE_
     </div>
   );
 }
+
