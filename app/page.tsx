@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import HomeClient from "./home-client";
+import AIAutomationClient from "./ai-automation/ai-automation-client";
 
 export const metadata: Metadata = {
-  title: "Jakub Krukowski | Portfolio",
-  description: "Select the right persona: consulting, AI automation, or photography.",
+  title: "The Rundown | AI Automation Studio",
+  description:
+    "Operations-as-a-service and automation studio building calm, predictable GTM systems.",
 };
 
 export default function Home() {
-  return <HomeClient />;
+  return <AIAutomationClient />;
 }

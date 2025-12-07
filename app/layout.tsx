@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jakub Krukowski | Portfolio",
-  description: "Consulting, automation, and photography by Jakub Krukowski.",
+  title: "The Rundown | AI Automation Studio",
+  description:
+    "Ops-as-a-service and automation studio for GTM, Sales, and CX teams.",
 };
 
 export default function RootLayout({
