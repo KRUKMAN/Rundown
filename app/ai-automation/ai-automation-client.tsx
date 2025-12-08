@@ -214,7 +214,7 @@ export default function AIAutomationClient({ locale, dictionary }: AIAutomationC
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="https://rundown.digital" aria-label="The Rundown" className="flex items-center">
-            <RundownDigitalLogo className="scale-75 sm:scale-90 md:scale-100" />
+            <RundownDigitalLogo className="scale-[0.6] sm:scale-[0.72] md:scale-[0.82]" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
