@@ -76,7 +76,7 @@ const pl: Dictionary = {
         title: "Studio automatyzacji i narzędzi wewnętrznych",
         description: "Skalowalna stacja przygotowania dla całego zespołu.",
         items: [
-          "Automatyzacje no-code/low-code (Tray/n8n)",
+          "Automatyzacje no-code/low-code (Tray/n8n/Zapier)",
           "Dedykowane narzędzia wewnętrzne",
           "Agenci AI dla zespołów GTM",
           "Dashboardy i health checki",
@@ -87,10 +87,10 @@ const pl: Dictionary = {
         title: "Implementacja narzędzi",
         description: "Nie ważne czy sprzejesz czy pomagasz obecnym klientom - dobierzemy właściwe narzędzia.",
         items: [
-          "Ustawienie i migracja CRM",
-          "Narzędzia support, chat i ticketin + AI",
-          "Routing, workflow, triggery",
-          "Integracje strony/landingów",
+          "Ustawienie i migracja CRM (Salesforce/HubSpot)",
+          "Implemetnacja narzędzi wsparcia (Zendesk/Intercom/LiveChat)",
+          "Dokumentacja i enablement zespołów",
+          "Integracje poraz tworzenie stron/landingów",
         ],
       },
       {
@@ -100,7 +100,7 @@ const pl: Dictionary = {
         items: [
           "Fractional Head of Ops / RevOps",
           "Wsparcie abonamentowe",
-          "Dedykowany embedded specialist",
+          "Dedykowany specjalista ds. operacji",
           "Opieka nad narzędziami i procesami",
         ],
       },
@@ -132,7 +132,7 @@ const pl: Dictionary = {
   process: {
     heading: "Gotowi zamienić chaos w klarowność?",
     description:
-      "Zaprojektujmy silnik GTM, który działa spokojnie, przewidywalnie i wydajnie — nawet gdy się pali.",
+      "Projektujemy systemy Go-To-Market, który działa spokojnie, przewidywalnie i wydajnie — nawet gdy się pali.",
     cta: "Poznajmy się!",
   },
   contact: {
