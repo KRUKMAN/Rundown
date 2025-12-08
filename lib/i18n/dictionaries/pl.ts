@@ -5,7 +5,7 @@ const pl: Dictionary = {
   metadata: {
     title: "The Rundown | Studio Automatyzacji AI",
     description:
-      "Operacje jako usługa i studio automatyzacji, które buduje spokojne, przewidywalne procesy GTM.",
+      "Ugasimy pożary i zbudujemy spokojne, przewidywalne systemy GTM — bez chaosu.",
     ogLocale: "pl_PL",
   },
   navigation: {
@@ -16,9 +16,9 @@ const pl: Dictionary = {
     switcherLabel: "Język",
   },
   hero: {
-    badge: "Doskonałość operacyjna",
-    heading: "Studio operacyjne, które sprawia, że Twój GTM staje się",
-    highlight: "Bez wysiłku.",
+    badge: "Operational Excellence",
+    heading: "Poczuj, że nawet pożar można mieć pod kontrolą",
+    highlight: "Bez zbędnego wysiłku.",
     description:
       "Łączymy projektowanie workflow, automatyzację i właściwą dawkę AI, by zbudować spokojne, przewidywalne, wysokowydajne operacje dla Sales, CX i Supportu.",
     primaryCta: "Umów darmową rozmowę",
@@ -30,7 +30,7 @@ const pl: Dictionary = {
       "> Skanowanie stosu operacyjnego...",
       "> Wykrywanie manualnych zadań......[USUNIĘTO]",
       "> Upraszczanie workflow............[GOTOWE]",
-      "> Optymalizacja przepływów CRM....[AKTYWNE]",
+      "> Optymalizacja CRM....[AKTYWNE]",
       "> Wdrażanie asystentów AI.........[ONLINE]",
       "> STATUS: GOTOWE DO SKALOWANIA",
     ],
@@ -50,13 +50,13 @@ const pl: Dictionary = {
   },
   demos: {
     eyebrow: "Przykłady na żywo",
-    heading: "Prawdziwe workflow. Prawdziwy efekt. Prawdziwa przewidywalność.",
+    heading: "Prawdziwe workflow. Prawdziwy efekt. Przykładowe Demoć.",
     description: "Zobacz, jak usuwamy chaos automatyzacją.",
   },
   services: {
-    heading: "Co robimy (bez chaosu)",
+    heading: "Co robimy dla Sprzedaży, CX i Supportu",
     description:
-      "Obszary, w których pomagamy Twojemu zespołowi działać jak dobrze przygotowana kuchnia.",
+      "Obszary, w których pomagamy Twojemu zespołowi działać.",
     cards: [
       {
         id: "gtm-ops",
@@ -65,7 +65,7 @@ const pl: Dictionary = {
         items: [
           "Pełna opieka nad Salesforce/CRM",
           "Routing leadów i logika terytoriów",
-          "Stos supportu (Zendesk/Intercom)",
+          "Implementacja Supportu (Zendesk/Intercom/Text/Custom)",
           "QA i higiena danych",
           "Raportowanie i dashboardy",
           "Jasne playbooki GTM",
@@ -84,11 +84,11 @@ const pl: Dictionary = {
       },
       {
         id: "stack-implementation",
-        title: "Implementacja stacku",
-        description: "Twój pierwszy porządny stack GTM, poprawnie złożony.",
+        title: "Implementacja narzędzi",
+        description: "Nie ważne czy sprzejesz czy pomagasz obecnym klientom - dobierzemy właściwe narzędzia.",
         items: [
           "Ustawienie i migracja CRM",
-          "Narzędzia supportu i ticketing",
+          "Narzędzia support, chat i ticketin + AI",
           "Routing, workflow, triggery",
           "Integracje strony/landingów",
         ],
@@ -101,7 +101,7 @@ const pl: Dictionary = {
           "Fractional Head of Ops / RevOps",
           "Wsparcie abonamentowe",
           "Dedykowany embedded specialist",
-          "Opieka nad narzędziami i roadmapą",
+          "Opieka nad narzędziami i procesami",
         ],
       },
       {
@@ -110,9 +110,9 @@ const pl: Dictionary = {
         description: "Daj repom i liderom brakującą klarowność.",
         items: [
           "Umiejętności AI dla Sales & Support",
-          "Mastery raportowania w Salesforce",
+          "Podstawy Salesforce dla zespołów GTM",
           "Best practices pracy zdalnej",
-          "Dyscyplina i nawyki GTM",
+          "Custom training na życzenie",
         ],
       },
     ],
@@ -124,7 +124,7 @@ const pl: Dictionary = {
     bullets: [
       "Presja nie zamienia się w panikę",
       "Workflow prowadzą, a nie spowalniają",
-      "AI wspiera ludzi, nie zastępuje myślenia",
+      "AI wspiera ludzi, nie zastępuje myślenie",
       "Metryki faktycznie coś znaczą",
     ],
     footerNote: "Jak w hotelowej kuchni: czyste stanowiska, jasne role, przewidywalna praca.",
@@ -132,13 +132,13 @@ const pl: Dictionary = {
   process: {
     heading: "Gotowi zamienić chaos w klarowność?",
     description:
-      "Zaprojektujmy silnik GTM, który działa spokojnie, przewidywalnie i wydajnie — nawet w szczycie.",
-    cta: "Umów wprowadzenie",
+      "Zaprojektujmy silnik GTM, który działa spokojnie, przewidywalnie i wydajnie — nawet gdy się pali.",
+    cta: "Poznajmy się!",
   },
   contact: {
     eyebrow: "Kontakt",
-    heading: "Opowiedz o swoich wąskich gardłach w operacjach",
-    description: "Odpowiadamy w 1 dzień roboczy z kolejnymi krokami.",
+    heading: "W czym możemy pomóc?",
+    description: "Staramy się odopowiadać tego samego dnia.",
     labels: {
       name: "Imię i nazwisko",
       email: "Email",
@@ -153,14 +153,14 @@ const pl: Dictionary = {
     },
     cta: "Wyślij",
     sending: "Wysyłanie...",
-    success: "Otrzymaliśmy zgłoszenie. Odezwę się.",
+    success: "Otrzymaliśmy Twoją wiadomość. Odezwiemy się wkrótce!",
     error: "Coś poszło nie tak. Napisz do nas bezpośrednio.",
-    successInline: "Otrzymaliśmy. Odezwę się.",
+    successInline: "Otrzymaliśmy Twoją wiadomność. Odezwiemy się wkrótce!.",
     errorInline: "Coś poszło nie tak. Napisz do nas bezpośrednio.",
     ledBy: "Prowadzone przez",
     person: "Jakub Krukowski",
-    experience: "Lider Sales & RevOps: Tidio, Coloplast, LiveChat, Prezi.",
-  },
+    experience: "Lider RevOps @ Prezi - ex-AE @ Callstack - ex-Revenue Operations @ LiveChat",
+  }
   scope: {
     heading: "Prowadzone przez",
     description: "Liderstwo i konsulting Sales/RevOps: LiveChat, Callstack, Prezi i inni.",
@@ -214,7 +214,7 @@ const pl: Dictionary = {
           { label: "Przegląd przez handlowca", sub: "Weryfikacja kluczowych pól", theme: "orange" },
           { label: "Aktualizacja Salesforce", sub: "Automatyczny zapis notatek i pól", theme: "blue" },
         ],
-        successMessage: "Informacje zapisane",
+        successMessage: "Pola CRM uzpełnione",
       },
       {
         id: "lead-flow",
@@ -244,7 +244,7 @@ const pl: Dictionary = {
           { label: "Nowy ticket", sub: "Ticket zarejestrowany", theme: "white" },
           { label: "Analiza sentymentu AI", sub: "Wykrycie negatywnych trendów", theme: "yellow" },
           { label: "Aktualizacja health score", sub: "Zapis wyniku ryzyka", theme: "blue" },
-          { label: "Alert dla Success", sub: "Slack, email lub zadanie", theme: "red" },
+          { label: "Alert dla Success Teamu", sub: "Slack, email lub zadanie", theme: "red" },
         ],
         successMessage: "Ryzyko oflagowane",
       },
@@ -260,8 +260,8 @@ const pl: Dictionary = {
           { label: "Nowy ticket", sub: "Kategoryzacja po intencie", theme: "white" },
           { label: "Priorytetyzacja", sub: "Pilność + historia", theme: "orange" },
           { label: "Automatyczny routing", sub: "Do właściwego zespołu", theme: "purple" },
-          { label: "Monitoring SLA", sub: "Alerty przed porażką", theme: "red" },
-          { label: "Domknięcie pętli", sub: "Tagi i notatki dodane", theme: "green" },
+          { label: "Monitoring SLA", sub: "Masz widoczność twojego performancu", theme: "red" },
+          { label: "Domknięcie pętli informacyjnej", sub: "Tagi i notatki dodane", theme: "green" },
         ],
         successMessage: "Zadanie przejęte i wysłane",
       },
@@ -274,7 +274,7 @@ const pl: Dictionary = {
         roiLabel: "Czas akceptacji",
         roiValue: "-80% szybciej",
         steps: [
-          { label: "Prośba od repsa", sub: "Niestandardowe warunki", theme: "white" },
+          { label: "Prośba od handlowca", sub: "Niestandardowe warunki", theme: "white" },
           { label: "Walidacja AI", sub: "Sprawdzenie zgodności cen", theme: "blue" },
           { label: "Powiadom przełożonych", sub: "Kontekst do Slacka", theme: "yellow" },
           { label: "Ścieżka akceptacji", sub: "Akcept jednym kliknięciem", theme: "green" },

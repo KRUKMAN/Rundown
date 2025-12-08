@@ -36,6 +36,7 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import WorkflowEngine, { type UseCase } from "./components/workflow-engine";
 import LanguageSwitcher from "./components/language-switcher";
+import { RundownDigitalLogo } from "./components/rundown-logo";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 
@@ -212,11 +213,8 @@ export default function AIAutomationClient({ locale, dictionary }: AIAutomationC
     <main className="min-h-screen bg-[#050505] text-white selection:bg-green-500/30 font-sans">
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="https://rundown.digital" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-green-500/10 border border-green-500/20 rounded flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-              <Terminal className="w-4 h-4 text-green-500" />
-            </div>
-            <span className="font-bold tracking-tight text-lg">THE RUNDOWN</span>
+          <Link href="https://rundown.digital" aria-label="The Rundown" className="flex items-center">
+            <RundownDigitalLogo className="scale-75 sm:scale-90 md:scale-100" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">

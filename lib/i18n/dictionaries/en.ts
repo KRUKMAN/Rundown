@@ -5,7 +5,7 @@ const en: Dictionary = {
   metadata: {
     title: "The Rundown | AI Automation Studio",
     description:
-      "Operations-as-a-service and automation studio building calm, predictable GTM systems.",
+      "Operations-as-a-service and automation studio specializing in GTM systems.",
     ogLocale: "en_US",
   },
   navigation: {
