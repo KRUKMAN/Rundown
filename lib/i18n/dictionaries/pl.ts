@@ -160,7 +160,7 @@ const pl: Dictionary = {
     ledBy: "Prowadzone przez",
     person: "Jakub Krukowski",
     experience: "Lider RevOps @ Prezi - ex-AE @ Callstack - ex-Revenue Operations @ LiveChat",
-  }
+  },
   scope: {
     heading: "Prowadzone przez",
     description: "Liderstwo i konsulting Sales/RevOps: LiveChat, Callstack, Prezi i inni.",
