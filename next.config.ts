@@ -14,7 +14,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https://track.hubspot.com https://forms.hubspot.com",
       "font-src 'self'",
-      "connect-src 'self' ws: wss: https://api.hubspot.com https://forms.hubspot.com https://api.hsforms.com",
+      "connect-src 'self' ws: wss: https://api.hubspot.com https://forms.hubspot.com https://api.hsforms.com https://track.hubspot.com",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
