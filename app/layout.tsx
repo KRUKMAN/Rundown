@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import HubSpotTracking from "./ai-automation/components/hubspot-tracking";
 import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default async function RootLayout(props: any) {
       >
         <HubSpotTracking />
         {children}
+        <Analytics />
       </body>
     </html>
   );
