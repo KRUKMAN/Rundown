@@ -3,16 +3,14 @@
 import Script from "next/script";
 
 export default function HubSpotTracking() {
-  const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
-
-  if (!portalId) return null;
+  const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID ?? "147393350";
 
   return (
     <Script
       id="hs-script-loader"
       async
       defer
-      src={`//js.hs-scripts.com/${portalId}.js`}
+      src={`https://js-eu1.hs-scripts.com/${portalId}.js`}
       strategy="afterInteractive"
     />
   );
