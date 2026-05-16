@@ -8,8 +8,6 @@ import {
   ArrowRight,
   Bell,
   Bot,
-  Box,
-  Calculator,
   Check,
   CheckCircle2,
   CheckSquare,
@@ -18,10 +16,8 @@ import {
   Cpu,
   Database,
   FileAudio,
-  FileSignature,
   FileText,
   GitMerge,
-  LayoutTemplate,
   ListFilter,
   Mail,
   MessageSquare,
@@ -46,11 +42,10 @@ type AIAutomationClientProps = {
 };
 
 const serviceIconMap: Record<string, ReactNode> = {
-  "gtm-ops": <Zap className="text-green-400" />,
-  "automation-studio": <Box className="text-emerald-400" />,
-  "stack-implementation": <Cpu className="text-teal-400" />,
-  "ops-as-a-service": <Users className="text-blue-400" />,
-  training: <LayoutTemplate className="text-purple-400" />,
+  "crm-implementation": <Database className="text-green-400" />,
+  "support-stack": <MessageSquare className="text-emerald-400" />,
+  "gtm-stack": <Cpu className="text-teal-400" />,
+  "ops-consulting": <Users className="text-blue-400" />,
 };
 
 const defaultServiceIcon = <Zap className="text-green-400" />;
@@ -78,34 +73,35 @@ const useCaseIconMap: Record<
     ],
     successIcon: <Zap size={14} />,
   },
-  "support-cx": {
+  "support-handoff": {
     steps: [
       <MessageSquare size={14} />,
-      <AlertTriangle size={14} />,
-      <Database size={14} />,
-      <Bell size={14} />,
-    ],
-    successIcon: <ShieldAlert size={14} />,
-  },
-  "task-routing": {
-    steps: [
-      <MessageSquare size={14} />,
+      <Bot size={14} />,
+      <Users size={14} />,
       <ListFilter size={14} />,
-      <GitMerge size={14} />,
-      <Clock size={14} />,
-      <CheckCircle2 size={14} />,
+      <Database size={14} />,
     ],
     successIcon: <CheckCircle2 size={14} />,
   },
-  "deal-desk": {
+  "crm-onboarding": {
     steps: [
-      <FileText size={14} />,
-      <Calculator size={14} />,
-      <Bell size={14} />,
       <CheckSquare size={14} />,
-      <FileSignature size={14} />,
+      <FileText size={14} />,
+      <GitMerge size={14} />,
+      <Mail size={14} />,
+      <Database size={14} />,
     ],
     successIcon: <Zap size={14} />,
+  },
+  "stack-health": {
+    steps: [
+      <Clock size={14} />,
+      <AlertTriangle size={14} />,
+      <GitMerge size={14} />,
+      <Bell size={14} />,
+      <CheckCircle2 size={14} />,
+    ],
+    successIcon: <ShieldAlert size={14} />,
   },
 };
 
