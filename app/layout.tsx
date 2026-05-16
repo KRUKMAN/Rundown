@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rundown.digital"),
 };
 
-export default async function RootLayout(props: any) {
-  const { children, params } = props as Readonly<{
-    children: React.ReactNode;
-    params?: Promise<{ locale?: Locale }>;
-  }>;
+export default async function RootLayout(props: Readonly<{
+  children: React.ReactNode;
+  params?: Promise<{ locale?: Locale }>;
+}>) {
+  const { children, params } = props;
 
   const resolvedParams = params ? await params : undefined;
   const locale = isLocale(resolvedParams?.locale) ? resolvedParams?.locale : defaultLocale;

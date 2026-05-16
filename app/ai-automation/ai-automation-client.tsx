@@ -23,7 +23,6 @@ import {
   MessageSquare,
   Mic,
   ShieldAlert,
-  Terminal,
   UserPlus,
   Users,
   Zap,
@@ -56,50 +55,50 @@ const useCaseIconMap: Record<
 > = {
   "sales-crm": {
     steps: [
-      <Mic size={14} />,
-      <FileAudio size={14} />,
-      <Bot size={14} />,
-      <AppWindow size={14} />,
-      <Database size={14} />,
+      <Mic key="0" size={14} />,
+      <FileAudio key="1" size={14} />,
+      <Bot key="2" size={14} />,
+      <AppWindow key="3" size={14} />,
+      <Database key="4" size={14} />,
     ],
     successIcon: <CheckCircle2 size={14} />,
   },
   "lead-flow": {
     steps: [
-      <UserPlus size={14} />,
-      <Database size={14} />,
-      <GitMerge size={14} />,
-      <Mail size={14} />,
+      <UserPlus key="0" size={14} />,
+      <Database key="1" size={14} />,
+      <GitMerge key="2" size={14} />,
+      <Mail key="3" size={14} />,
     ],
     successIcon: <Zap size={14} />,
   },
   "support-handoff": {
     steps: [
-      <MessageSquare size={14} />,
-      <Bot size={14} />,
-      <Users size={14} />,
-      <ListFilter size={14} />,
-      <Database size={14} />,
+      <MessageSquare key="0" size={14} />,
+      <Bot key="1" size={14} />,
+      <Users key="2" size={14} />,
+      <ListFilter key="3" size={14} />,
+      <Database key="4" size={14} />,
     ],
     successIcon: <CheckCircle2 size={14} />,
   },
   "crm-onboarding": {
     steps: [
-      <CheckSquare size={14} />,
-      <FileText size={14} />,
-      <GitMerge size={14} />,
-      <Mail size={14} />,
-      <Database size={14} />,
+      <CheckSquare key="0" size={14} />,
+      <FileText key="1" size={14} />,
+      <GitMerge key="2" size={14} />,
+      <Mail key="3" size={14} />,
+      <Database key="4" size={14} />,
     ],
     successIcon: <Zap size={14} />,
   },
   "stack-health": {
     steps: [
-      <Clock size={14} />,
-      <AlertTriangle size={14} />,
-      <GitMerge size={14} />,
-      <Bell size={14} />,
-      <CheckCircle2 size={14} />,
+      <Clock key="0" size={14} />,
+      <AlertTriangle key="1" size={14} />,
+      <GitMerge key="2" size={14} />,
+      <Bell key="3" size={14} />,
+      <CheckCircle2 key="4" size={14} />,
     ],
     successIcon: <ShieldAlert size={14} />,
   },
@@ -169,8 +168,6 @@ export default function AIAutomationClient({ locale, dictionary }: AIAutomationC
     }, 30);
     return () => clearInterval(typing);
   }, [fullText]);
-
-  const currentYear = new Date().getFullYear();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
