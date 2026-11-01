@@ -3,6 +3,7 @@ import Site from "@/components/site";
 import { defaultLocale, isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { showDrafts } from "@/lib/env";
+import { structuredData } from "@/lib/structured-data";
 
 type PageProps = { params: Promise<{ locale: Locale }> };
 
@@ -36,5 +37,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Page({ params }: PageProps) {
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : defaultLocale;
-  return <Site locale={locale} t={getDictionary(locale)} showDrafts={showDrafts} />;
+  const t = getDictionary(locale);
+  const jsonLd = JSON.stringify(structuredData(locale, t)).replace(/</g, "\\u003c");
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <Site locale={locale} t={t} showDrafts={showDrafts} />
+    </>
+  );
 }

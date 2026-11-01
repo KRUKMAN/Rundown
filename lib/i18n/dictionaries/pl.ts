@@ -3,25 +3,24 @@ import type { Dictionary } from "./types";
 const pl: Dictionary = {
   locale: "pl",
   metadata: {
-    title: "The Rundown · Jakub Krukowski · Niezależne doradztwo operacyjne",
+    title: "Wdrożenie CRM i automatyzacja procesów · Jakub Krukowski",
     description:
-      "Ułatwiam prowadzenie firmy. CRM, uporządkowana praca, automatyzacje i praktyczne AI dla firm budowlanych, usługowych i software house’ów. Jestem niezależny, więc powiem też, kiedy nie warto niczego kupować.",
+      "Niezależny konsultant: wdrożenie CRM (HubSpot, Salesforce), automatyzacja procesów i szkolenia z AI dla firm budowlanych, usługowych i software house’ów.",
     ogLocale: "pl_PL",
   },
   nav: {
     work: "Co robię",
     how: "Jak pracuję",
+    faq: "Pytania",
     about: "O mnie",
     cta: "Napisz do mnie",
-    languageLabel: "Język",
-    otherLanguage: "English",
     skip: "Przejdź do treści",
     home: "The Rundown, strona główna",
   },
   hero: {
     titleStart: "Ułatwiam",
     titleAccent: "prowadzenie firmy.",
-    body: "Firma budowlana, sprzątająca, software house. Jeśli tydzień schodzi ci na dopytywaniu ludzi o postępy i przepisywaniu tych samych danych z arkusza do arkusza, da się to prowadzić spokojniej. Jestem niezależny, więc czasem odpowiedź brzmi: nie kupuj niczego.",
+    body: "Niezależny konsultant ds. procesów i automatyzacji. Wdrażam CRM, automatyzuję powtarzalne zadania, porządkuję, kto za co odpowiada, i uczę zespoły pracować z AI. Pracuję z firmami budowlanymi, sprzątającymi, agencjami i software house’ami. Jeśli twój tydzień schodzi na dopytywaniu o postępy i przepisywaniu danych, da się to naprawić.",
     cta: "Napisz do mnie",
     emailPrefix: "albo napisz na",
     replyNote: "Odpisuję w ciągu jednego dnia roboczego.",
@@ -31,120 +30,114 @@ const pl: Dictionary = {
     names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
   },
   example: {
-    title: "Jak to wygląda w praktyce",
-    intro:
-      "Klient zmienia zdanie w połowie zlecenia. Tak wygląda taki tydzień w firmie remontowej, przed i po. Równie dobrze mogłoby to być wdrożenie oprogramowania, umowa na sprzątanie biur albo zamówienie cateringowe. Schemat jest ten sam.",
+    title: "Jedno zlecenie, przed i po",
+    intro: "Klient firmy remontowej zmienia zakres prac w połowie zlecenia. W software house’ie, firmie sprzątającej czy cateringowej jest tak samo.",
     beforeLabel: "Przed",
     before: [
-      "Klient dzwoni do właściciela w sprawie zmiany",
-      "Właściciel przekazuje to kierownikowi na WhatsAppie",
-      "Nikt nie mówi o tym osobie, która zamawia materiały",
+      "Klient dzwoni do właściciela z prośbą o zmianę",
+      "Właściciel pisze o tym kierownikowi na WhatsAppie",
+      "Nikt nie informuje zaopatrzenia",
       "W czwartek przywożą nie te materiały",
       "Piątek schodzi na odkręcaniu sprawy przez telefon",
       "Na fakturze wciąż jest stary zakres prac",
     ],
-    beforeNote:
-      "Każdy zrobił swoje. Tyle że informacja była w czterech miejscach i w głowie jednej osoby.",
+    beforeNote: "Każdy zrobił swoje. Informacja leżała w czterech miejscach i w głowie jednej osoby.",
     afterLabel: "Po",
     after: [
       "Zmianę zapisuje się raz, przy zleceniu",
       "Kierownik, zaopatrzenie i księgowość widzą ją w tej samej minucie",
       "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
-    afterNote:
-      "Nie trzeba uczyć się niczego nowego. Jedno miejsce dla każdego zlecenia i kilka prostych zasad: kto co zapisuje. Właściciel dostaje w poniedziałek krótkie podsumowanie zamiast piątkowego pożaru.",
+    afterNote: "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i poniedziałkowe podsumowanie dla właściciela. Nikt nie musi uczyć się niczego nowego.",
   },
   problems: {
-    title: "Co słyszę i co się zmienia",
-    intro:
-      "Nie musisz wiedzieć, czym jest CRM, Notion czy agent AI. Chcesz, żeby problem zniknął. Poniżej to, co słyszę najczęściej, słowami właścicieli, i to, co faktycznie ustawiamy.",
+    title: "Problemy, które rozwiązuję",
+    intro: "Słowami właścicieli firm. Nie musisz wiedzieć, czym jest CRM. Wystarczy, że chcesz, żeby to się skończyło.",
     paths:
-      "Ludzie trafiają do mnie z trzech powodów: ich firma urosła szybciej niż jej organizacja; od dawna chcą to uporządkować, ale nigdy nie było spokojnego miesiąca; albo od początku działało to na tyle dobrze, że nikt nie pomyślał, że mogłoby być inaczej.",
-    pathsLink: "Każdy z nich wystarczy, żeby porozmawiać.",
+      "Zgłaszają się firmy, które urosły szybciej niż ich organizacja, które ciągle odkładały porządki na później albo w których coś działa od lat, ale mogłoby działać dużo lepiej.",
+    pathsLink: "Każdy z tych powodów wystarczy, żeby porozmawiać.",
     items: [
       {
-        quote: "Projekty sypią się znikąd.",
-        answer:
-          "Rzadko naprawdę znikąd. Sygnały były, tylko rozrzucone po różnych miejscach. Ustawiamy jedną listę wszystkich zleceń: etap, osoba odpowiedzialna, na co czekamy. Kłopot widać tydzień wcześniej, a nie w dniu, w którym wybucha.",
+        quote: "O problemie dowiaduję się, gdy jest już za późno.",
+        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Problem widać tydzień wcześniej.",
       },
       {
         quote: "Nikt nie wie, kto za co odpowiada.",
-        answer:
-          "Każde ważne, powtarzalne zadanie dostaje jedno nazwisko, zapisane tam, gdzie wszyscy je widzą. Bez reorganizacji, po prostu aktualna lista.",
+        fix: "Każde powtarzalne zadanie ma jedną osobę, która za nie odpowiada. Wiedzą o tym wszyscy.",
       },
       {
         quote: "Nie wiem, co jest naprawdę zrobione.",
-        answer:
-          "Status zmienia się sam, gdy praca idzie do przodu, więc nie ma piątkowej rundy pytań „na jakim to jest etapie?”. Przestajesz pytać, bo po prostu to widzisz.",
+        fix: "Status zmienia się razem z pracą. Bez piątkowego obdzwaniania ludzi.",
       },
       {
-        quote: "Ciągle gasimy pożary.",
-        answer:
-          "Większość pożarów to w kółko te same pytania: gdzie jest moje zamówienie, na kiedy będzie, czy ktoś oddzwonił. Odpowiada na nie system. Ludziom zostają sprawy, które naprawdę wymagają człowieka.",
+        quote: "Cały dzień odpowiadamy na te same pytania.",
+        fix: "Status zamówienia, terminy, prośby o oddzwonienie: odpowiedzi wychodzą same. Ludzie zajmują się wyjątkami.",
       },
       {
-        quote: "Wszyscy mówią o AI. Nie wiem, co by nam z tego przyszło.",
-        answer:
-          "Najczęściej AI czyta notatki z rozmów i szykuje wycenę, sortuje maile, odpowiada na rutynowe pytania, pisze poniedziałkowe podsumowanie. Pokażę ci to na twojej własnej pracy, a potem zdecydujesz.",
+        quote: "Wszyscy mówią o AI. Co by nam to dało?",
+        fix: "Najczęściej: szkice wycen z notatek po rozmowach, sortowanie maili, cotygodniowe podsumowanie. Najpierw pokazuję to na twoich danych.",
       },
       {
-        quote: "Zawsze tak robiliśmy.",
-        answer:
-          "I dobrze. Zostawiamy to, co działa, i zmieniamy dwie, trzy rzeczy, które kosztują cię najwięcej. Potem kończymy.",
+        quote: "Płacimy za narzędzia, z których nikt nie korzysta.",
+        fix: "Sprawdzam każdy abonament: zostawić, wyłączyć albo połączyć z resztą.",
       },
     ],
   },
   services: {
     title: "Co robię",
-    intro: "Większość projektów przechodzi przez te trzy etapy po kolei. Niektórym klientom wystarcza pierwszy.",
+    intro: "Trzy rodzaje pracy. Większość klientów zaczyna od pierwszego.",
     groups: [
       {
-        title: "Porządek w codziennej pracy",
-        tools: "HubSpot, Salesforce, Attio, Notion",
+        title: "Porządek",
+        summary: "Procesy, odpowiedzialność, CRM",
         items: [
           {
-            title: "Organizacja pracy",
-            body: "Projekty, zlecenia i zgłoszenia w jednym miejscu, każde z osobą odpowiedzialną, statusem i kolejnym krokiem. Każdy widzi, co się dzieje, bez dopytywania.",
+            title: "Mapowanie procesów i odpowiedzialności",
+            body: "Kto robi co, w jakiej kolejności i w jakim narzędziu. Każdy proces spisany na jednej stronie.",
           },
           {
-            title: "CRM, z którego ludzie naprawdę korzystają",
-            body: "Każdy klient, wycena i rozmowa w jednym systemie, który zespół otwiera bez przypominania. Wdrażałem HubSpot od zera i zarządzałem Salesforce’em w zespołach, którym pierwsza konfiguracja przestała wystarczać.",
+            title: "Wdrożenie CRM",
+            body: "HubSpot, Salesforce albo Attio, ustawione pod to, jak sprzedajesz. Przenoszę dane, ustawiam etapy sprzedaży i szkolę zespół.",
           },
           {
-            title: "Porządek w narzędziach",
-            body: "Stare systemy, których nikt nie odważy się ruszyć, trzy narzędzia do tego samego, arkusz, na którym wszystko się trzyma. Decydujemy, co zostaje, co znika, a co trzeba ze sobą połączyć.",
+            title: "Audyt narzędzi i systemów",
+            body: "Sprawdzam każdy abonament i stary system: zostawić, wymienić, połączyć albo wyłączyć.",
           },
         ],
       },
       {
-        title: "Mniej powtarzalnej pracy",
-        tools: "n8n, Tray.ai, Zapier, Claude, Notion AI",
+        title: "Automatyzacja",
+        summary: "Procesy, AI i własne narzędzia",
         items: [
           {
-            title: "Automatyzacje",
-            body: "Przekazywanie zadań, przypomnienia, raporty i wpisywanie danych dzieją się same. Gdy zlecenie zostanie podpisane, właściwe osoby od razu o tym wiedzą, a potrzebne dokumenty już czekają.",
+            title: "Automatyzacja procesów",
+            body: "Przekazywanie zadań, przypomnienia, raporty i wpisywanie danych dzieją się same. Buduję to w n8n, Tray.ai albo Zapierze.",
           },
           {
-            title: "AI tam, gdzie się opłaca",
-            body: "Asystenci AI, którzy szykują wyceny na podstawie notatek z rozmów, sortują maile, odpowiadają na rutynowe pytania albo piszą cotygodniowe podsumowanie. To, co ważne, nadal sprawdza człowiek.",
+            title: "AI do powtarzalnych zadań",
+            body: "Szkice wycen z notatek po rozmowach, sortowanie maili, odpowiedzi na rutynowe pytania, cotygodniowe podsumowania. Ważne rzeczy zatwierdza człowiek.",
           },
           {
-            title: "Małe narzędzia dla zespołu",
-            body: "Gdy gotowy program nie pasuje, budujemy to, czego brakuje: kalkulator wycen, wewnętrzny panel, prostą aplikację dla ekipy na budowie. Tak, żeby zespół zrobił więcej bez zatrudniania kolejnych osób.",
+            title: "Własne narzędzia i aplikacje",
+            body: "Kalkulatory wycen, raporty na jednym ekranie, proste aplikacje dla ekip w terenie. Robię je wtedy, gdy gotowy program nie pasuje.",
           },
         ],
       },
       {
-        title: "Żeby zostało na dłużej",
-        tools: "Warsztaty, procedury, rekrutacja",
+        title: "Zespół",
+        summary: "Szkolenia i zespół operacyjny",
         items: [
           {
-            title: "Szkolenia: jak pracować mądrzej, także z AI",
-            body: "Praktyczne warsztaty na prawdziwych zadaniach zespołu: jak naprawdę korzystać z Claude, Notion AI i innych narzędzi, za które firma już płaci, i gdzie szkoda zachodu. Ludzie wychodzą z kilkoma rzeczami, które zastosują już w poniedziałek.",
+            title: "Szkolenia z AI dla zespołów",
+            body: "Warsztaty na prawdziwych zadaniach zespołu, w narzędziach takich jak Claude i Notion AI oraz w tych, za które firma już płaci.",
           },
           {
-            title: "Rekrutacja i rozwój działu operacyjnego",
-            body: "Opis stanowiska, rozmowy kwalifikacyjne i wdrożenie do pracy pierwszej osoby, która zajmie się organizacją pracy w firmie. Potem pomagam ten obszar rozwinąć: jasny podział odpowiedzialności, spisane procesy, kilka liczb, na które warto patrzeć.",
+            title: "Rekrutacja koordynatora operacyjnego",
+            body: "Pierwsza osoba, która zajmie się organizacją pracy w firmie. Opis stanowiska, rozmowy kwalifikacyjne i wdrożenie do pracy.",
+          },
+          {
+            title: "Budowa zespołu operacyjnego",
+            body: "Jasny podział odpowiedzialności, spisane procesy i kilka wskaźników, żeby całość działała beze mnie.",
           },
         ],
       },
@@ -153,17 +146,18 @@ const pl: Dictionary = {
   principles: {
     title: "Czego ci nie sprzedam",
     intro: "I trzy rzeczy, których możesz ode mnie wymagać.",
+    promisesTitle: "Czego możesz ode mnie wymagać",
     wont: [
       { struck: "Nowego systemu", rest: "tam, gdzie wystarczy uporządkować ten, który już masz." },
       { struck: "Asystenta AI", rest: "do zadania, które załatwi prosta reguła." },
       { struck: "Strategii w prezentacji", rest: ", której nikt nie otworzy po spotkaniu." },
       { struck: "Dwunastu narzędzi", rest: "tam, gdzie wystarczą cztery." },
-      { struck: "Abonamentu", rest: "płaconego dalej, choć dawno przestał być potrzebny." },
+      { struck: "Abonamentu na moje usługi", rest: "płaconego dalej, choć dawno przestał być potrzebny." },
     ],
     promises: [
       {
         title: "Bez prowizji",
-        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców, więc polecam tylko to, co naprawdę do ciebie pasuje.",
+        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców. Polecam to, co do ciebie pasuje.",
       },
       {
         title: "Wszystko należy do ciebie",
@@ -171,17 +165,17 @@ const pl: Dictionary = {
       },
       {
         title: "Najpierw plan, potem cena",
-        body: "Zaczynamy od krótkiego audytu i spisanego planu. Potem ty decydujesz, co warto zrobić.",
+        body: "Krótki przegląd tego, jak dziś wygląda praca, potem spisany plan z wyceną. Ty decydujesz, co warto zrobić.",
       },
     ],
   },
   work: {
     title: "Wybrane projekty",
-    intro: "Krótkie opisy. Co nie działało, co zmieniłem, co było dalej.",
+    intro: "Co nie działało, co się zmieniło, co było dalej.",
     draftNote: "Szkic: widoczny tylko w wersjach podglądowych. Uzupełnij przed publikacją.",
     cases: [
       { company: "[Firma]", readTime: "2 min", title: "Zwroty pieniędzy, które wypłacają się same", result: "[Jedno zdanie o efekcie]" },
-      { company: "[Firma]", readTime: "3 min", title: "HubSpot, który handlowcy naprawdę otwierają", result: "[Jedno zdanie o efekcie]" },
+      { company: "[Firma]", readTime: "3 min", title: "HubSpot, który handlowcy otwierają codziennie", result: "[Jedno zdanie o efekcie]" },
       { company: "[Firma]", readTime: "2 min", title: "AI dla całego zespołu, z zasadami, których ludzie się trzymają", result: "[Jedno zdanie o efekcie]" },
     ],
     quote: {
@@ -189,38 +183,79 @@ const pl: Dictionary = {
       attribution: "[Imię i nazwisko], [stanowisko], [firma]",
     },
   },
+  faq: {
+    title: "Pytania",
+    intro: "O to ludzie najczęściej pytają przed pierwszą rozmową.",
+    items: [
+      {
+        q: "Czym zajmuje się konsultant ds. procesów i automatyzacji?",
+        a: "Konsultant ds. procesów i automatyzacji (inaczej konsultant operacyjny) sprawdza, jak praca przechodzi przez firmę (sprzedaż, realizacja, obsługa klienta, fakturowanie), i naprawia miejsca, w których się zacina. Najczęściej to niejasna odpowiedzialność, ręczne przepisywanie danych i narzędzia, które się ze sobą nie łączą. W praktyce oznacza to porządkowanie procesów, wdrożenie CRM, automatyzację powtarzalnych kroków i szkolenie zespołu.",
+      },
+      {
+        q: "Czy muszę wymienić narzędzia albo zmieniać wszystko naraz?",
+        a: "Nie, nie trzeba wymieniać narzędzi ani zmieniać wszystkiego naraz. Najwięcej daje uporządkowanie i połączenie tego, co firma już ma, oraz zmiana dwóch, trzech rzeczy, które kosztują najwięcej. Nowe oprogramowanie polecam tylko wtedy, gdy obecne narzędzia naprawdę nie wystarczają.",
+      },
+      {
+        q: "Jaki CRM wybrać dla małej firmy?",
+        a: "Małej firmie usługowej lub B2B najczęściej pasuje HubSpot, bo łączy marketing i sprzedaż w jednym miejscu. Salesforce sprawdza się przy złożonej sprzedaży z wieloma własnymi regułami, a Attio w małych, elastycznych zespołach. Arkusz wystarcza, dopóki kilka osób nie potrzebuje jednocześnie tych samych danych o klientach. Ostatecznie wybór zależy od tego, jak firma sprzedaje.",
+      },
+      {
+        q: "Czy AI pomoże firmie spoza IT, np. budowlanej albo sprzątającej?",
+        a: "Tak, AI pomaga firmom spoza branży IT, na przykład budowlanym i sprzątającym, w mało efektownych miejscach: przy szkicach wycen z notatek po wizji lokalnej, odpowiedziach na rutynowe pytania klientów, cotygodniowym podsumowaniu dla właściciela i sortowaniu maili. AI najlepiej sprawdza się przy zadaniach, które powtarzają się codziennie i mają jasne zasady.",
+      },
+      {
+        q: "Jak zaczyna się współpraca?",
+        a: "Współpraca zaczyna się od bezpłatnej, 30-minutowej rozmowy. Jeśli widzimy sens współpracy, sprawdzam, jak dziś wygląda praca w firmie, i przesyłam spisany plan z priorytetami i kosztami. Ty decydujesz, co dalej.",
+      },
+      {
+        q: "Czy pracujesz z firmami spoza Polski?",
+        a: "Tak, pracuję z firmami spoza Polski. Robię to zdalnie, po polsku i po angielsku.",
+      },
+    ],
+  },
   about: {
     title: "O mnie",
     photoNote: "Zdjęcie Jakuba",
     paragraphs: [
-      "Nazywam się Jakub Krukowski. Większość zawodowego życia zajmowałem się operacjami, czyli tym, jak firma działa na co dzień. Głównie w firmach technologicznych, na styku sprzedaży, obsługi klienta, finansów i narzędzi, które to wszystko łączą. Okazuje się, że problemy są wszędzie te same, niezależnie od tego, czy firma pisze oprogramowanie, czy sprząta biura: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
-      "Pracuję niezależnie, więc doradzam wyłącznie w interesie twojej firmy. Od początku do końca rozmawiasz ze mną. Kiedy projekt wymaga więcej rąk do pracy, zapraszam osoby, z którymi już pracowałem i które wysoko cenię:",
+      "Nazywam się Jakub Krukowski. Przez większość kariery zajmowałem się organizacją pracy w firmach, głównie technologicznych, na styku sprzedaży, obsługi klienta, finansów i systemów, które je łączą. W firmie budowlanej problemy są te same: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
+      "Pracuję niezależnie. Od początku do końca rozmawiasz ze mną. Gdy projekt wymaga więcej rąk do pracy, dołączam projektantów, programistów i specjalistów od procesów, z którymi już pracowałem.",
     ],
-    teamIntro: "",
     team: [
-      { role: "Projektanci aplikacji i stron", body: "Panele i formularze dla klientów, centra pomocy i wewnętrzne narzędzia, z których da się korzystać bez irytacji." },
-      { role: "Programiści", body: "Połączenia między systemami i narzędzia pisane od zera tam, gdzie gotowe programy przestają wystarczać." },
-      { role: "Specjaliści od operacji", body: "Obsługa klienta, finanse i operacje sprzedażowe, także w dużych organizacjach." },
+      { role: "Projektanci aplikacji i stron", body: "Portale dla klientów, formularze, centra pomocy i narzędzia wewnętrzne." },
+      { role: "Programiści", body: "Połączenia między systemami i kod pisany od zera tam, gdzie gotowe narzędzia przestają wystarczać." },
+      { role: "Specjaliści od procesów", body: "Obsługa klienta, finanse i sprzedaż, także w dużych firmach." },
     ],
     location: "Działam z Polski. Pracuję po polsku i po angielsku.",
   },
   contact: {
     title: "Napisz do mnie jak do kogoś z zespołu.",
-    body: "Wystarczy kilka zdań o tym, co przeszkadza. Odpisuję w ciągu jednego dnia roboczego. Jeśli nie jestem właściwą osobą, powiem to wprost i wskażę kogoś, kto się nada.",
+    body: "Wystarczy kilka zdań o tym, co spowalnia firmę. Odpisuję w ciągu jednego dnia roboczego, a jeśli to nie ja jestem właściwą osobą, wskażę kogoś, kto pomoże.",
     labels: { name: "Imię", email: "E-mail", company: "Firma", message: "Co nie działa tak, jak powinno?", optional: "opcjonalnie" },
     placeholders: { message: "Kilka zdań wystarczy." },
     submit: "Wyślij",
     sending: "Wysyłam…",
     success: "Dzięki. Wiadomość dotarła, odpiszę w ciągu jednego dnia roboczego.",
-    error: "Coś poszło nie tak. Napisz bezpośrednio na jake@rundown.digital.",
+    error: "Nie udało się wysłać wiadomości. Napisz bezpośrednio na jake@rundown.digital.",
     orEmail: "Albo napisz bezpośrednio:",
     ps: "PS Nie wiesz, czy twój problem należy do tych, którymi się zajmuję? I tak napisz. Większość dobrych projektów zaczyna się od maila w stylu „to może głupie pytanie, ale…”.",
   },
   footer: {
-    line: "The Rundown. Niezależne doradztwo operacyjne, Jakub Krukowski.",
+    line: "The Rundown. Niezależny konsultant ds. procesów i automatyzacji, Jakub Krukowski.",
     rights: "©",
   },
-  logoPicker: { label: "Logo", open: "Wybierz logo", close: "Zamknij", allLogos: "Zobacz wszystkie logotypy" },
+  logoPicker: { label: "Logo", open: "Wybierz logo", close: "Zamknij", allLogos: "Zobacz wszystkie loga" },
+  schema: {
+    jobTitle: "Niezależny konsultant ds. procesów i automatyzacji",
+    serviceTypes: [
+      "Wdrożenie CRM",
+      "Automatyzacja procesów biznesowych",
+      "Wdrożenie AI w małej firmie",
+      "Szkolenia z AI dla zespołów",
+      "Audyt narzędzi i systemów w firmie",
+      "Rekrutacja i budowa zespołu operacyjnego",
+    ],
+    knowsAbout: ["HubSpot", "Salesforce", "Attio", "Notion", "n8n", "Tray.ai", "Zapier", "Claude", "Revenue operations", "Mapowanie procesów"],
+  },
 };
 
 export default pl;

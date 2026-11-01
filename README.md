@@ -13,13 +13,14 @@ Single-page bilingual site (EN/PL) for The Rundown, Jakub Krukowski's independen
 - Page: `components/site.tsx` (all sections, server-rendered). Every section uses the same `Section` skeleton: heading left, content right.
 - Logos: `components/logos.tsx` has all 20 explored directions, numbered as on the design canvas. `DEFAULT_LOGO` sets the one in the header.
 - Contact form: `components/contact-form.tsx` posts to `app/api/contact/route.ts`, which forwards to HubSpot Forms (`HUBSPOT_PORTAL_ID`, `HUBSPOT_FORM_GUID`). Includes a honeypot.
+- SEO/AEO: per-locale metadata in the dictionaries; JSON-LD (ProfessionalService, Person, FAQPage) built from the same copy in `lib/structured-data.ts`; `app/robots.ts`, `app/sitemap.ts` and `public/llms.txt` (a plain summary for AI crawlers, update it when services change).
 - Fonts: self-hosted, subset to Latin + Polish in `app/fonts/` (Archivo variable, Newsreader italic, JetBrains Mono).
 
 ## Drafts and the logo picker
 Placeholder content (case studies, client quote) and the floating logo picker render only when `VERCEL_ENV !== "production"`, i.e. locally and on preview deployments. See `lib/env.ts`. On production they are hidden; `?logo=N` still works for a quick check, and `/en/logos` shows all options (noindex).
 
 ## Design rules (keep the page calm)
-- One grid: 360px heading column, content column.
+- One section shape: heading and intro across the top, full-width content grid below.
 - One list style: rule on top, label left, text right.
 - One accent (`--color-accent`, deep red), used as ink only: the headline phrase, strikethroughs, one result line.
 - Condensed caps for H1/H2 and wordmarks only. Serif italic only for the quote and the P.S.

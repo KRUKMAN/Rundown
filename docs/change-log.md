@@ -14,3 +14,9 @@
 - Contact API: input validation, length limits, honeypot. Kept HubSpot Forms integration and tracking.
 - Self-hosted subset fonts; removed framer-motion and lucide-react; removed starter assets.
 - Added `npm test` (runs typecheck) so the CI workflow's test step passes.
+
+## 2026-11-01 · Copy and layout pass
+- Sections now use the full width: heading row on top, content in grids (problems 3x2, services in three columns, principles beside promises, FAQ in two columns).
+- Copy rewritten to be shorter and keyword-led: service titles are the terms people search ("CRM implementation", "Workflow automation", "AI and productivity training").
+- New FAQ section; JSON-LD for the business, person and FAQ; robots.txt; llms.txt.
+- Polish reviewed again: Polish label is "konsultant ds. procesów i automatyzacji" (owners don't search "konsultant operacyjny"); metadata leads with "Wdrożenie CRM i automatyzacja procesów".
