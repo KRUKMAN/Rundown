@@ -51,7 +51,7 @@ const en: Dictionary = {
       "The client gets the updated quote to approve",
     ],
     afterNote:
-      "One place per job, a few rules on who records what, and a weekly summary for management. The team helped set the rules, so they follow them.",
+      "One place per job, a few rules on who records what, and a weekly summary for management. The site lead and purchasing agreed the rules before anything was built.",
     elsewhereTitle: "The same pattern in other industries",
     elsewhere: [
       {
@@ -60,11 +60,11 @@ const en: Dictionary = {
       },
       {
         industry: "Agencies and professional services",
-        text: "A client adds scope. The estimate, the capacity plan and the invoice update together.",
+        text: "A client adds scope mid-project. The estimate, the capacity plan and the invoice update together.",
       },
       {
         industry: "E-commerce and retail",
-        text: "A refund request is checked against the policy and paid. Support only sees the exceptions.",
+        text: "A customer changes the delivery address after ordering. The warehouse and the courier label update before the parcel is packed.",
       },
       {
         industry: "Manufacturing and distribution",
@@ -75,9 +75,6 @@ const en: Dictionary = {
   problems: {
     title: "Problems I fix",
     intro: "In the words of people who run teams. You don't need to know what a CRM is to recognise these.",
-    paths:
-      "People get in touch when the business grew faster than its systems, when the clean-up kept getting postponed, or when something has worked for years and could work much better.",
-    pathsLink: "Any of those is reason enough to talk.",
     items: [
       {
         quote: "Projects go wrong without warning.",
@@ -89,15 +86,11 @@ const en: Dictionary = {
       },
       {
         quote: "I can't trust the pipeline numbers.",
-        fix: "One definition for each deal stage, clear rules for updating it, and a report sales and finance both accept.",
+        fix: "One definition for each deal stage and a few rules for keeping it current. The forecast stops being a guess.",
       },
       {
         quote: "We bought HubSpot. Nobody uses it.",
-        fix: "I sit with the people doing the work, cut the fields nobody needs and train until it becomes routine.",
-      },
-      {
-        quote: "Leads wait days for a reply.",
-        fix: "Routing rules send each lead to the right person within minutes, with the context attached.",
+        fix: "I sit with the people who use it, cut the fields nobody fills in and set it up around how they actually sell.",
       },
       {
         quote: "We answer the same questions all day.",
@@ -105,15 +98,7 @@ const en: Dictionary = {
       },
       {
         quote: "Everyone talks about AI. What would it do here?",
-        fix: "Usually: drafts quotes from call notes, sorts the inbox, writes the weekly summary. I show it on your own data first.",
-      },
-      {
-        quote: "We pay for tools nobody uses.",
-        fix: "Every subscription reviewed: keep it, cut it or connect it to the rest.",
-      },
-      {
-        quote: "Our RevOps backlog keeps growing.",
-        fix: "Extra senior hands for the clean-up, integrations and reports that never reach the top of the list.",
+        fix: "I pick one task your team does every day and show what AI does with it, on your own data, before anything is bought.",
       },
     ],
   },
@@ -185,7 +170,7 @@ const en: Dictionary = {
           },
           {
             title: "Adoption and change",
-            body: "The people who'll use the new setup help design it. Then short training on real work until it becomes routine.",
+            body: "The people who'll use the new setup help design it. Then short training sessions on their own work, not a demo account.",
           },
           {
             title: "Hiring and building the ops function",
@@ -199,7 +184,7 @@ const en: Dictionary = {
     title: "How I work",
     intro: "Five steps. You can stop after any of them.",
     steps: [
-      { title: "Free 30-minute call", body: "You describe what's slowing you down. I tell you honestly whether I can help." },
+      { title: "Free call", body: "30 minutes. You describe what's slowing you down, I ask questions and say whether it's something I'd take on." },
       { title: "Review", body: "I talk to the people doing the work and look at your tools, data and handoffs." },
       { title: "Written plan", body: "Priorities, costs and what to leave alone. You decide what happens next." },
       { title: "Build with your team", body: "Setup, migration and automation, done alongside the people who'll use them." },
@@ -207,9 +192,9 @@ const en: Dictionary = {
     ],
     engagementsTitle: "Ways to work together",
     engagements: [
-      { title: "Review and plan", body: "A short review of how work flows today and a written plan with priorities and costs." },
+      { title: "Review and plan", body: "Only the first three steps. You get the plan and can carry it out yourselves or with someone else." },
       { title: "Fixed-scope project", body: "A defined piece of work, like a CRM implementation or an automation build, with an agreed scope and price." },
-      { title: "Ongoing monthly help", body: "A set amount of time each month, as a fractional ops or RevOps lead or to work through your backlog." },
+      { title: "Ongoing monthly help", body: "A set amount of time each month, as a fractional ops or RevOps lead or to work through your backlog. Agreed month by month." },
       { title: "Workshops", body: "Hands-on AI and productivity training for a team, built around their own tasks." },
     ],
   },
@@ -220,13 +205,13 @@ const en: Dictionary = {
       "Teams of 5 to 500 people, in any industry",
       "Growing faster than your systems, or cleaning up after a rough stretch",
       "Someone on your side who will own the result",
-      "Ops, sales and RevOps teams that want an outside view or senior hands",
+      "An ops, sales or RevOps lead with more backlog than hours",
     ],
     badLabel: "Probably not a fit",
     bad: [
       "You need a full-time development team",
       "You want a strategy deck without changing how work runs",
-      "You're looking for the cheapest software licences",
+      "You need a new system live by next week",
     ],
   },
   ctaBand: {
@@ -247,15 +232,15 @@ const en: Dictionary = {
     promises: [
       {
         title: "No commissions",
-        body: "I don't resell software or take a cut from vendors. A recommendation is about fit.",
+        body: "I don't resell software or take a cut from vendors, so I've no reason to push one.",
       },
       {
         title: "You own everything",
         body: "Accounts, automations and documentation are in your company's name from day one.",
       },
       {
-        title: "A plan before a price",
-        body: "A short review of how work flows today, then a written plan. You decide what's worth doing.",
+        title: "No lock-in",
+        body: "Monthly help can stop any month, and everything I build keeps running without me.",
       },
     ],
   },
@@ -282,32 +267,24 @@ const en: Dictionary = {
         a: "An operations consultant looks at how work moves through your company (sales, delivery, support, invoicing) and fixes where it gets stuck: unclear ownership, data retyped by hand, tools that don't talk to each other. In practice that means organising processes, setting up a CRM, automating repetitive steps and training the team.",
       },
       {
-        q: "Do I have to replace my tools or change everything at once?",
-        a: "No. Most of the gain comes from cleaning up and connecting what you already have, and changing the two or three things that cost the most. I recommend new software only when the old one can't do the job.",
-      },
-      {
         q: "Which CRM should a growing company use?",
         a: "HubSpot suits most service and B2B companies that want marketing and sales in one place. Salesforce fits complex sales with many custom rules and someone to administer it. Attio works well for small, flexible teams. The right choice depends on how you sell and who will maintain it.",
       },
       {
         q: "Can AI help a company that isn't in tech?",
-        a: "Yes, mostly in unglamorous places: drafting quotes from notes, answering routine customer questions, summarising the week for management, sorting email. It works best on tasks that repeat daily and follow clear rules.",
+        a: "Yes. The best candidates are tasks that repeat every day and follow clear rules, and every company has them: routine customer questions, notes that become documents, incoming requests that need sorting.",
       },
       {
         q: "Can you work with our in-house team or RevOps lead?",
-        a: "Yes. I can work alongside an internal ops, sales or RevOps person, on a defined project or as extra senior hands on their backlog.",
+        a: "Yes. I can work alongside an internal ops, sales or RevOps person, on a defined project or by taking items off their backlog.",
       },
       {
         q: "What happens to our data when AI is involved?",
-        a: "AI tools only see the data a task needs, and only in tools your company has approved. Sensitive data stays out unless you decide otherwise, and a person checks anything that matters.",
+        a: "Only tools your company approves, usually business plans of Claude or ChatGPT or the AI built into HubSpot or Notion, on terms that don't use your data for training. They get only the data a task needs, confidential data stays out unless you decide otherwise, and a person checks anything that matters.",
       },
       {
-        q: "How does working together start?",
-        a: "With a free 30-minute call. If it's a fit, I review how work flows today and send a written plan with priorities and costs. You decide what happens next.",
-      },
-      {
-        q: "Do you work with companies outside Poland?",
-        a: "Yes. I work remotely, in English and Polish.",
+        q: "What happens after the handover?",
+        a: "Your team runs it. Everything is documented, sits in your company's accounts and has an owner on your side. If you want, I stay on for monthly help.",
       },
     ],
   },

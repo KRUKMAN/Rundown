@@ -46,7 +46,7 @@ export type Dictionary = {
     elsewhereTitle: string;
     elsewhere: IndustryExample[];
   };
-  problems: { title: string; intro: string; paths: string; pathsLink: string; items: Problem[] };
+  problems: { title: string; intro: string; items: Problem[] };
   services: { title: string; intro: string; groups: ServiceGroup[] };
   process: { title: string; intro: string; steps: TitledText[]; engagementsTitle: string; engagements: TitledText[] };
   fit: { title: string; goodLabel: string; good: string[]; badLabel: string; bad: string[] };

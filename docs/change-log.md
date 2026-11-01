@@ -35,3 +35,12 @@
 - New sections: How I work (five steps plus four ways to work together, no prices), Who I work with (good fit / not a fit), a call-to-action band after What I do and after the FAQ.
 - "How I work" in the nav now points to the process section; principles moved to `#principles`.
 - Smaller H2s; mobile menu below 1024px; compact cookie bar on phones; FAQ rewritten for real questions (which CRM, AI outside tech, working with an in-house RevOps lead, data and AI).
+
+## 2026-11-01 · Second review: shorter, less repetition
+- Problems cut to six that don't repeat a service; dropped the duplicate "paths" paragraph.
+- Removed the second CTA band, the "A plan before a price" promise (now "No lock-in") and the "How does working together start?" FAQ, which all repeated the process section.
+- FAQ is six collapsible questions (answers stay in the HTML and JSON-LD); added "What happens after the handover?" and named the AI tools in the data answer.
+- Services in four columns from 1280px; process and engagements in two columns until 1280px.
+- Industries row at body size, with a real "change" example for e-commerce.
+- Photo placeholder hidden until a real photo exists (`PHOTO_SRC` in `components/site.tsx`).
+- Section spacing 56/80px. Page height at 1440px down from ~8,850px to ~7,500px; on phones from ~15,400px to ~13,000px.

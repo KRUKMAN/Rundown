@@ -13,12 +13,13 @@ export const EMAIL = business.email;
 type SiteProps = { locale: Locale; t: Dictionary; showDrafts: boolean };
 
 /* ---------- Layout system ----------
-   Spacing: 64px between sections on mobile, 96px on desktop; 40px from heading block to content.
+   Spacing: 56px between sections on mobile, 80px on desktop; 40px from heading block to content.
    Reading measure: running text capped at ~62–68 characters (Baymard: 50–75; WCAG 1.4.8: ≤80).
    Type scale: H1 52–104 · H2 30–46 · card title 20 · body 18 · secondary 16 · meta 14–15.
    One tinted band (the before/after example) breaks the page rhythm once; everything else sits on paper. */
 
 const MEASURE = "max-w-[64ch]";
+const PHOTO_SRC: string | null = null;
 
 function Section({
   id,
@@ -38,19 +39,19 @@ function Section({
       <h2 id={`${id}-title`} className="display m-0 max-w-[22ch] text-[clamp(30px,3.4vw,46px)] leading-[0.95]">
         {title}
       </h2>
-      {intro && <div className={`mt-4 space-y-3 text-[17px] leading-relaxed text-muted sm:text-[18px] ${MEASURE}`}>{intro}</div>}
+      {intro && <div className={`mt-4 flex flex-col gap-3 text-[17px] leading-relaxed text-muted sm:text-[18px] ${MEASURE}`}>{intro}</div>}
       <div className="mt-8 sm:mt-10">{children}</div>
     </div>
   );
   if (band) {
     return (
-      <section id={id} aria-labelledby={`${id}-title`} className="mt-16 bg-paper-deep/60 pb-14 pt-10 sm:mt-24 sm:pb-20 sm:pt-14">
+      <section id={id} aria-labelledby={`${id}-title`} className="mt-16 bg-paper-deep/60 pb-14 pt-10 sm:mt-20 sm:pb-20 sm:pt-14">
         <div className="container-site">{inner}</div>
       </section>
     );
   }
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="container-site pt-16 sm:pt-24">
+    <section id={id} aria-labelledby={`${id}-title`} className="container-site pt-14 sm:pt-20">
       {inner}
     </section>
   );
@@ -195,21 +196,7 @@ function Problems({ t }: { t: Dictionary }) {
   const p = t.problems;
   const [open, close] = t.locale === "pl" ? ["„", "”"] : ["“", "”"];
   return (
-    <Section
-      id="problems"
-      title={p.title}
-      intro={
-        <>
-          <p className="m-0">{p.intro}</p>
-          <p className="m-0">
-            {p.paths}{" "}
-            <a href="#contact" className="link-quiet font-semibold text-ink">
-              {p.pathsLink}
-            </a>
-          </p>
-        </>
-      }
-    >
+    <Section id="problems" title={p.title} intro={introP(p.intro)}>
       <ul className="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {p.items.map((item, i) => (
           <li key={i} className="border-t border-line pb-7 pt-5">
@@ -252,12 +239,12 @@ function Example({ t }: { t: Dictionary }) {
         </div>
       </div>
       <div className="mt-12 sm:mt-14">
-        <h3 className="mb-0 mt-0 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted">{e.elsewhereTitle}</h3>
-        <ul className="m-0 mt-3 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        <h3 className="mb-0 mt-0 text-[20px] font-bold">{e.elsewhereTitle}</h3>
+        <ul className="m-0 mt-3 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-4">
           {e.elsewhere.map((item) => (
-            <li key={item.industry} className="border-t border-ink/70 pb-4 pt-3">
-              <h4 className="m-0 text-[17px] font-bold leading-snug">{item.industry}</h4>
-              <p className="mb-0 mt-1.5 text-[15px] leading-relaxed text-muted">{item.text}</p>
+            <li key={item.industry} className="border-t border-ink/70 pb-5 pt-4">
+              <h4 className="m-0 text-[18px] font-bold leading-snug">{item.industry}</h4>
+              <p className="mb-0 mt-1.5 text-[16px] leading-relaxed sm:text-[17px]">{item.text}</p>
             </li>
           ))}
         </ul>
@@ -270,7 +257,7 @@ function Services({ t }: { t: Dictionary }) {
   const s = t.services;
   return (
     <Section id="what" title={s.title} intro={introP(s.intro)}>
-      <ol className="m-0 grid list-none gap-x-14 gap-y-14 p-0 md:grid-cols-2">
+      <ol className="m-0 grid list-none gap-x-14 gap-y-14 p-0 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
         {s.groups.map((group, gi) => (
           <li key={gi} className="min-w-0">
             <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(gi + 1).padStart(2, "0")}</p>
@@ -295,7 +282,7 @@ function Process({ t }: { t: Dictionary }) {
   const p = t.process;
   return (
     <Section id="how" title={p.title} intro={introP(p.intro)}>
-      <ol className="m-0 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-5">
+      <ol className="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-5 xl:gap-x-8">
         {p.steps.map((step, i) => (
           <li key={i} className="border-t border-ink pb-6 pt-4">
             <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(i + 1).padStart(2, "0")}</p>
@@ -305,9 +292,9 @@ function Process({ t }: { t: Dictionary }) {
         ))}
       </ol>
       <h3 className="mb-0 mt-10 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted sm:mt-12">{p.engagementsTitle}</h3>
-      <ul className="m-0 mt-3 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="m-0 mt-3 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
         {p.engagements.map((item) => (
-          <li key={item.title} className="border-t border-line pb-5 pt-4">
+          <li key={item.title} className="border-t border-ink pb-5 pt-4">
             <h4 className="m-0 text-[18px] font-bold leading-snug">{item.title}</h4>
             <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{item.body}</p>
           </li>
@@ -419,16 +406,26 @@ function Faq({ t }: { t: Dictionary }) {
   const f = t.faq;
   return (
     <Section id="faq" title={f.title} intro={<p className="m-0">{f.intro}</p>}>
-      <dl className="m-0 grid gap-x-14 md:grid-cols-2">
-        {f.items.map((item, i) => (
-          <div key={i} className="border-t border-line pb-7 pt-5">
-            <dt>
-              <h3 className="m-0 text-[19px] font-bold leading-[1.3]">{item.q}</h3>
-            </dt>
-            <dd className="m-0 mt-2 text-[16px] leading-relaxed text-muted">{item.a}</dd>
-          </div>
+      {/* Answers stay in the HTML (and in the FAQPage JSON-LD); only the display is collapsed. */}
+      <div className="grid items-start gap-x-14 md:grid-cols-2">
+        {[f.items.slice(0, Math.ceil(f.items.length / 2)), f.items.slice(Math.ceil(f.items.length / 2))].map((col, ci) => (
+          <ul key={ci} className="m-0 list-none border-b border-line p-0">
+            {col.map((item) => (
+              <li key={item.q} className="border-t border-line">
+                <details className="group">
+                  <summary className="flex min-h-14 cursor-pointer list-none items-start justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
+                    <h3 className="m-0 text-[18px] font-bold leading-[1.35] sm:text-[19px]">{item.q}</h3>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" className="mt-[6px] flex-none transition-transform group-open:rotate-45">
+                      <path d="M7 0v14M0 7h14" stroke="currentColor" strokeWidth="2" fill="none" />
+                    </svg>
+                  </summary>
+                  <p className={`mb-0 mt-0 pb-5 text-[16px] leading-relaxed text-muted ${MEASURE}`}>{item.a}</p>
+                </details>
+              </li>
+            ))}
+          </ul>
         ))}
-      </dl>
+      </div>
     </Section>
   );
 }
@@ -438,15 +435,11 @@ function About({ t }: { t: Dictionary }) {
   return (
     <Section id="about" title={a.title}>
       <div className="flex flex-wrap gap-x-12 gap-y-8">
-        <div
-          role="img"
-          aria-label={a.photoNote}
-          className="flex aspect-[4/5] w-full max-w-[240px] flex-none items-end bg-paper-deep p-4"
-        >
-          <span aria-hidden="true" className="display text-[56px] text-ink/55">
-            JK
-          </span>
-        </div>
+        {/* Set PHOTO_SRC (a file in /public) once a real photo exists; until then the bio runs alone. */}
+        {PHOTO_SRC && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={PHOTO_SRC} alt={a.photoNote} width={240} height={300} className="aspect-[4/5] w-full max-w-[240px] flex-none object-cover" />
+        )}
         <div className="min-w-0 flex-[1_1_440px]">
           {a.paragraphs.map((para, i) => (
             <p key={i} className={`mb-4 mt-0 text-[18px] leading-relaxed sm:text-[19px] ${MEASURE}`}>
@@ -471,7 +464,7 @@ function About({ t }: { t: Dictionary }) {
 function Contact({ locale, t }: { locale: Locale; t: Dictionary }) {
   const c = t.contact;
   return (
-    <section id="contact" aria-labelledby="contact-title" className="container-site pb-16 pt-16 sm:pb-24 sm:pt-24">
+    <section id="contact" aria-labelledby="contact-title" className="container-site pb-16 pt-14 sm:pb-24 sm:pt-20">
       <div className="border-t border-ink pt-6 sm:pt-8">
         <h2 id="contact-title" className="display m-0 max-w-[1100px] text-[clamp(40px,6vw,88px)]">
           {c.title}
@@ -524,7 +517,6 @@ export default function Site(props: SiteProps) {
         <Principles t={t} />
         {showDrafts && <Work t={t} />}
         <Faq t={t} />
-        <CtaBand {...t.ctaBand} />
         <About t={t} />
         <Contact locale={locale} t={t} />
       </main>

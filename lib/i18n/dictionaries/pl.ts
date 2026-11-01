@@ -22,7 +22,7 @@ const pl: Dictionary = {
   hero: {
     titleStart: "Ułatwiam",
     titleAccent: "prowadzenie firmy.",
-    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i zostaję, dopóki zespół z tego nie korzysta.",
+    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i zostaję, dopóki zespół nie zacznie z tego korzystać.",
     cta: "Napisz do mnie",
     emailPrefix: "albo napisz na",
     replyNote: "Odpisuję w ciągu jednego dnia roboczego. Pierwsza rozmowa jest bezpłatna.",
@@ -51,7 +51,7 @@ const pl: Dictionary = {
       "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
     afterNote:
-      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Zespół współtworzył te zasady, więc się ich trzyma.",
+      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Kierownik budowy i dział zaopatrzenia uzgodnili te zasady, zanim cokolwiek wdrożono.",
     elsewhereTitle: "Ten sam schemat w innych branżach",
     elsewhere: [
       {
@@ -60,11 +60,11 @@ const pl: Dictionary = {
       },
       {
         industry: "Agencje i firmy usługowe",
-        text: "Klient dokłada zakres. Wycena, plan obłożenia zespołu i faktura aktualizują się jednocześnie.",
+        text: "Klient dokłada zakres w trakcie projektu. Wycena, plan obłożenia zespołu i faktura aktualizują się jednocześnie.",
       },
       {
         industry: "E-commerce i handel",
-        text: "Prośba o zwrot pieniędzy jest sprawdzana pod kątem regulaminu, a zwrot wypłacany automatycznie. Obsługa klienta widzi tylko wyjątki.",
+        text: "Klient po złożeniu zamówienia zmienia adres dostawy. Magazyn i etykieta kurierska aktualizują się, zanim paczka zostanie spakowana.",
       },
       {
         industry: "Produkcja i dystrybucja",
@@ -75,9 +75,6 @@ const pl: Dictionary = {
   problems: {
     title: "Problemy, które rozwiązuję",
     intro: "Słowami osób, które kierują zespołami. Nie musisz wiedzieć, czym jest CRM, żeby je rozpoznać.",
-    paths:
-      "Zgłaszają się firmy, które urosły szybciej niż ich organizacja, od dawna odkładają porządki albo mają coś, co działa od lat, ale mogłoby działać dużo lepiej.",
-    pathsLink: "Każdy z tych powodów wystarczy, żeby porozmawiać.",
     items: [
       {
         quote: "O problemie dowiaduję się, gdy jest już za późno.",
@@ -89,15 +86,11 @@ const pl: Dictionary = {
       },
       {
         quote: "Nie ufam liczbom w lejku sprzedaży.",
-        fix: "Jedna definicja każdego etapu, jasne zasady aktualizacji i raport, któremu ufają zarówno sprzedaż, jak i finanse.",
+        fix: "Jedna definicja każdego etapu i kilka zasad, jak go aktualizować. Prognoza przestaje być zgadywaniem.",
       },
       {
         quote: "Kupiliśmy HubSpota. Nikt z niego nie korzysta.",
-        fix: "Siadam z ludźmi, którzy na co dzień z tego korzystają, usuwam niepotrzebne pola i szkolę, aż korzystanie wejdzie w nawyk.",
-      },
-      {
-        quote: "Leady czekają na odpowiedź po kilka dni.",
-        fix: "Reguły kierują każdy lead do właściwej osoby w kilka minut, razem z całym kontekstem.",
+        fix: "Siadam z ludźmi, którzy z niego korzystają, usuwam pola, których nikt nie wypełnia, i ustawiam go pod to, jak naprawdę sprzedają.",
       },
       {
         quote: "Cały dzień odpowiadamy na te same pytania.",
@@ -105,15 +98,7 @@ const pl: Dictionary = {
       },
       {
         quote: "Wszyscy mówią o AI. Co by nam to dało?",
-        fix: "Najczęściej: szkice wycen z notatek po rozmowach, sortowanie maili, cotygodniowe podsumowanie. Najpierw pokazuję to na twoich danych.",
-      },
-      {
-        quote: "Płacimy za narzędzia, z których nikt nie korzysta.",
-        fix: "Sprawdzam każdy abonament: zostawić, wyłączyć albo połączyć z resztą.",
-      },
-      {
-        quote: "Zaległości w RevOps tylko rosną.",
-        fix: "Dodatkowe, doświadczone ręce do porządków, integracji i raportów, które nigdy nie trafiają na początek listy.",
+        fix: "Wybieram jedno zadanie, które zespół wykonuje codziennie, i pokazuję na twoich danych, co zrobi z nim AI. Zanim cokolwiek kupisz.",
       },
     ],
   },
@@ -185,7 +170,7 @@ const pl: Dictionary = {
           },
           {
             title: "Wdrożenie zmiany w zespole",
-            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia przy bieżącej pracy, aż nowy sposób działania wejdzie w nawyk.",
+            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia na ich własnej pracy, a nie na koncie demo.",
           },
           {
             title: "Rekrutacja i budowa zespołu operacyjnego",
@@ -199,7 +184,7 @@ const pl: Dictionary = {
     title: "Jak pracuję",
     intro: "Pięć kroków. Po każdym możesz zakończyć współpracę.",
     steps: [
-      { title: "Bezpłatna rozmowa (30 minut)", body: "Opowiadasz, co spowalnia firmę. Mówię wprost, czy mogę pomóc." },
+      { title: "Bezpłatna rozmowa", body: "30 minut. Opowiadasz, co spowalnia firmę, ja dopytuję i mówię, czy to coś, czego się podejmę." },
       { title: "Przegląd", body: "Rozmawiam z ludźmi, którzy na co dzień wykonują tę pracę, i sprawdzam narzędzia, dane oraz momenty przekazywania zadań." },
       { title: "Spisany plan", body: "Priorytety, koszty i to, czego lepiej nie ruszać. Ty decydujesz, co dalej." },
       { title: "Wdrożenie z zespołem", body: "Konfiguracja, przeniesienie danych i automatyzacje, robione razem z osobami, które będą z nich korzystać." },
@@ -207,9 +192,9 @@ const pl: Dictionary = {
     ],
     engagementsTitle: "Formy współpracy",
     engagements: [
-      { title: "Przegląd i plan", body: "Krótki przegląd tego, jak dziś wygląda praca, i spisany plan z priorytetami i kosztami." },
+      { title: "Przegląd i plan", body: "Tylko pierwsze trzy kroki. Dostajesz plan i możesz go wdrożyć sam albo z kimś innym." },
       { title: "Projekt o ustalonym zakresie", body: "Konkretne zadanie, np. wdrożenie CRM albo zbudowanie automatyzacji, z uzgodnionym zakresem i ceną." },
-      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami." },
+      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami. Umawiamy się z miesiąca na miesiąc." },
       { title: "Warsztaty", body: "Praktyczne szkolenie z AI i efektywnej pracy dla zespołu, oparte na jego własnych zadaniach." },
     ],
   },
@@ -220,13 +205,13 @@ const pl: Dictionary = {
       "masz zespół od 5 do 500 osób, w dowolnej branży",
       "firma rośnie szybciej niż jej systemy albo porządkuje się po trudniejszym okresie",
       "po twojej stronie jest osoba, która weźmie odpowiedzialność za efekt",
-      "w firmie jest zespół operacji, sprzedaży lub RevOps, który potrzebuje spojrzenia z zewnątrz albo doświadczonych rąk do pracy",
+      "w firmie jest lider operacji, sprzedaży lub RevOps, który ma więcej zaległości niż godzin",
     ],
     badLabel: "Raczej się nie dopasujemy, jeśli",
     bad: [
       "potrzebujesz zespołu programistów na pełen etat",
       "chcesz strategii w prezentacji bez zmiany sposobu pracy",
-      "szukasz najtańszych licencji na oprogramowanie",
+      "potrzebujesz nowego systemu działającego od przyszłego tygodnia",
     ],
   },
   ctaBand: {
@@ -247,15 +232,15 @@ const pl: Dictionary = {
     promises: [
       {
         title: "Bez prowizji",
-        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców. Polecam to, co do ciebie pasuje.",
+        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców, więc nie mam powodu niczego ci wciskać.",
       },
       {
         title: "Wszystko należy do ciebie",
         body: "Konta, automatyzacje i dokumentacja są od pierwszego dnia zapisane na twoją firmę.",
       },
       {
-        title: "Najpierw plan, potem cena",
-        body: "Krótki przegląd tego, jak dziś wygląda praca, potem spisany plan z wyceną. Ty decydujesz, co warto zrobić.",
+        title: "Bez uzależnienia",
+        body: "Stałe wsparcie możesz zakończyć w każdym miesiącu, a wszystko, co zbuduję, działa beze mnie.",
       },
     ],
   },
@@ -282,32 +267,24 @@ const pl: Dictionary = {
         a: "Sprawdzam, jak praca przepływa przez firmę (sprzedaż, realizacja, obsługa klienta, fakturowanie), i naprawiam miejsca, w których się zacina: niejasną odpowiedzialność, ręczne przepisywanie danych, narzędzia, które się ze sobą nie łączą. W praktyce to porządkowanie procesów, wdrożenie CRM, automatyzacje i szkolenie zespołu.",
       },
       {
-        q: "Czy muszę wymieniać narzędzia i zmieniać wszystko naraz?",
-        a: "Nie. Najwięcej daje uporządkowanie i połączenie tego, co już działa, i zmiana dwóch, trzech rzeczy, które kosztują najwięcej. Nowe oprogramowanie polecam tylko wtedy, gdy obecne naprawdę nie wystarcza.",
-      },
-      {
         q: "Jaki CRM wybrać dla rosnącej firmy?",
         a: "HubSpot pasuje do większości firm usługowych i B2B, które chcą mieć marketing i sprzedaż w jednym miejscu. Salesforce sprawdza się przy złożonej sprzedaży z wieloma niestandardowymi regułami i osobą, która go administruje. Attio sprawdza się w małych, elastycznych zespołach. Wybór zależy od tego, jak sprzedajesz i kto będzie system utrzymywał.",
       },
       {
         q: "Czy AI pomoże firmie spoza branży IT?",
-        a: "Tak, głównie przy prostych, mało efektownych zadaniach: szkice wycen z notatek, odpowiedzi na rutynowe pytania klientów, cotygodniowe podsumowanie dla zarządu, sortowanie maili. Najlepiej działa przy zadaniach, które powtarzają się codziennie i mają jasne zasady.",
+        a: "Tak. Najlepiej nadają się zadania, które powtarzają się codziennie i mają jasne zasady, a takie są w każdej firmie: rutynowe pytania klientów, notatki, z których powstają dokumenty, zgłoszenia, które trzeba posortować.",
       },
       {
         q: "Czy możesz pracować z naszym zespołem albo liderem RevOps?",
-        a: "Tak. Mogę pracować obok wewnętrznej osoby od operacji, sprzedaży lub RevOps, przy konkretnym projekcie albo jako dodatkowe, doświadczone wsparcie w zaległych zadaniach.",
+        a: "Tak. Mogę pracować obok wewnętrznej osoby od operacji, sprzedaży lub RevOps, przy konkretnym projekcie albo przejmując część zadań z jej listy zaległości.",
       },
       {
         q: "Co dzieje się z naszymi danymi, gdy w grę wchodzi AI?",
-        a: "Narzędzia AI dostają tylko te dane, które są potrzebne do konkretnego zadania, i działają wyłącznie w narzędziach zatwierdzonych przez firmę. Dane poufne zostają poza nimi, chyba że zdecydujecie inaczej, a wszystko, co ważne, sprawdza człowiek.",
+        a: "Używam tylko narzędzi zatwierdzonych przez firmę, najczęściej planów firmowych Claude lub ChatGPT albo AI wbudowanego w HubSpota czy Notion, na warunkach, które nie pozwalają uczyć modeli na twoich danych. Dostają tylko dane potrzebne do konkretnego zadania, dane poufne zostają poza nimi, chyba że zdecydujesz inaczej, a wszystko, co ważne, sprawdza człowiek.",
       },
       {
-        q: "Jak zaczyna się współpraca?",
-        a: "Od bezpłatnej, 30-minutowej rozmowy. Jeśli ma to sens, sprawdzam, jak dziś wygląda praca w firmie, i przesyłam spisany plan z priorytetami i kosztami. Ty decydujesz, co dalej.",
-      },
-      {
-        q: "Czy pracujesz z firmami spoza Polski?",
-        a: "Tak. Pracuję zdalnie, po polsku i po angielsku.",
+        q: "Co dzieje się po przekazaniu?",
+        a: "Twój zespół przejmuje stery. Wszystko jest opisane, zapisane na kontach twojej firmy i ma osobę odpowiedzialną po twojej stronie. Jeśli chcesz, mogę dalej pomagać w ramach stałego wsparcia.",
       },
     ],
   },
