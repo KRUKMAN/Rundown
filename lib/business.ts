@@ -1,11 +1,12 @@
 /**
  * Legal business details, used in the privacy policy, terms and footer.
- * FILL THESE IN BEFORE MERGING TO PRODUCTION. Anything in [brackets] is a placeholder.
+ * Source: CEIDG entry (sole proprietorship, active since 2022-07-02). Anything in [brackets] is a placeholder.
  */
 export const business = {
-  legalName: "[Legal business name, e.g. Jakub Krukowski The Rundown]",
-  address: "[Street and number, postcode, city, Poland]",
-  nip: "[NIP]",
+  legalName: "Jakub Krukowski The Rundown",
+  address: "ul. Reduty Ordona 75A lok. 7, 71-180 Szczecin",
+  nip: "8952243688",
+  regon: "522417180",
   email: "jake@rundown.digital",
   /** HubSpot portal data region. The tracking script loads from js-eu1, which suggests the EU data centre: confirm in HubSpot settings. */
   hubspotRegion: "EU",

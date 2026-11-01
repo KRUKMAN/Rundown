@@ -41,7 +41,7 @@ const privacy: Record<Locale, LegalDoc> = {
       {
         heading: "1. Who is responsible for your data",
         blocks: [
-          p(`The controller of your personal data is ${b.legalName}, ${b.address}, NIP ${b.nip}, run by Jakub Krukowski ("I"). For anything related to your data, email ${b.email}.`),
+          p(`The controller of your personal data is Jakub Krukowski ("I"), trading as ${b.legalName}, ${b.address}, Poland, NIP ${b.nip}, REGON ${b.regon}. For anything related to your data, email ${b.email}.`),
         ],
       },
       {
@@ -117,7 +117,7 @@ const privacy: Record<Locale, LegalDoc> = {
       {
         heading: "1. Kto odpowiada za twoje dane",
         blocks: [
-          p(`Administratorem twoich danych osobowych jest Jakub Krukowski („ja”), prowadzący działalność gospodarczą pod firmą ${b.legalName}, ${b.address}, NIP ${b.nip}. We wszystkich sprawach dotyczących danych pisz na ${b.email}.`),
+          p(`Administratorem twoich danych osobowych jest Jakub Krukowski („ja”), prowadzący działalność gospodarczą pod firmą ${b.legalName}, ${b.address}, NIP ${b.nip}, REGON ${b.regon}. We wszystkich sprawach dotyczących danych pisz na ${b.email}.`),
         ],
       },
       {
@@ -194,7 +194,7 @@ const terms: Record<Locale, LegalDoc> = {
     sections: [
       {
         heading: "1. Who runs this site",
-        blocks: [p(`${b.legalName}, ${b.address}, NIP ${b.nip}. Contact: ${b.email}.`)],
+        blocks: [p(`Jakub Krukowski, trading as ${b.legalName}, ${b.address}, Poland, NIP ${b.nip}, REGON ${b.regon}. Contact: ${b.email}.`)],
       },
       {
         heading: "2. What the site provides",
@@ -237,7 +237,7 @@ const terms: Record<Locale, LegalDoc> = {
     sections: [
       {
         heading: "1. Kto prowadzi stronę",
-        blocks: [p(`Stronę prowadzi Jakub Krukowski, działający pod firmą ${b.legalName}, ${b.address}, NIP ${b.nip}. Kontakt: ${b.email}.`)],
+        blocks: [p(`Stronę prowadzi Jakub Krukowski, działający pod firmą ${b.legalName}, ${b.address}, NIP ${b.nip}, REGON ${b.regon}. Kontakt: ${b.email}.`)],
       },
       {
         heading: "2. Co oferuje strona",

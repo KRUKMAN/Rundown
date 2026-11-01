@@ -91,7 +91,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
           <p className="m-0">{t.footer.line}</p>
           {!hasPlaceholders && (
             <p className="m-0">
-              {business.legalName} · NIP {business.nip}
+              {business.legalName} · NIP {business.nip} · REGON {business.regon}
             </p>
           )}
           <p className="m-0">
