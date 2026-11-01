@@ -38,9 +38,10 @@
 
 ## 2026-11-01 · Second review: shorter, less repetition
 - Problems cut to six that don't repeat a service; dropped the duplicate "paths" paragraph.
-- Removed the second CTA band, the "A plan before a price" promise (now "No lock-in") and the "How does working together start?" FAQ, which all repeated the process section.
+- Removed the second CTA band, the "A plan before a price" promise and the "How does working together start?" FAQ, which all repeated the process section.
 - FAQ is six collapsible questions (answers stay in the HTML and JSON-LD); added "What happens after the handover?" and named the AI tools in the data answer.
 - Services in four columns from 1280px; process and engagements in two columns until 1280px.
 - Industries row at body size, with a real "change" example for e-commerce.
 - Photo placeholder hidden until a real photo exists (`PHOTO_SRC` in `components/site.tsx`).
 - Section spacing 56/80px. Page height at 1440px down from ~8,850px to ~7,500px; on phones from ~15,400px to ~13,000px.
+- No promises about contract terms: removed "agreed month by month", the "No lock-in" promise and "you can stop after any step"; softened "problems show up a week early".

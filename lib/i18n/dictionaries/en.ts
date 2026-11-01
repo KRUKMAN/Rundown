@@ -78,7 +78,7 @@ const en: Dictionary = {
     items: [
       {
         quote: "Projects go wrong without warning.",
-        fix: "One list of every job with its stage, owner and blocker. Problems show up a week early.",
+        fix: "One list of every job with its stage, owner and blocker. Problems are visible while there's still time to act.",
       },
       {
         quote: "Nobody knows who owns what.",
@@ -182,7 +182,7 @@ const en: Dictionary = {
   },
   process: {
     title: "How I work",
-    intro: "Five steps. You can stop after any of them.",
+    intro: "Five steps, from the first call to the handover.",
     steps: [
       { title: "Free call", body: "30 minutes. You describe what's slowing you down, I ask questions and say whether it's something I'd take on." },
       { title: "Review", body: "I talk to the people doing the work and look at your tools, data and handoffs." },
@@ -194,7 +194,7 @@ const en: Dictionary = {
     engagements: [
       { title: "Review and plan", body: "Only the first three steps. You get the plan and can carry it out yourselves or with someone else." },
       { title: "Fixed-scope project", body: "A defined piece of work, like a CRM implementation or an automation build, with an agreed scope and price." },
-      { title: "Ongoing monthly help", body: "A set amount of time each month, as a fractional ops or RevOps lead or to work through your backlog. Agreed month by month." },
+      { title: "Ongoing monthly help", body: "A set amount of time each month, as a fractional ops or RevOps lead or to work through your backlog." },
       { title: "Workshops", body: "Hands-on AI and productivity training for a team, built around their own tasks." },
     ],
   },
@@ -237,10 +237,6 @@ const en: Dictionary = {
       {
         title: "You own everything",
         body: "Accounts, automations and documentation are in your company's name from day one.",
-      },
-      {
-        title: "No lock-in",
-        body: "Monthly help can stop any month, and everything I build keeps running without me.",
       },
     ],
   },

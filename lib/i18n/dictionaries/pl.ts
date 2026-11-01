@@ -78,7 +78,7 @@ const pl: Dictionary = {
     items: [
       {
         quote: "O problemie dowiaduję się, gdy jest już za późno.",
-        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Problem widać tydzień wcześniej.",
+        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Problem widać, zanim jest za późno, żeby zareagować.",
       },
       {
         quote: "Nikt nie wie, kto za co odpowiada.",
@@ -182,7 +182,7 @@ const pl: Dictionary = {
   },
   process: {
     title: "Jak pracuję",
-    intro: "Pięć kroków. Po każdym możesz zakończyć współpracę.",
+    intro: "Pięć kroków, od pierwszej rozmowy do przekazania.",
     steps: [
       { title: "Bezpłatna rozmowa", body: "30 minut. Opowiadasz, co spowalnia firmę, ja dopytuję i mówię, czy to coś, czego się podejmę." },
       { title: "Przegląd", body: "Rozmawiam z ludźmi, którzy na co dzień wykonują tę pracę, i sprawdzam narzędzia, dane oraz momenty przekazywania zadań." },
@@ -194,7 +194,7 @@ const pl: Dictionary = {
     engagements: [
       { title: "Przegląd i plan", body: "Tylko pierwsze trzy kroki. Dostajesz plan i możesz go wdrożyć sam albo z kimś innym." },
       { title: "Projekt o ustalonym zakresie", body: "Konkretne zadanie, np. wdrożenie CRM albo zbudowanie automatyzacji, z uzgodnionym zakresem i ceną." },
-      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami. Umawiamy się z miesiąca na miesiąc." },
+      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami." },
       { title: "Warsztaty", body: "Praktyczne szkolenie z AI i efektywnej pracy dla zespołu, oparte na jego własnych zadaniach." },
     ],
   },
@@ -237,10 +237,6 @@ const pl: Dictionary = {
       {
         title: "Wszystko należy do ciebie",
         body: "Konta, automatyzacje i dokumentacja są od pierwszego dnia zapisane na twoją firmę.",
-      },
-      {
-        title: "Bez uzależnienia",
-        body: "Stałe wsparcie możesz zakończyć w każdym miesiącu, a wszystko, co zbuduję, działa beze mnie.",
       },
     ],
   },
