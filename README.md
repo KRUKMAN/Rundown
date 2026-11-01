@@ -32,3 +32,4 @@ Placeholder content (case studies, client quote) and the floating logo picker re
 - One list style: rule on top, label left, text right.
 - One accent (`--color-accent`, deep red), used as ink only: the headline phrase, strikethroughs, one result line.
 - Condensed caps for H1/H2 and wordmarks only. Serif italic only for the quote and the P.S.
+- One tinted band per page (`bg-paper-deep/60`, the before/after example). Don't add more; it stops meaning anything.

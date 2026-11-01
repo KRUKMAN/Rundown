@@ -1,16 +1,24 @@
 # The Rundown
 
-> The Rundown is the independent operations consultancy of Jakub Krukowski, based in Poland and working remotely in English and Polish. It helps businesses of any kind (construction firms, cleaning companies, agencies, software houses) run more smoothly: organising processes and ownership, implementing CRMs, automating repetitive work, applying AI to repeatable tasks, and training teams.
+> The Rundown is the independent operations, CRM and RevOps consultancy of Jakub Krukowski, based in Szczecin, Poland, and working remotely in English and Polish. It works with teams of 5 to 500 people in any industry, usually after fast growth or a rough stretch left too many tools, unclear ownership and processes that live in a few people's heads. Typical clients are founders and operating directors who know they need a CRM or better information flow but not the best approach, and ops, sales or RevOps leaders who need an outside view or senior hands for a backlog or project.
 
 ## Services
 - Process and ownership mapping: who does what, in what order, in which tool; each process documented on one page.
-- CRM implementation: HubSpot, Salesforce or Attio, set up around how the client sells, including data migration and team training.
+- CRM implementation and clean-up: HubSpot, Salesforce or Attio, set up or rebuilt around how the client sells and delivers, including data migration, de-duplication and pipeline design.
 - Tool stack and tech debt clean-up: reviewing subscriptions and legacy systems to keep, replace, connect or switch off.
+- Sales and RevOps: lead routing and follow-up, pipeline stages and reporting that sales and finance agree on, CRM admin and backlog work.
 - Workflow automation: handoffs, reminders, reports and data entry automated with n8n, Tray.ai or Zapier.
 - AI for repeatable tasks: drafting quotes from call notes, inbox triage, routine replies, weekly summaries, with a person approving what matters.
 - Internal tools: quote calculators, dashboards and simple field apps when off-the-shelf software doesn't fit.
 - AI and productivity training: hands-on sessions on a team's real tasks with Claude, Notion AI and existing tools.
+- Adoption and change: the people who will use a new setup help design it, then short training on real work.
 - Hiring a first operations person and building the operations function.
+
+## Ways to work together
+- Review and plan: a short review of how work flows today and a written plan with priorities and costs.
+- Fixed-scope project, such as a CRM implementation or an automation build.
+- Ongoing monthly help, as a fractional ops or RevOps lead or for backlog work.
+- Workshops on AI and productivity for a team.
 
 ## Principles
 - Independent: no software resale or vendor commissions.

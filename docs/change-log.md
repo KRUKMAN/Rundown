@@ -26,3 +26,12 @@
 - Cookie consent banner (EDPB / art. 399 PKE): HubSpot tracking only after Accept, equal Accept/Reject, reopen from footer, consent expires after 12 months.
 - Privacy policy and terms of use in EN and PL, generated from `lib/business.ts`; privacy note under the contact form; footer legal links.
 - axe-core audit clean on all pages; fixed logo link accessible name (2.5.3), placeholder contrast, 8px overflow on Polish mobile header.
+
+## 2026-11-01 · Positioning and structure from the adversarial review
+- Repositioned for teams of 5 to 500 in any industry, by situation (fast growth, rough stretch, tech debt) instead of trades; removed owner-only framing.
+- Before/after example now sits on the page's one tinted band, followed by the same pattern in four other industries.
+- Problems rewritten "in the words of people who run teams", including pipeline trust, HubSpot adoption, lead response and RevOps backlog.
+- Services regrouped into four areas in a 2x2 grid: Organise, Sales and RevOps, Automate, People (adds adoption and change).
+- New sections: How I work (five steps plus four ways to work together, no prices), Who I work with (good fit / not a fit), a call-to-action band after What I do and after the FAQ.
+- "How I work" in the nav now points to the process section; principles moved to `#principles`.
+- Smaller H2s; mobile menu below 1024px; compact cookie bar on phones; FAQ rewritten for real questions (which CRM, AI outside tech, working with an in-house RevOps lead, data and AI).

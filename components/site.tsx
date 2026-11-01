@@ -5,6 +5,7 @@ import { business, hasPlaceholders } from "@/lib/business";
 import HeaderLogo from "./header-logo";
 import LanguageSwitcher from "./language-switcher";
 import ContactForm from "./contact-form";
+import MobileMenu from "./mobile-menu";
 import { CookieSettingsButton } from "./consent";
 
 export const EMAIL = business.email;
@@ -14,7 +15,8 @@ type SiteProps = { locale: Locale; t: Dictionary; showDrafts: boolean };
 /* ---------- Layout system ----------
    Spacing: 64px between sections on mobile, 96px on desktop; 40px from heading block to content.
    Reading measure: running text capped at ~62–68 characters (Baymard: 50–75; WCAG 1.4.8: ≤80).
-   Type scale: H1 52–104 · H2 34–60 · card title 20 · body 18 · secondary 16 · meta 14–15. */
+   Type scale: H1 52–104 · H2 30–46 · card title 20 · body 18 · secondary 16 · meta 14–15.
+   One tinted band (the before/after example) breaks the page rhythm once; everything else sits on paper. */
 
 const MEASURE = "max-w-[64ch]";
 
@@ -22,23 +24,50 @@ function Section({
   id,
   title,
   intro,
+  band = false,
   children,
 }: {
   id: string;
   title: string;
   intro?: ReactNode;
+  band?: boolean;
   children: ReactNode;
 }) {
+  const inner = (
+    <div className="border-t border-ink pt-6 sm:pt-8">
+      <h2 id={`${id}-title`} className="display m-0 max-w-[22ch] text-[clamp(30px,3.4vw,46px)] leading-[0.95]">
+        {title}
+      </h2>
+      {intro && <div className={`mt-4 space-y-3 text-[17px] leading-relaxed text-muted sm:text-[18px] ${MEASURE}`}>{intro}</div>}
+      <div className="mt-8 sm:mt-10">{children}</div>
+    </div>
+  );
+  if (band) {
+    return (
+      <section id={id} aria-labelledby={`${id}-title`} className="mt-16 bg-paper-deep/60 pb-14 pt-10 sm:mt-24 sm:pb-20 sm:pt-14">
+        <div className="container-site">{inner}</div>
+      </section>
+    );
+  }
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="container-site pt-16 sm:pt-24">
-      <div className="border-t border-ink pt-6 sm:pt-8">
-        <h2 id={`${id}-title`} className="display m-0 max-w-[20ch] text-[clamp(34px,4.4vw,60px)] leading-[0.95]">
-          {title}
-        </h2>
-        {intro && <div className={`mt-4 space-y-3 text-[17px] leading-relaxed text-muted sm:text-[18px] ${MEASURE}`}>{intro}</div>}
-        <div className="mt-8 sm:mt-10">{children}</div>
-      </div>
+      {inner}
     </section>
+  );
+}
+
+const introP = (text: string) => (text ? <p className="m-0">{text}</p> : undefined);
+
+function CtaBand({ text, button }: Dictionary["ctaBand"]) {
+  return (
+    <div className="container-site pt-12 sm:pt-16">
+      <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-y border-ink py-6 sm:py-7">
+        <p className="m-0 max-w-[46ch] text-[19px] font-semibold leading-snug sm:text-[21px]">{text}</p>
+        <a href="#contact" className="btn-primary">
+          {button}
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -47,6 +76,13 @@ function Section({
 export function Header({ locale, t, showDrafts }: SiteProps) {
   const other: Locale = locale === "en" ? "pl" : "en";
   const home = `/${locale}`;
+  const links = [
+    { href: `${home}#what`, label: t.nav.work },
+    { href: `${home}#how`, label: t.nav.how },
+    { href: `${home}#faq`, label: t.nav.faq },
+    { href: `${home}#about`, label: t.nav.about },
+  ];
+  const cta = { href: `${home}#contact`, label: t.nav.cta };
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
       <div className="container-site flex h-[72px] items-center justify-between gap-x-4 sm:gap-x-10">
@@ -57,15 +93,10 @@ export function Header({ locale, t, showDrafts }: SiteProps) {
           labels={t.logoPicker}
           allLogosHref={`/${locale}/logos`}
         />
-        <nav aria-label="Main" className="flex flex-none items-center gap-x-2 text-[16px] sm:gap-x-7">
-          {[
-            ["what", t.nav.work],
-            ["how", t.nav.how],
-            ["faq", t.nav.faq],
-            ["about", t.nav.about],
-          ].map(([id, label]) => (
-            <a key={id} href={`${home}#${id}`} className="hidden min-h-11 items-center no-underline hover:underline lg:inline-flex">
-              {label}
+        <nav aria-label="Main" className="flex flex-none items-center gap-x-2 text-[16px] sm:gap-x-6 lg:gap-x-7">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="hidden min-h-11 items-center no-underline hover:underline lg:inline-flex">
+              {link.label}
             </a>
           ))}
           <LanguageSwitcher
@@ -73,9 +104,10 @@ export function Header({ locale, t, showDrafts }: SiteProps) {
             label={other.toUpperCase()}
             className="inline-flex min-h-11 min-w-11 items-center justify-center text-muted no-underline hover:text-ink"
           />
-          <a href={`${home}#contact`} className="btn-primary min-h-11 whitespace-nowrap px-3.5 text-[15px] sm:px-5 sm:text-[16px]">
-            {t.nav.cta}
+          <a href={cta.href} className="btn-primary hidden min-h-11 whitespace-nowrap px-5 text-[16px] sm:inline-flex">
+            {cta.label}
           </a>
+          <MobileMenu links={links} cta={cta} labels={{ menu: t.nav.menu }} />
         </nav>
       </div>
     </header>
@@ -206,7 +238,7 @@ function Example({ t }: { t: Dictionary }) {
     );
   };
   return (
-    <Section id="example" title={e.title} intro={<p className="m-0">{e.intro}</p>}>
+    <Section id="example" title={e.title} intro={introP(e.intro)} band>
       <div className="grid gap-x-14 gap-y-10 md:grid-cols-2">
         <div>
           <h3 className="mb-3 mt-0 text-[20px] font-bold text-muted">{e.beforeLabel}</h3>
@@ -219,6 +251,17 @@ function Example({ t }: { t: Dictionary }) {
           <p className="mb-0 mt-4 text-[16px] leading-relaxed">{e.afterNote}</p>
         </div>
       </div>
+      <div className="mt-12 sm:mt-14">
+        <h3 className="mb-0 mt-0 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted">{e.elsewhereTitle}</h3>
+        <ul className="m-0 mt-3 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+          {e.elsewhere.map((item) => (
+            <li key={item.industry} className="border-t border-ink/70 pb-4 pt-3">
+              <h4 className="m-0 text-[17px] font-bold leading-snug">{item.industry}</h4>
+              <p className="mb-0 mt-1.5 text-[15px] leading-relaxed text-muted">{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }
@@ -226,8 +269,8 @@ function Example({ t }: { t: Dictionary }) {
 function Services({ t }: { t: Dictionary }) {
   const s = t.services;
   return (
-    <Section id="what" title={s.title} intro={<p className="m-0">{s.intro}</p>}>
-      <ol className="m-0 grid list-none gap-x-10 gap-y-14 p-0 lg:grid-cols-3">
+    <Section id="what" title={s.title} intro={introP(s.intro)}>
+      <ol className="m-0 grid list-none gap-x-14 gap-y-14 p-0 md:grid-cols-2">
         {s.groups.map((group, gi) => (
           <li key={gi} className="min-w-0">
             <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(gi + 1).padStart(2, "0")}</p>
@@ -248,10 +291,67 @@ function Services({ t }: { t: Dictionary }) {
   );
 }
 
+function Process({ t }: { t: Dictionary }) {
+  const p = t.process;
+  return (
+    <Section id="how" title={p.title} intro={introP(p.intro)}>
+      <ol className="m-0 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-5">
+        {p.steps.map((step, i) => (
+          <li key={i} className="border-t border-ink pb-6 pt-4">
+            <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(i + 1).padStart(2, "0")}</p>
+            <h3 className="mb-0 mt-1.5 text-[18px] font-bold leading-snug">{step.title}</h3>
+            <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+      <h3 className="mb-0 mt-10 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted sm:mt-12">{p.engagementsTitle}</h3>
+      <ul className="m-0 mt-3 grid list-none gap-x-8 p-0 sm:grid-cols-2 lg:grid-cols-4">
+        {p.engagements.map((item) => (
+          <li key={item.title} className="border-t border-line pb-5 pt-4">
+            <h4 className="m-0 text-[18px] font-bold leading-snug">{item.title}</h4>
+            <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{item.body}</p>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+}
+
+function Fit({ t }: { t: Dictionary }) {
+  const f = t.fit;
+  const list = (label: string, items: string[], good: boolean) => (
+    <div>
+      <h3 className="mb-3 mt-0 text-[20px] font-bold">{label}</h3>
+      <ul className="m-0 list-none border-b border-line p-0">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 border-t border-line py-3.5 text-[17px] leading-snug">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" className="mt-[3px] flex-none">
+              {good ? (
+                <path d="M2.5 9.5l4 4 9-10" stroke="currentColor" strokeWidth="2.2" fill="none" className="text-ink" />
+              ) : (
+                <path d="M3.5 3.5l11 11M14.5 3.5l-11 11" stroke="currentColor" strokeWidth="2.2" fill="none" className="text-accent" />
+              )}
+            </svg>
+            <span className={good ? "" : "text-muted"}>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+  return (
+    <Section id="fit" title={f.title}>
+      <div className="grid gap-x-14 gap-y-10 md:grid-cols-[3fr_2fr]">
+        {list(f.goodLabel, f.good, true)}
+        {list(f.badLabel, f.bad, false)}
+      </div>
+    </Section>
+  );
+}
+
 function Principles({ t }: { t: Dictionary }) {
   const p = t.principles;
   return (
-    <Section id="how" title={p.title} intro={<p className="m-0">{p.intro}</p>}>
+    <Section id="principles" title={p.title} intro={introP(p.intro)}>
       <div className="grid gap-x-14 gap-y-10 lg:grid-cols-[3fr_2fr]">
         <ul className="m-0 list-none border-b border-line p-0 text-[19px] leading-snug sm:text-[22px]">
           {p.wont.map((item, i) => (
@@ -418,9 +518,13 @@ export default function Site(props: SiteProps) {
         <Problems t={t} />
         <Example t={t} />
         <Services t={t} />
+        <CtaBand {...t.ctaBand} />
+        <Process t={t} />
+        <Fit t={t} />
         <Principles t={t} />
         {showDrafts && <Work t={t} />}
         <Faq t={t} />
+        <CtaBand {...t.ctaBand} />
         <About t={t} />
         <Contact locale={locale} t={t} />
       </main>

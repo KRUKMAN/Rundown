@@ -8,6 +8,8 @@ export type PromiseItem = { title: string; body: string };
 export type CaseStudy = { company: string; readTime: string; title: string; result: string };
 export type TeamRole = { role: string; body: string };
 export type FaqItem = { q: string; a: string };
+export type TitledText = { title: string; body: string };
+export type IndustryExample = { industry: string; text: string };
 
 export type Dictionary = {
   locale: Locale;
@@ -20,6 +22,8 @@ export type Dictionary = {
     cta: string;
     skip: string;
     home: string;
+    menu: string;
+    close: string;
   };
   hero: {
     titleStart: string;
@@ -39,9 +43,14 @@ export type Dictionary = {
     afterLabel: string;
     after: string[];
     afterNote: string;
+    elsewhereTitle: string;
+    elsewhere: IndustryExample[];
   };
   problems: { title: string; intro: string; paths: string; pathsLink: string; items: Problem[] };
   services: { title: string; intro: string; groups: ServiceGroup[] };
+  process: { title: string; intro: string; steps: TitledText[]; engagementsTitle: string; engagements: TitledText[] };
+  fit: { title: string; goodLabel: string; good: string[]; badLabel: string; bad: string[] };
+  ctaBand: { text: string; button: string };
   principles: { title: string; intro: string; promisesTitle: string; wont: StruckItem[]; promises: PromiseItem[] };
   work: {
     title: string;

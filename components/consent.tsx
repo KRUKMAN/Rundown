@@ -96,17 +96,18 @@ export default function ConsentManager({ copy, privacyHref }: Props) {
       {open && (
         <section
           aria-label={copy.label}
-          className="fixed inset-x-3 bottom-3 z-[60] border border-ink bg-paper p-5 shadow-[0_10px_30px_rgba(17,17,17,0.18)] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[420px]"
+          className="fixed inset-x-0 bottom-0 z-[60] border-t border-ink bg-paper px-4 pb-4 pt-3 shadow-[0_-6px_24px_rgba(17,17,17,0.14)] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[420px] sm:border sm:p-5 sm:shadow-[0_10px_30px_rgba(17,17,17,0.18)]"
         >
-          <h2 className="m-0 text-[17px] font-bold">{copy.label}</h2>
-          <p className="mb-0 mt-2 text-[15px] leading-relaxed">{copy.body}</p>
-          <p className="mb-0 mt-2 text-[14px]">
-            <a className="link-quiet" href={privacyHref}>
+          <h2 className="m-0 text-[15px] font-bold sm:text-[17px]">{copy.label}</h2>
+          {/* Compact on phones: body and policy link run together, so the bar covers less of the page. */}
+          <p className="mb-0 mt-1 text-[14px] leading-snug sm:mt-2 sm:text-[15px] sm:leading-relaxed">
+            {copy.body}{" "}
+            <a className="link-quiet whitespace-nowrap sm:mt-2 sm:block sm:text-[14px]" href={privacyHref}>
               {copy.policy}
             </a>
           </p>
           {/* Equal weight on purpose: same size, same style, same layer. */}
-          <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-2 gap-3 sm:mt-4">
             <button type="button" onClick={() => decide("denied")} className="btn-consent">
               {copy.reject}
             </button>

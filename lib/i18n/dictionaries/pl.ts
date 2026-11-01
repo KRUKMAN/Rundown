@@ -3,9 +3,9 @@ import type { Dictionary } from "./types";
 const pl: Dictionary = {
   locale: "pl",
   metadata: {
-    title: "Wdrożenie CRM i automatyzacja procesów · Jakub Krukowski",
+    title: "Wdrożenie CRM, automatyzacja i AI dla rosnących firm · The Rundown",
     description:
-      "Niezależny konsultant: wdrożenie CRM (HubSpot, Salesforce), automatyzacja procesów i szkolenia z AI dla firm budowlanych, usługowych i software house’ów.",
+      "Niezależny konsultant dla zespołów od 5 do 500 osób: wdrożenie i porządkowanie CRM (HubSpot, Salesforce), automatyzacja procesów, RevOps i szkolenia z AI.",
     ogLocale: "pl_PL",
   },
   nav: {
@@ -16,26 +16,28 @@ const pl: Dictionary = {
     cta: "Napisz do mnie",
     skip: "Przejdź do treści",
     home: "strona główna",
+    menu: "Menu",
+    close: "Zamknij menu",
   },
   hero: {
     titleStart: "Ułatwiam",
     titleAccent: "prowadzenie firmy.",
-    body: "Niezależny konsultant ds. procesów i automatyzacji. Wdrażam CRM, automatyzuję powtarzalne zadania, porządkuję, kto za co odpowiada, i uczę zespoły pracować z AI. Pracuję z firmami budowlanymi, sprzątającymi, agencjami i software house’ami. Jeśli twój tydzień schodzi na dopytywaniu o postępy i przepisywaniu danych, da się to naprawić.",
+    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Najczęściej po szybkim wzroście albo trudniejszym okresie, po którym zostało za dużo narzędzi, niejasny podział odpowiedzialności i procesy, które znają tylko pojedyncze osoby. Wdrażam CRM, automatyzuję powtarzalną pracę i zostaję, dopóki zespół z tego nie korzysta.",
     cta: "Napisz do mnie",
     emailPrefix: "albo napisz na",
-    replyNote: "Odpisuję w ciągu jednego dnia roboczego.",
+    replyNote: "Odpisuję w ciągu jednego dnia roboczego. Pierwsza rozmowa jest bezpłatna.",
   },
   clients: {
     label: "Zespoły, z którymi pracowałem",
     names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
   },
   example: {
-    title: "Jedno zlecenie, przed i po",
-    intro: "Klient firmy remontowej zmienia zakres prac w połowie zlecenia. W software house’ie, firmie sprzątającej czy cateringowej jest tak samo.",
+    title: "Jedna zmiana, przed i po",
+    intro: "Klient zmienia zakres prac w połowie projektu. Tak wygląda ten tydzień w firmie remontowej.",
     beforeLabel: "Przed",
     before: [
-      "Klient dzwoni do właściciela z prośbą o zmianę",
-      "Właściciel pisze o tym kierownikowi na WhatsAppie",
+      "Klient dzwoni do swojej osoby kontaktowej z prośbą o zmianę",
+      "Ta pisze o tym kierownikowi budowy na WhatsAppie",
       "Nikt nie informuje zaopatrzenia",
       "W czwartek przywożą nie te materiały",
       "Piątek schodzi na odkręcaniu sprawy przez telefon",
@@ -48,11 +50,31 @@ const pl: Dictionary = {
       "Kierownik, zaopatrzenie i księgowość widzą ją w tej samej minucie",
       "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
-    afterNote: "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i poniedziałkowe podsumowanie dla właściciela. Nikt nie musi uczyć się niczego nowego.",
+    afterNote:
+      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Zespół sam pomógł ustalić te zasady, więc się ich trzyma.",
+    elsewhereTitle: "Ten sam schemat w innych branżach",
+    elsewhere: [
+      {
+        industry: "Software i SaaS",
+        text: "Umowa zmienia się w CRM. Wdrożenie, fakturowanie i wsparcie widzą nowe warunki bez spotkania przekazującego.",
+      },
+      {
+        industry: "Agencje i usługi profesjonalne",
+        text: "Klient dokłada zakres. Wycena, plan obłożenia zespołu i faktura aktualizują się razem.",
+      },
+      {
+        industry: "E-commerce i handel",
+        text: "Prośba o zwrot jest sprawdzana z regulaminem i wypłacana. Obsługa klienta widzi tylko wyjątki.",
+      },
+      {
+        industry: "Produkcja i dystrybucja",
+        text: "Zamówienie się zmienia. Plan produkcji i termin dostawy dla klienta aktualizują się w jednym kroku.",
+      },
+    ],
   },
   problems: {
     title: "Problemy, które rozwiązuję",
-    intro: "Słowami właścicieli firm. Nie musisz wiedzieć, czym jest CRM. Wystarczy, że chcesz, żeby to się skończyło.",
+    intro: "Słowami osób, które kierują zespołami. Nie musisz wiedzieć, czym jest CRM, żeby je rozpoznać.",
     paths:
       "Zgłaszają się firmy, które urosły szybciej niż ich organizacja, które ciągle odkładały porządki na później albo w których coś działa od lat, ale mogłoby działać dużo lepiej.",
     pathsLink: "Każdy z tych powodów wystarczy, żeby porozmawiać.",
@@ -66,8 +88,16 @@ const pl: Dictionary = {
         fix: "Każde powtarzalne zadanie ma jedną osobę, która za nie odpowiada. Wiedzą o tym wszyscy.",
       },
       {
-        quote: "Nie wiem, co jest naprawdę zrobione.",
-        fix: "Status zmienia się razem z pracą. Bez piątkowego obdzwaniania ludzi.",
+        quote: "Nie ufam liczbom w lejku sprzedaży.",
+        fix: "Jedna definicja każdego etapu, jasne zasady aktualizacji i raport, który akceptuje i sprzedaż, i finanse.",
+      },
+      {
+        quote: "Kupiliśmy HubSpota. Nikt z niego nie korzysta.",
+        fix: "Siadam z osobami, które wykonują pracę, usuwam niepotrzebne pola i szkolę, aż korzystanie wejdzie w nawyk.",
+      },
+      {
+        quote: "Leady czekają na odpowiedź po kilka dni.",
+        fix: "Reguły kierują każdy lead do właściwej osoby w kilka minut, razem z całym kontekstem.",
       },
       {
         quote: "Cały dzień odpowiadamy na te same pytania.",
@@ -81,23 +111,27 @@ const pl: Dictionary = {
         quote: "Płacimy za narzędzia, z których nikt nie korzysta.",
         fix: "Sprawdzam każdy abonament: zostawić, wyłączyć albo połączyć z resztą.",
       },
+      {
+        quote: "Zaległości w RevOps tylko rosną.",
+        fix: "Dodatkowe, doświadczone ręce do porządków, integracji i raportów, które nigdy nie trafiają na początek listy.",
+      },
     ],
   },
   services: {
     title: "Co robię",
-    intro: "Trzy rodzaje pracy. Większość klientów zaczyna od pierwszego.",
+    intro: "Cztery obszary. Większość projektów łączy dwa albo trzy z nich.",
     groups: [
       {
         title: "Porządek",
-        summary: "Procesy, odpowiedzialność, CRM",
+        summary: "Procesy, odpowiedzialność, narzędzia",
         items: [
           {
             title: "Mapowanie procesów i odpowiedzialności",
             body: "Kto robi co, w jakiej kolejności i w jakim narzędziu. Każdy proces spisany na jednej stronie.",
           },
           {
-            title: "Wdrożenie CRM",
-            body: "HubSpot, Salesforce albo Attio, ustawione pod to, jak sprzedajesz. Przenoszę dane, ustawiam etapy sprzedaży i szkolę zespół.",
+            title: "Wdrożenie i porządkowanie CRM",
+            body: "HubSpot, Salesforce albo Attio, ustawione od zera lub przebudowane pod to, jak sprzedajesz i realizujesz zlecenia. Z przeniesieniem danych, usunięciem duplikatów i etapami sprzedaży.",
           },
           {
             title: "Audyt narzędzi i systemów",
@@ -106,8 +140,26 @@ const pl: Dictionary = {
         ],
       },
       {
+        title: "Sprzedaż i RevOps",
+        summary: "Dla zespołów sprzedaży, marketingu i RevOps",
+        items: [
+          {
+            title: "Obsługa i przydzielanie leadów",
+            body: "Reguły, które szybko kierują każdy lead do właściwej osoby, i czyste przekazanie między marketingiem a sprzedażą.",
+          },
+          {
+            title: "Lejek sprzedaży i raportowanie",
+            body: "Etapy z jasnymi kryteriami wejścia i wyjścia oraz prognozy i raporty, co do których sprzedaż i finanse są zgodne.",
+          },
+          {
+            title: "Administracja CRM i zaległości",
+            body: "Doświadczone wsparcie przy integracjach, poprawkach danych i raportach, na które zespół nie miał czasu.",
+          },
+        ],
+      },
+      {
         title: "Automatyzacja",
-        summary: "Procesy, AI i własne narzędzia",
+        summary: "Automatyzacje, AI, własne narzędzia",
         items: [
           {
             title: "Automatyzacja procesów",
@@ -125,27 +177,65 @@ const pl: Dictionary = {
       },
       {
         title: "Zespół",
-        summary: "Szkolenia i zespół operacyjny",
+        summary: "Szkolenia, wdrożenie zmian, zespół operacyjny",
         items: [
           {
             title: "Szkolenia z AI dla zespołów",
             body: "Warsztaty na prawdziwych zadaniach zespołu, w narzędziach takich jak Claude i Notion AI oraz w tych, za które firma już płaci.",
           },
           {
-            title: "Rekrutacja koordynatora operacyjnego",
-            body: "Pierwsza osoba, która zajmie się organizacją pracy w firmie. Opis stanowiska, rozmowy kwalifikacyjne i wdrożenie do pracy.",
+            title: "Wdrożenie zmiany w zespole",
+            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia na prawdziwej pracy, aż nowy sposób działania wejdzie w nawyk.",
           },
           {
-            title: "Budowa zespołu operacyjnego",
-            body: "Jasny podział odpowiedzialności, spisane procesy i kilka wskaźników, żeby całość działała beze mnie.",
+            title: "Rekrutacja i budowa zespołu operacyjnego",
+            body: "Opis stanowiska, rozmowy i wdrożenie pierwszej osoby od organizacji pracy, a potem jasny podział odpowiedzialności, spisane procesy i kilka wskaźników.",
           },
         ],
       },
     ],
   },
+  process: {
+    title: "Jak pracuję",
+    intro: "Pięć kroków. Po każdym możesz zakończyć współpracę.",
+    steps: [
+      { title: "Bezpłatna rozmowa (30 minut)", body: "Opowiadasz, co spowalnia firmę. Mówię wprost, czy mogę pomóc." },
+      { title: "Przegląd", body: "Rozmawiam z osobami, które wykonują pracę, i sprawdzam narzędzia, dane i miejsca przekazania zadań." },
+      { title: "Spisany plan", body: "Priorytety, koszty i to, czego lepiej nie ruszać. Ty decydujesz, co dalej." },
+      { title: "Wdrożenie z zespołem", body: "Konfiguracja, przeniesienie danych i automatyzacje, robione razem z osobami, które będą z nich korzystać." },
+      { title: "Przekazanie i szkolenie", body: "Dokumentacja, szkolenie i osoba odpowiedzialna po twojej stronie. Dalsze wsparcie, jeśli chcesz." },
+    ],
+    engagementsTitle: "Formy współpracy",
+    engagements: [
+      { title: "Przegląd i plan", body: "Krótki przegląd tego, jak dziś wygląda praca, i spisany plan z priorytetami i kosztami." },
+      { title: "Projekt o ustalonym zakresie", body: "Konkretne zadanie, np. wdrożenie CRM albo zbudowanie automatyzacji, z uzgodnionym zakresem i ceną." },
+      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami." },
+      { title: "Warsztaty", body: "Praktyczne szkolenie z AI i efektywnej pracy dla zespołu, oparte na jego własnych zadaniach." },
+    ],
+  },
+  fit: {
+    title: "Z kim pracuję",
+    goodLabel: "Dobrze się dopasujemy, jeśli",
+    good: [
+      "masz zespół od 5 do 500 osób, w dowolnej branży",
+      "firma rośnie szybciej niż jej systemy albo porządkuje się po trudniejszym okresie",
+      "po twojej stronie jest osoba, która weźmie odpowiedzialność za efekt",
+      "kierujesz zespołem operacji, sprzedaży lub RevOps i potrzebujesz spojrzenia z zewnątrz albo doświadczonych rąk do pracy",
+    ],
+    badLabel: "Raczej się nie dopasujemy, jeśli",
+    bad: [
+      "potrzebujesz stałego zespołu programistów",
+      "chcesz strategii w prezentacji bez zmiany sposobu pracy",
+      "szukasz najtańszych licencji na oprogramowanie",
+    ],
+  },
+  ctaBand: {
+    text: "Nie wiesz, czego z tego potrzebujesz? Od tego jest pierwsza, bezpłatna rozmowa.",
+    button: "Napisz do mnie",
+  },
   principles: {
     title: "Czego ci nie sprzedam",
-    intro: "I trzy rzeczy, których możesz ode mnie wymagać.",
+    intro: "",
     promisesTitle: "Czego możesz ode mnie wymagać",
     wont: [
       { struck: "Nowego systemu", rest: "tam, gdzie wystarczy uporządkować ten, który już masz." },
@@ -188,28 +278,36 @@ const pl: Dictionary = {
     intro: "O to ludzie najczęściej pytają przed pierwszą rozmową.",
     items: [
       {
-        q: "Czym zajmuje się konsultant ds. procesów i automatyzacji?",
-        a: "Konsultant ds. procesów i automatyzacji (inaczej konsultant operacyjny) sprawdza, jak praca przechodzi przez firmę (sprzedaż, realizacja, obsługa klienta, fakturowanie), i naprawia miejsca, w których się zacina. Najczęściej to niejasna odpowiedzialność, ręczne przepisywanie danych i narzędzia, które się ze sobą nie łączą. W praktyce oznacza to porządkowanie procesów, wdrożenie CRM, automatyzację powtarzalnych kroków i szkolenie zespołu.",
+        q: "Czym właściwie się zajmujesz?",
+        a: "Sprawdzam, jak praca przechodzi przez firmę (sprzedaż, realizacja, obsługa klienta, fakturowanie), i naprawiam miejsca, w których się zacina: niejasną odpowiedzialność, ręczne przepisywanie danych, narzędzia, które się ze sobą nie łączą. W praktyce to porządkowanie procesów, wdrożenie CRM, automatyzacje i szkolenie zespołu.",
       },
       {
-        q: "Czy muszę wymienić narzędzia albo zmieniać wszystko naraz?",
-        a: "Nie, nie trzeba wymieniać narzędzi ani zmieniać wszystkiego naraz. Najwięcej daje uporządkowanie i połączenie tego, co firma już ma, oraz zmiana dwóch, trzech rzeczy, które kosztują najwięcej. Nowe oprogramowanie polecam tylko wtedy, gdy obecne narzędzia naprawdę nie wystarczają.",
+        q: "Czy trzeba wymienić narzędzia albo zmieniać wszystko naraz?",
+        a: "Nie. Najwięcej daje uporządkowanie i połączenie tego, co już działa, i zmiana dwóch, trzech rzeczy, które kosztują najwięcej. Nowe oprogramowanie polecam tylko wtedy, gdy obecne naprawdę nie wystarcza.",
       },
       {
-        q: "Jaki CRM wybrać dla małej firmy?",
-        a: "Małej firmie usługowej lub B2B najczęściej pasuje HubSpot, bo łączy marketing i sprzedaż w jednym miejscu. Salesforce sprawdza się przy złożonej sprzedaży z wieloma własnymi regułami, a Attio w małych, elastycznych zespołach. Arkusz wystarcza, dopóki kilka osób nie potrzebuje jednocześnie tych samych danych o klientach. Ostatecznie wybór zależy od tego, jak firma sprzedaje.",
+        q: "Jaki CRM wybrać dla rosnącej firmy?",
+        a: "HubSpot pasuje do większości firm usługowych i B2B, które chcą mieć marketing i sprzedaż w jednym miejscu. Salesforce sprawdza się przy złożonej sprzedaży z wieloma własnymi regułami i osobą, która go administruje. Attio jest dobre dla małych, elastycznych zespołów. Wybór zależy od tego, jak sprzedajesz i kto będzie system utrzymywał.",
       },
       {
-        q: "Czy AI pomoże firmie spoza IT, np. budowlanej albo sprzątającej?",
-        a: "Tak, AI pomaga firmom spoza branży IT, na przykład budowlanym i sprzątającym, w mało efektownych miejscach: przy szkicach wycen z notatek po wizji lokalnej, odpowiedziach na rutynowe pytania klientów, cotygodniowym podsumowaniu dla właściciela i sortowaniu maili. AI najlepiej sprawdza się przy zadaniach, które powtarzają się codziennie i mają jasne zasady.",
+        q: "Czy AI pomoże firmie spoza branży IT?",
+        a: "Tak, głównie w mało efektownych miejscach: szkice wycen z notatek, odpowiedzi na rutynowe pytania klientów, cotygodniowe podsumowanie dla zarządu, sortowanie maili. Najlepiej działa przy zadaniach, które powtarzają się codziennie i mają jasne zasady.",
+      },
+      {
+        q: "Czy możesz pracować z naszym zespołem albo liderem RevOps?",
+        a: "Tak. Mogę pracować obok wewnętrznej osoby od operacji, sprzedaży lub RevOps, przy konkretnym projekcie albo jako dodatkowe, doświadczone wsparcie przy zaległościach.",
+      },
+      {
+        q: "Co dzieje się z naszymi danymi, gdy w grę wchodzi AI?",
+        a: "Narzędzia AI widzą tylko te dane, których potrzebuje dane zadanie, i tylko w narzędziach zatwierdzonych przez firmę. Dane wrażliwe zostają poza nimi, chyba że zdecydujecie inaczej, a wszystko, co ważne, sprawdza człowiek.",
       },
       {
         q: "Jak zaczyna się współpraca?",
-        a: "Współpraca zaczyna się od bezpłatnej, 30-minutowej rozmowy. Jeśli widzimy sens współpracy, sprawdzam, jak dziś wygląda praca w firmie, i przesyłam spisany plan z priorytetami i kosztami. Ty decydujesz, co dalej.",
+        a: "Od bezpłatnej, 30-minutowej rozmowy. Jeśli ma to sens, sprawdzam, jak dziś wygląda praca w firmie, i przesyłam spisany plan z priorytetami i kosztami. Ty decydujesz, co dalej.",
       },
       {
         q: "Czy pracujesz z firmami spoza Polski?",
-        a: "Tak, pracuję z firmami spoza Polski. Robię to zdalnie, po polsku i po angielsku.",
+        a: "Tak. Pracuję zdalnie, po polsku i po angielsku.",
       },
     ],
   },
@@ -217,7 +315,7 @@ const pl: Dictionary = {
     title: "O mnie",
     photoNote: "Zdjęcie Jakuba",
     paragraphs: [
-      "Nazywam się Jakub Krukowski. Przez większość kariery zajmowałem się organizacją pracy w firmach, głównie technologicznych, na styku sprzedaży, obsługi klienta, finansów i systemów, które je łączą. W firmie budowlanej problemy są te same: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
+      "Nazywam się Jakub Krukowski. Przez większość kariery zajmowałem się organizacją pracy w firmach, głównie technologicznych, na styku sprzedaży, obsługi klienta, finansów i systemów, które je łączą. Te same problemy widać w każdej branży: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
       "Pracuję niezależnie. Od początku do końca rozmawiasz ze mną. Gdy projekt wymaga więcej rąk do pracy, dołączam projektantów, programistów i specjalistów od procesów, z którymi już pracowałem.",
     ],
     team: [
@@ -258,16 +356,17 @@ const pl: Dictionary = {
   },
   logoPicker: { label: "Logo", open: "Wybierz logo", close: "Zamknij", allLogos: "Zobacz wszystkie loga" },
   schema: {
-    jobTitle: "Niezależny konsultant ds. procesów i automatyzacji",
+    jobTitle: "Niezależny konsultant ds. procesów, CRM i automatyzacji",
     serviceTypes: [
-      "Wdrożenie CRM",
+      "Wdrożenie i porządkowanie CRM",
+      "Doradztwo RevOps",
       "Automatyzacja procesów biznesowych",
-      "Wdrożenie AI w małej firmie",
+      "Wdrożenie AI w firmie",
       "Szkolenia z AI dla zespołów",
       "Audyt narzędzi i systemów w firmie",
       "Rekrutacja i budowa zespołu operacyjnego",
     ],
-    knowsAbout: ["HubSpot", "Salesforce", "Attio", "Notion", "n8n", "Tray.ai", "Zapier", "Claude", "Revenue operations", "Mapowanie procesów"],
+    knowsAbout: ["HubSpot", "Salesforce", "Attio", "Notion", "n8n", "Tray.ai", "Zapier", "Claude", "Revenue operations", "Mapowanie procesów", "Zarządzanie zmianą"],
   },
 };
 
