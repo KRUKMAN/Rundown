@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { DEFAULT_LOGO, FINALISTS, LOGO_IDS, Logo, isLogoId, logoMeta } from "./logos";
+import { createPortal } from "react-dom";
+import { DEFAULT_LOGO, FINALISTS, LOGO_IDS, Logo, isLogoId, logoMeta, logoText } from "./logos";
 
 const STORAGE_KEY = "rundown-logo";
 
@@ -29,11 +30,13 @@ export default function HeaderLogo({ homeHref, homeLabel, showPicker, labels, al
   const [logoId, setLogoId] = useState(DEFAULT_LOGO);
   const [open, setOpen] = useState(false);
   const [pickerVisible, setPickerVisible] = useState(showPicker);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // Sync from URL/localStorage after hydration so the static HTML stays identical.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLogoId(readInitial());
+    setMounted(true);
     if (new URLSearchParams(window.location.search).has("logo")) setPickerVisible(true);
   }, []);
 
@@ -51,11 +54,18 @@ export default function HeaderLogo({ homeHref, homeLabel, showPicker, labels, al
 
   return (
     <>
-      <a href={homeHref} aria-label={homeLabel} className="inline-flex min-h-11 items-center no-underline">
-        <Logo id={logoId} size={28} />
+      <a
+        href={homeHref}
+        aria-label={`${logoText(logoId)}, ${homeLabel}`}
+        className="inline-flex min-h-11 min-w-0 items-center text-[22px] no-underline sm:text-[28px]"
+      >
+        <Logo id={logoId} size={null} />
       </a>
 
-      {pickerVisible && (
+      {pickerVisible &&
+        mounted &&
+        // Portal to <body>: the sticky header uses backdrop-filter, which would otherwise trap position:fixed.
+        createPortal(
         <div className="fixed bottom-4 left-4 z-50 font-sans text-[14px]">
           {open && (
             <div
@@ -102,7 +112,8 @@ export default function HeaderLogo({ homeHref, homeLabel, showPicker, labels, al
           >
             {open ? labels.close : `${labels.label}: ${logoId}`}
           </button>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

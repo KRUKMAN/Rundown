@@ -15,7 +15,7 @@ const pl: Dictionary = {
     about: "O mnie",
     cta: "Napisz do mnie",
     skip: "Przejdź do treści",
-    home: "The Rundown, strona główna",
+    home: "strona główna",
   },
   hero: {
     titleStart: "Ułatwiam",
@@ -238,10 +238,23 @@ const pl: Dictionary = {
     error: "Nie udało się wysłać wiadomości. Napisz bezpośrednio na jake@rundown.digital.",
     orEmail: "Albo napisz bezpośrednio:",
     ps: "PS Nie wiesz, czy twój problem należy do tych, którymi się zajmuję? I tak napisz. Większość dobrych projektów zaczyna się od maila w stylu „to może głupie pytanie, ale…”.",
+    notice: "Twoje dane wykorzystam, żeby ci odpowiedzieć, a jeśli poprosisz, także żeby przygotować ofertę.",
+    noticeLink: "Polityka prywatności",
   },
   footer: {
     line: "The Rundown. Niezależny konsultant ds. procesów i automatyzacji, Jakub Krukowski.",
     rights: "©",
+    privacy: "Polityka prywatności",
+    terms: "Regulamin",
+    cookies: "Ustawienia cookies",
+    backHome: "Wróć na stronę główną",
+  },
+  consent: {
+    label: "Ustawienia cookies",
+    body: "Statystyki odwiedzin na tej stronie działają bez cookies. Jeśli się zgodzisz, HubSpot zapisze też pliki cookies, dzięki którym zobaczę, jakie strony zostały odwiedzone, gdy się do mnie odezwiesz. Nic więcej.",
+    accept: "Akceptuję",
+    reject: "Odrzucam",
+    policy: "Szczegóły w polityce prywatności",
   },
   logoPicker: { label: "Logo", open: "Wybierz logo", close: "Zamknij", allLogos: "Zobacz wszystkie loga" },
   schema: {

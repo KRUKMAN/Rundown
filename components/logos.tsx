@@ -52,8 +52,9 @@ function RArrowMark({ fg }: { fg: string }) {
   );
 }
 
-const logos: Record<number, { name: string; note: string; render: (fg: string, bg: string) => ReactNode }> = {
+const logos: Record<number, { name: string; note: string; text?: string; render: (fg: string, bg: string) => ReactNode }> = {
   1: {
+    text: "The Rundown",
     name: "The list",
     note: "A rundown is a short list. Three bars, the last one red.",
     render: (fg) => (
@@ -64,6 +65,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   2: {
+    text: "Rundown.digital",
     name: "The domain",
     note: "The URL is the logo. The dot is the only colour.",
     render: (fg) => (
@@ -74,6 +76,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   3: {
+    text: "The Rundown",
     name: "The R that runs down",
     note: "An R whose leg drops into an arrow.",
     render: (fg) => (
@@ -84,6 +87,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   4: {
+    text: "The Rundown",
     name: "The stacked block",
     note: "Two lines with a red rule. Reads like a stamp.",
     render: (fg) => (
@@ -94,6 +98,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   5: {
+    text: "Rundown .digital",
     name: "Stacked domain",
     note: "RUNDOWN over .digital. The red dot is the mark.",
     render: (fg) => (
@@ -106,6 +111,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   6: {
+    text: "Rundown",
     name: "Staggered baseline",
     note: "Each letter a step lower. The word runs down.",
     render: (fg) => (
@@ -119,6 +125,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   7: {
+    text: "Rundown.",
     name: "Two weights",
     note: "RUN heavy, DOWN light. Says run first.",
     render: (fg) => (
@@ -129,6 +136,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   8: {
+    text: "The Rundown.",
     name: "Knockout stamp",
     note: "Reversed out of a block. Carries its own background.",
     render: (fg, bg) => (
@@ -138,6 +146,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   9: {
+    text: "Rundown",
     name: "The rule through",
     note: "A red line through the waist, like a ticked-off item.",
     render: (fg) => (
@@ -148,6 +157,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   10: {
+    text: "01 the_rundown",
     name: "Tabular",
     note: "Row one of a well-kept list, in mono.",
     render: (fg) => (
@@ -157,6 +167,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   11: {
+    text: "Rundown",
     name: "Tight, touching",
     note: "Letters close enough to touch. The O cut to a red slot.",
     render: (fg) => (
@@ -171,6 +182,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   12: {
+    text: "Rundown",
     name: "Vertical",
     note: "Set top to bottom for edges and spines. Horizontal version shown here.",
     render: (fg) => (
@@ -181,6 +193,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   13: {
+    text: "Rundown .digital",
     name: "Stacked, in a block",
     note: "The stacked domain reversed out of a block.",
     render: (fg, bg) => (
@@ -193,6 +206,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   14: {
+    text: "The Rundown > rundown.digital",
     name: "Block plus mono tag",
     note: "The stamp says the name, a mono line gives the address.",
     render: (fg, bg) => (
@@ -205,6 +219,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   15: {
+    text: "01 The Rundown",
     name: "Line number",
     note: "A red mono 01 beside the name.",
     render: (fg) => (
@@ -215,6 +230,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   16: {
+    text: "01 Rundown 02 .digital",
     name: "Two numbered rows",
     note: "The logo as a two-item rundown.",
     render: (fg) => (
@@ -227,6 +243,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   17: {
+    text: "Rundown .digital",
     name: "Domain tag",
     note: "The name stays open; .digital sits in a small red tag.",
     render: (fg) => (
@@ -249,6 +266,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   18: {
+    text: "Run Down. The Rundown",
     name: "Square badge",
     note: "RUN over DOWN in a square. Logo and favicon are one object.",
     render: (fg, bg) => (
@@ -279,6 +297,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   19: {
+    text: "rundown .digital",
     name: "Mono stacked",
     note: "Lowercase mono, rundown over .digital.",
     render: (fg) => (
@@ -291,6 +310,7 @@ const logos: Record<number, { name: string; note: string; render: (fg: string, b
     ),
   },
   20: {
+    text: "The Rundown",
     name: "Block with a status line",
     note: "The stamp carries a second mono line that can change per use.",
     render: (fg, bg) => (
@@ -317,12 +337,17 @@ export function isLogoId(value: unknown): value is number {
   return Number.isInteger(n) && n in logos;
 }
 
-export function Logo({ id, tone = "ink", size = 28 }: LogoProps & { id: number; size?: number }) {
+/** The words a logo visibly shows, for accessible names (WCAG 2.5.3 Label in Name). */
+export function logoText(id: number) {
+  return logoMeta(id).text ?? "The Rundown";
+}
+
+export function Logo({ id, tone = "ink", size = 28 }: LogoProps & { id: number; size?: number | null }) {
   const meta = logoMeta(id);
   const fg = tone === "ink" ? INK : PAPER;
   const bg = tone === "ink" ? PAPER : INK;
   return (
-    <span style={{ fontSize: size, display: "inline-flex", lineHeight: 1 }} aria-hidden="true">
+    <span style={{ fontSize: size ?? undefined, display: "inline-flex", lineHeight: 1 }} aria-hidden="true">
       {meta.render(fg, bg)}
     </span>
   );

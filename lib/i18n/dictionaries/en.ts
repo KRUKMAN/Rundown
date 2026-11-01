@@ -15,7 +15,7 @@ const en: Dictionary = {
     about: "About",
     cta: "Write to me",
     skip: "Skip to content",
-    home: "The Rundown, home",
+    home: "home page",
   },
   hero: {
     titleStart: "I make businesses",
@@ -238,10 +238,23 @@ const en: Dictionary = {
     error: "That didn't go through. Please email me directly at jake@rundown.digital.",
     orEmail: "Or email me directly:",
     ps: "P.S. Not sure your problem is the kind I solve? Write anyway. Most good projects start with an email that begins “this might be a silly question”.",
+    notice: "I use your details to reply and, if you ask, to prepare an offer.",
+    noticeLink: "Privacy policy",
   },
   footer: {
     line: "The Rundown. Independent operations consulting by Jakub Krukowski.",
     rights: "©",
+    privacy: "Privacy policy",
+    terms: "Terms of use",
+    cookies: "Cookie settings",
+    backHome: "Back to the home page",
+  },
+  consent: {
+    label: "Cookie settings",
+    body: "Page statistics on this site work without cookies. With your OK, HubSpot also sets cookies so I can see which pages you visited if you get in touch. Nothing else.",
+    accept: "Accept",
+    reject: "Reject",
+    policy: "Details in the privacy policy",
   },
   logoPicker: { label: "Logo", open: "Choose logo", close: "Close", allLogos: "See all logos" },
   schema: {

@@ -9,7 +9,7 @@ type Status = "idle" | "sending" | "success" | "error";
 const field =
   "w-full border border-ink/25 bg-white/60 px-4 text-[17px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-accent";
 
-export default function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
+export default function ContactForm({ copy, privacyHref }: { copy: Dictionary["contact"]; privacyHref: string }) {
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -50,7 +50,7 @@ export default function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-5" noValidate={false}>
+    <form onSubmit={onSubmit} className="flex flex-col gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-2 text-[15px] font-semibold">
           {copy.labels.name}
@@ -88,10 +88,16 @@ export default function ContactForm({ copy }: { copy: Dictionary["contact"] }) {
         <button type="submit" className="btn-primary cursor-pointer disabled:opacity-60" disabled={status === "sending"}>
           {status === "sending" ? copy.sending : copy.submit}
         </button>
-        <p aria-live="polite" className="text-[15px] text-accent-ink">
+        <p aria-live="polite" className="m-0 text-[15px] text-accent-ink">
           {status === "error" ? copy.error : ""}
         </p>
       </div>
+      <p className="m-0 text-[14px] text-muted">
+        {copy.notice}{" "}
+        <a className="link-quiet" href={privacyHref}>
+          {copy.noticeLink}
+        </a>
+      </p>
     </form>
   );
 }

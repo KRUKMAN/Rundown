@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
-import HubSpotTracking from "@/components/hubspot-tracking";
+import ConsentManager from "@/components/consent";
+import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";
 
 const archivo = localFont({
@@ -49,8 +50,8 @@ export default async function RootLayout(
   return (
     <html lang={locale} className={`${archivo.variable} ${newsreader.variable} ${jetbrains.variable}`}>
       <body className="antialiased">
-        <HubSpotTracking />
         {children}
+        <ConsentManager copy={getDictionary(locale).consent} privacyHref={`/${locale}/privacy`} />
         <Analytics />
       </body>
     </html>

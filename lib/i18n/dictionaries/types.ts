@@ -63,8 +63,11 @@ export type Dictionary = {
     error: string;
     orEmail: string;
     ps: string;
+    notice: string;
+    noticeLink: string;
   };
-  footer: { line: string; rights: string };
+  footer: { line: string; rights: string; privacy: string; terms: string; cookies: string; backHome: string };
+  consent: { label: string; body: string; accept: string; reject: string; policy: string };
   logoPicker: { label: string; open: string; close: string; allLogos: string };
   schema: { jobTitle: string; serviceTypes: string[]; knowsAbout: string[] };
 };

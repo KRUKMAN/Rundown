@@ -20,3 +20,9 @@
 - Copy rewritten to be shorter and keyword-led: service titles are the terms people search ("CRM implementation", "Workflow automation", "AI and productivity training").
 - New FAQ section; JSON-LD for the business, person and FAQ; robots.txt; llms.txt.
 - Polish reviewed again: Polish label is "konsultant ds. procesów i automatyzacji" (owners don't search "konsultant operacyjny"); metadata leads with "Wdrożenie CRM i automatyzacja procesów".
+
+## 2026-11-01 · Polish, accessibility and privacy
+- Layout system: one spacing scale, reading measure capped at ~64 characters, stacked section headings with balanced wrapping, sticky header with scroll padding (WCAG 2.4.11), darker secondary text.
+- Cookie consent banner (EDPB / art. 399 PKE): HubSpot tracking only after Accept, equal Accept/Reject, reopen from footer, consent expires after 12 months.
+- Privacy policy and terms of use in EN and PL, generated from `lib/business.ts`; privacy note under the contact form; footer legal links.
+- axe-core audit clean on all pages; fixed logo link accessible name (2.5.3), placeholder contrast, 8px overflow on Polish mobile header.
