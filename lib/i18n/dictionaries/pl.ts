@@ -3,287 +3,224 @@ import type { Dictionary } from "./types";
 const pl: Dictionary = {
   locale: "pl",
   metadata: {
-    title: "The Rundown | Studio Automatyzacji AI",
+    title: "The Rundown · Jakub Krukowski · Niezależne doradztwo operacyjne",
     description:
-      "Ugasimy pożary i zbudujemy spokojne, przewidywalne systemy GTM — bez chaosu.",
+      "Ułatwiam prowadzenie firmy. CRM, uporządkowana praca, automatyzacje i praktyczne AI dla firm budowlanych, usługowych i software house’ów. Jestem niezależny, więc powiem też, kiedy nie warto niczego kupować.",
     ogLocale: "pl_PL",
   },
-  navigation: {
-    services: "Usługi",
-    demos: "Demo",
-    contact: "Kontakt",
-    cta: "Porozmawiajmy!",
-    switcherLabel: "Język",
+  nav: {
+    work: "Co robię",
+    how: "Jak pracuję",
+    about: "O mnie",
+    cta: "Napisz do mnie",
+    languageLabel: "Język",
+    otherLanguage: "English",
+    skip: "Przejdź do treści",
+    home: "The Rundown, strona główna",
   },
   hero: {
-    badge: "Operational Excellence",
-    heading: "Poczuj, że nawet pożar można mieć pod kontrolą",
-    highlight: "Bez zbędnego wysiłku.",
-    description:
-      "Łączymy projektowanie workflow, automatyzację i właściwą dawkę AI, by zbudować spokojne, przewidywalne, wysokowydajne operacje dla Sales, CX i Supportu.",
-    primaryCta: "Umów darmową rozmowę",
+    titleStart: "Ułatwiam",
+    titleAccent: "prowadzenie firmy.",
+    body: "Firma budowlana, sprzątająca, software house. Jeśli tydzień schodzi ci na dopytywaniu ludzi o postępy i przepisywaniu tych samych danych z arkusza do arkusza, da się to prowadzić spokojniej. Jestem niezależny, więc czasem odpowiedź brzmi: nie kupuj niczego.",
+    cta: "Napisz do mnie",
+    emailPrefix: "albo napisz na",
+    replyNote: "Odpisuję w ciągu jednego dnia roboczego.",
   },
-  systemPanel: {
-    fileLabel: "system_v2.sh",
-    typedLines: [
-      "> Sprawdzanie systemu: THE RUNDOWN v2.0",
-      "> Skanowanie stosu operacyjnego...",
-      "> Wykrywanie manualnych zadań......[USUNIĘTO]",
-      "> Upraszczanie workflow............[GOTOWE]",
-      "> Optymalizacja CRM....[AKTYWNE]",
-      "> Wdrażanie asystentów AI.........[ONLINE]",
-      "> STATUS: GOTOWE DO SKALOWANIA",
+  clients: {
+    label: "Zespoły, z którymi pracowałem",
+    names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
+  },
+  example: {
+    title: "Jak to wygląda w praktyce",
+    intro:
+      "Klient zmienia zdanie w połowie zlecenia. Tak wygląda taki tydzień w firmie remontowej, przed i po. Równie dobrze mogłoby to być wdrożenie oprogramowania, umowa na sprzątanie biur albo zamówienie cateringowe. Schemat jest ten sam.",
+    beforeLabel: "Przed",
+    before: [
+      "Klient dzwoni do właściciela w sprawie zmiany",
+      "Właściciel przekazuje to kierownikowi na WhatsAppie",
+      "Nikt nie mówi o tym osobie, która zamawia materiały",
+      "W czwartek przywożą nie te materiały",
+      "Piątek schodzi na odkręcaniu sprawy przez telefon",
+      "Na fakturze wciąż jest stary zakres prac",
     ],
-  },
-  kitchen: {
-    heading: "Twój GTM powinien działać jak kuchnia z gwiazdką Michelin",
-    subheading: "Najlepsze kuchnie wygrywają przygotowaniem, nie adrenaliną.",
-    leftTitle: "Tworzymy zaplecze, w którym:",
-    bullets: [
-      "Handlowcy dokładnie wiedzą, co robić dalej",
-      "Liderzy ufają danym, które widzą",
-      "Narzędzia wspierają ludzi, a nie ich męczą",
+    beforeNote:
+      "Każdy zrobił swoje. Tyle że informacja była w czterech miejscach i w głowie jednej osoby.",
+    afterLabel: "Po",
+    after: [
+      "Zmianę zapisuje się raz, przy zleceniu",
+      "Kierownik, zaopatrzenie i księgowość widzą ją w tej samej minucie",
+      "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
-    rightTitle: "Efekt:",
-    quote:
-      "\"Zespół może po prostu przyjść, skupić się i błyszczeć — bo systemy wreszcie mają sens.\"",
+    afterNote:
+      "Nie trzeba uczyć się niczego nowego. Jedno miejsce dla każdego zlecenia i kilka prostych zasad: kto co zapisuje. Właściciel dostaje w poniedziałek krótkie podsumowanie zamiast piątkowego pożaru.",
   },
-  demos: {
-    eyebrow: "Przykłady na żywo",
-    heading: "Prawdziwe workflow. Prawdziwy efekt. Przykładowe Demoć.",
-    description: "Zobacz, jak usuwamy chaos automatyzacją.",
+  problems: {
+    title: "Co słyszę i co się zmienia",
+    intro:
+      "Nie musisz wiedzieć, czym jest CRM, Notion czy agent AI. Chcesz, żeby problem zniknął. Poniżej to, co słyszę najczęściej, słowami właścicieli, i to, co faktycznie ustawiamy.",
+    paths:
+      "Ludzie trafiają do mnie z trzech powodów: ich firma urosła szybciej niż jej organizacja; od dawna chcą to uporządkować, ale nigdy nie było spokojnego miesiąca; albo od początku działało to na tyle dobrze, że nikt nie pomyślał, że mogłoby być inaczej.",
+    pathsLink: "Każdy z nich wystarczy, żeby porozmawiać.",
+    items: [
+      {
+        quote: "Projekty sypią się znikąd.",
+        answer:
+          "Rzadko naprawdę znikąd. Sygnały były, tylko rozrzucone po różnych miejscach. Ustawiamy jedną listę wszystkich zleceń: etap, osoba odpowiedzialna, na co czekamy. Kłopot widać tydzień wcześniej, a nie w dniu, w którym wybucha.",
+      },
+      {
+        quote: "Nikt nie wie, kto za co odpowiada.",
+        answer:
+          "Każde ważne, powtarzalne zadanie dostaje jedno nazwisko, zapisane tam, gdzie wszyscy je widzą. Bez reorganizacji, po prostu aktualna lista.",
+      },
+      {
+        quote: "Nie wiem, co jest naprawdę zrobione.",
+        answer:
+          "Status zmienia się sam, gdy praca idzie do przodu, więc nie ma piątkowej rundy pytań „na jakim to jest etapie?”. Przestajesz pytać, bo po prostu to widzisz.",
+      },
+      {
+        quote: "Ciągle gasimy pożary.",
+        answer:
+          "Większość pożarów to w kółko te same pytania: gdzie jest moje zamówienie, na kiedy będzie, czy ktoś oddzwonił. Odpowiada na nie system. Ludziom zostają sprawy, które naprawdę wymagają człowieka.",
+      },
+      {
+        quote: "Wszyscy mówią o AI. Nie wiem, co by nam z tego przyszło.",
+        answer:
+          "Najczęściej AI czyta notatki z rozmów i szykuje wycenę, sortuje maile, odpowiada na rutynowe pytania, pisze poniedziałkowe podsumowanie. Pokażę ci to na twojej własnej pracy, a potem zdecydujesz.",
+      },
+      {
+        quote: "Zawsze tak robiliśmy.",
+        answer:
+          "I dobrze. Zostawiamy to, co działa, i zmieniamy dwie, trzy rzeczy, które kosztują cię najwięcej. Potem kończymy.",
+      },
+    ],
   },
   services: {
-    heading: "Co robimy dla Sprzedaży, CX i Supportu",
-    description:
-      "Obszary, w których pomagamy Twojemu zespołowi działać.",
-    cards: [
+    title: "Co robię",
+    intro: "Większość projektów przechodzi przez te trzy etapy po kolei. Niektórym klientom wystarcza pierwszy.",
+    groups: [
       {
-        id: "gtm-ops",
-        title: "Operacje GTM, Sales & CX",
-        description: "Naprawiamy fundamenty, aby silnik przychodów działał tak, jak powinien.",
+        title: "Porządek w codziennej pracy",
+        tools: "HubSpot, Salesforce, Attio, Notion",
         items: [
-          "Pełna opieka nad Salesforce/CRM",
-          "Routing leadów i logika terytoriów",
-          "Implementacja Supportu (Zendesk/Intercom/Text/Custom)",
-          "QA i higiena danych",
-          "Raportowanie i dashboardy",
-          "Jasne playbooki GTM",
+          {
+            title: "Organizacja pracy",
+            body: "Projekty, zlecenia i zgłoszenia w jednym miejscu, każde z osobą odpowiedzialną, statusem i kolejnym krokiem. Każdy widzi, co się dzieje, bez dopytywania.",
+          },
+          {
+            title: "CRM, z którego ludzie naprawdę korzystają",
+            body: "Każdy klient, wycena i rozmowa w jednym systemie, który zespół otwiera bez przypominania. Wdrażałem HubSpot od zera i zarządzałem Salesforce’em w zespołach, którym pierwsza konfiguracja przestała wystarczać.",
+          },
+          {
+            title: "Porządek w narzędziach",
+            body: "Stare systemy, których nikt nie odważy się ruszyć, trzy narzędzia do tego samego, arkusz, na którym wszystko się trzyma. Decydujemy, co zostaje, co znika, a co trzeba ze sobą połączyć.",
+          },
         ],
       },
       {
-        id: "automation-studio",
-        title: "Studio automatyzacji i narzędzi wewnętrznych",
-        description: "Skalowalna stacja przygotowania dla całego zespołu.",
+        title: "Mniej powtarzalnej pracy",
+        tools: "n8n, Tray.ai, Zapier, Claude, Notion AI",
         items: [
-          "Automatyzacje no-code/low-code (Tray/n8n/Zapier)",
-          "Dedykowane narzędzia wewnętrzne",
-          "Agenci AI dla zespołów GTM",
-          "Dashboardy i health checki",
+          {
+            title: "Automatyzacje",
+            body: "Przekazywanie zadań, przypomnienia, raporty i wpisywanie danych dzieją się same. Gdy zlecenie zostanie podpisane, właściwe osoby od razu o tym wiedzą, a potrzebne dokumenty już czekają.",
+          },
+          {
+            title: "AI tam, gdzie się opłaca",
+            body: "Asystenci AI, którzy szykują wyceny na podstawie notatek z rozmów, sortują maile, odpowiadają na rutynowe pytania albo piszą cotygodniowe podsumowanie. To, co ważne, nadal sprawdza człowiek.",
+          },
+          {
+            title: "Małe narzędzia dla zespołu",
+            body: "Gdy gotowy program nie pasuje, budujemy to, czego brakuje: kalkulator wycen, wewnętrzny panel, prostą aplikację dla ekipy na budowie. Tak, żeby zespół zrobił więcej bez zatrudniania kolejnych osób.",
+          },
         ],
       },
       {
-        id: "stack-implementation",
-        title: "Implementacja narzędzi",
-        description: "Nie ważne czy sprzejesz czy pomagasz obecnym klientom - dobierzemy właściwe narzędzia.",
+        title: "Żeby zostało na dłużej",
+        tools: "Warsztaty, procedury, rekrutacja",
         items: [
-          "Ustawienie i migracja CRM (Salesforce/HubSpot)",
-          "Implemetnacja narzędzi wsparcia (Zendesk/Intercom/LiveChat)",
-          "Dokumentacja i enablement zespołów",
-          "Integracje poraz tworzenie stron/landingów",
-        ],
-      },
-      {
-        id: "ops-as-a-service",
-        title: "Ops-as-a-Service",
-        description: "Twój zespół operacji bez zatrudniania zespołu operacji.",
-        items: [
-          "Fractional Head of Ops / RevOps",
-          "Wsparcie abonamentowe",
-          "Dedykowany specjalista ds. operacji",
-          "Opieka nad narzędziami i procesami",
-        ],
-      },
-      {
-        id: "training",
-        title: "Szkolenia i enablement",
-        description: "Daj repom i liderom brakującą klarowność.",
-        items: [
-          "Umiejętności AI dla Sales & Support",
-          "Podstawy Salesforce dla zespołów GTM",
-          "Best practices pracy zdalnej",
-          "Custom training na życzenie",
+          {
+            title: "Szkolenia: jak pracować mądrzej, także z AI",
+            body: "Praktyczne warsztaty na prawdziwych zadaniach zespołu: jak naprawdę korzystać z Claude, Notion AI i innych narzędzi, za które firma już płaci, i gdzie szkoda zachodu. Ludzie wychodzą z kilkoma rzeczami, które zastosują już w poniedziałek.",
+          },
+          {
+            title: "Rekrutacja i rozwój działu operacyjnego",
+            body: "Opis stanowiska, rozmowy kwalifikacyjne i wdrożenie do pracy pierwszej osoby, która zajmie się organizacją pracy w firmie. Potem pomagam ten obszar rozwinąć: jasny podział odpowiedzialności, spisane procesy, kilka liczb, na które warto patrzeć.",
+          },
         ],
       },
     ],
   },
-  removal: {
-    heading: "Nie dokładamy chaosu — usuwamy go",
-    description:
-      "Twój zespół nie powinien żonglować narzędziami, gonić za danymi ani zgadywać kolejnych kroków.",
-    bullets: [
-      "Presja nie zamienia się w panikę",
-      "Workflow prowadzą, a nie spowalniają",
-      "AI wspiera ludzi, nie zastępuje myślenie",
-      "Metryki faktycznie coś znaczą",
+  principles: {
+    title: "Czego ci nie sprzedam",
+    intro: "I trzy rzeczy, których możesz ode mnie wymagać.",
+    wont: [
+      { struck: "Nowego systemu", rest: "tam, gdzie wystarczy uporządkować ten, który już masz." },
+      { struck: "Asystenta AI", rest: "do zadania, które załatwi prosta reguła." },
+      { struck: "Strategii w prezentacji", rest: ", której nikt nie otworzy po spotkaniu." },
+      { struck: "Dwunastu narzędzi", rest: "tam, gdzie wystarczą cztery." },
+      { struck: "Abonamentu", rest: "płaconego dalej, choć dawno przestał być potrzebny." },
     ],
-    footerNote: "Jak w hotelowej kuchni: czyste stanowiska, jasne role, przewidywalna praca.",
+    promises: [
+      {
+        title: "Bez prowizji",
+        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców, więc polecam tylko to, co naprawdę do ciebie pasuje.",
+      },
+      {
+        title: "Wszystko należy do ciebie",
+        body: "Konta, automatyzacje i dokumentacja są od pierwszego dnia zapisane na twoją firmę.",
+      },
+      {
+        title: "Najpierw plan, potem cena",
+        body: "Zaczynamy od krótkiego audytu i spisanego planu. Potem ty decydujesz, co warto zrobić.",
+      },
+    ],
   },
-  process: {
-    heading: "Gotowi zamienić chaos w klarowność?",
-    description:
-      "Projektujemy systemy Go-To-Market, który działa spokojnie, przewidywalnie i wydajnie — nawet gdy się pali.",
-    cta: "Poznajmy się!",
+  work: {
+    title: "Wybrane projekty",
+    intro: "Krótkie opisy. Co nie działało, co zmieniłem, co było dalej.",
+    draftNote: "Szkic: widoczny tylko w wersjach podglądowych. Uzupełnij przed publikacją.",
+    cases: [
+      { company: "[Firma]", readTime: "2 min", title: "Zwroty pieniędzy, które wypłacają się same", result: "[Jedno zdanie o efekcie]" },
+      { company: "[Firma]", readTime: "3 min", title: "HubSpot, który handlowcy naprawdę otwierają", result: "[Jedno zdanie o efekcie]" },
+      { company: "[Firma]", readTime: "2 min", title: "AI dla całego zespołu, z zasadami, których ludzie się trzymają", result: "[Jedno zdanie o efekcie]" },
+    ],
+    quote: {
+      text: "[Dwa, trzy zdania od klienta o tym, co się zmieniło.]",
+      attribution: "[Imię i nazwisko], [stanowisko], [firma]",
+    },
+  },
+  about: {
+    title: "O mnie",
+    photoNote: "Zdjęcie Jakuba",
+    paragraphs: [
+      "Nazywam się Jakub Krukowski. Większość zawodowego życia zajmowałem się operacjami, czyli tym, jak firma działa na co dzień. Głównie w firmach technologicznych, na styku sprzedaży, obsługi klienta, finansów i narzędzi, które to wszystko łączą. Okazuje się, że problemy są wszędzie te same, niezależnie od tego, czy firma pisze oprogramowanie, czy sprząta biura: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
+      "Pracuję niezależnie, więc doradzam wyłącznie w interesie twojej firmy. Od początku do końca rozmawiasz ze mną. Kiedy projekt wymaga więcej rąk do pracy, zapraszam osoby, z którymi już pracowałem i które wysoko cenię:",
+    ],
+    teamIntro: "",
+    team: [
+      { role: "Projektanci aplikacji i stron", body: "Panele i formularze dla klientów, centra pomocy i wewnętrzne narzędzia, z których da się korzystać bez irytacji." },
+      { role: "Programiści", body: "Połączenia między systemami i narzędzia pisane od zera tam, gdzie gotowe programy przestają wystarczać." },
+      { role: "Specjaliści od operacji", body: "Obsługa klienta, finanse i operacje sprzedażowe, także w dużych organizacjach." },
+    ],
+    location: "Działam z Polski. Pracuję po polsku i po angielsku.",
   },
   contact: {
-    eyebrow: "Kontakt",
-    heading: "W czym możemy pomóc?",
-    description: "Staramy się odopowiadać tego samego dnia.",
-    labels: {
-      name: "Imię i nazwisko",
-      email: "Email",
-      company: "Firma",
-      message: "Z czym potrzebujesz pomocy?",
-    },
-    placeholders: {
-      name: "Twoje imię",
-      email: "ty@firma.com",
-      company: "Nazwa firmy",
-      message: "Napisz o systemach, workflow lub metrykach, które trzeba naprawić.",
-    },
-    cta: "Wyślij",
-    sending: "Wysyłanie...",
-    success: "Otrzymaliśmy Twoją wiadomość. Odezwiemy się wkrótce!",
-    error: "Coś poszło nie tak. Napisz do nas bezpośrednio.",
-    successInline: "Otrzymaliśmy Twoją wiadomność. Odezwiemy się wkrótce!.",
-    errorInline: "Coś poszło nie tak. Napisz do nas bezpośrednio.",
-    ledBy: "Prowadzone przez",
-    person: "Jakub Krukowski",
-    experience: "Lider RevOps @ Prezi - ex-AE @ Callstack - ex-Revenue Operations @ LiveChat",
-  },
-  scope: {
-    heading: "Prowadzone przez",
-    description: "Liderstwo i konsulting Sales/RevOps: LiveChat, Callstack, Prezi i inni.",
-  },
-  closing: {
-    heading: "Gotowi działać jak dobrze przygotowana kuchnia?",
-    description:
-      "Jeśli masz dość podklejonych taśmą narzędzi, zestresowanych repów i dashboardów, którym nie ufasz, przeprojektujmy Twoje operacje — spokojnie, celowo i z przestrzenią do skalowania.",
-    cta: "Umów darmową rozmowę",
+    title: "Napisz do mnie jak do kogoś z zespołu.",
+    body: "Wystarczy kilka zdań o tym, co przeszkadza. Odpisuję w ciągu jednego dnia roboczego. Jeśli nie jestem właściwą osobą, powiem to wprost i wskażę kogoś, kto się nada.",
+    labels: { name: "Imię", email: "E-mail", company: "Firma", message: "Co nie działa tak, jak powinno?", optional: "opcjonalnie" },
+    placeholders: { message: "Kilka zdań wystarczy." },
+    submit: "Wyślij",
+    sending: "Wysyłam…",
+    success: "Dzięki. Wiadomość dotarła, odpiszę w ciągu jednego dnia roboczego.",
+    error: "Coś poszło nie tak. Napisz bezpośrednio na jake@rundown.digital.",
+    orEmail: "Albo napisz bezpośrednio:",
+    ps: "PS Nie wiesz, czy twój problem należy do tych, którymi się zajmuję? I tak napisz. Większość dobrych projektów zaczyna się od maila w stylu „to może głupie pytanie, ale…”.",
   },
   footer: {
-    toolsLabel: "Narzędzia, z którymi pracujemy",
-    copyright: "(c) 2025 The Rundown. Spokojne operacje w hałaśliwym świecie.",
+    line: "The Rundown. Niezależne doradztwo operacyjne, Jakub Krukowski.",
+    rights: "©",
   },
-  stack: [
-    "Salesforce",
-    "HubSpot",
-    "Zendesk",
-    "Intercom",
-    "LiveChat",
-    "Tray.io",
-    "n8n",
-    "Zapier",
-    "Outreach",
-    "Apollo",
-    "Clay",
-  ],
-  workflow: {
-    copy: {
-      panelTitle: "Przykłady automatyzacji",
-      activeWorkflow: "Aktywne workflow",
-      simulate: "Uruchom symulację",
-      replay: "Odtwórz ponownie",
-      processing: "Przetwarzanie...",
-      complete: "Zakończono",
-      proven: "SPRAWDZONE",
-    },
-    useCases: [
-      {
-        id: "sales-crm",
-        navTitle: "Higiena CRM",
-        title: "Automatyczne uzupełnianie CRM",
-        description:
-          "Czyste dane bez spowalniania zespołu. Zapis rozmowy zamieniamy w ustrukturyzowaną inteligencję w Salesforce — automatycznie i pewnie.",
-        roiLabel: "Zysk efektywności",
-        roiValue: "15h+ odzyskane / mies.",
-        steps: [
-          { label: "Nagranie rozmowy sprzedażowej", sub: "Przechwycenie audio", theme: "red" },
-          { label: "Transkrypcja AI", sub: "Tekst z podziałem na mówców", theme: "blue" },
-          { label: "Wydobycie insightów", sub: "Budżet, blokery, timeline", theme: "white" },
-          { label: "Przegląd przez handlowca", sub: "Weryfikacja kluczowych pól", theme: "orange" },
-          { label: "Aktualizacja Salesforce", sub: "Automatyczny zapis notatek i pól", theme: "blue" },
-        ],
-        successMessage: "Pola CRM uzpełnione",
-      },
-      {
-        id: "lead-flow",
-        navTitle: "Lead inbound",
-        title: "Automatyzacja obsługi leadów",
-        description:
-          "Szybka, spójna obsługa leadów z uwzględnieniem terytoriów. Routing, wzbogacenie i outreach bez manualnej pracy i opóźnień.",
-        roiLabel: "Szybkość do leada",
-        roiValue: "4h -> 2min",
-        steps: [
-          { label: "Nowy lead z www", sub: "Wychwycony natychmiast", theme: "green" },
-          { label: "Wzbogacenie profilu", sub: "Firmografia + intent", theme: "cyan" },
-          { label: "Routing do handlowca", sub: "Według terytorium i reguł", theme: "purple" },
-          { label: "Szkic maila", sub: "AI generuje, człowiek zatwierdza", theme: "white" },
-        ],
-        successMessage: "Outreach gotowy",
-      },
-      {
-        id: "support-cx",
-        navTitle: "Nastrój CS",
-        title: "Monitoring nastroju wsparcia",
-        description:
-          "Wychwytuj konta zagrożone churnem, zanim będzie za późno. Skanujemy nowe tickety pod kątem frustracji, pilności i ukrytych sygnałów churnu.",
-        roiLabel: "Wskaźniki churn",
-        roiValue: "-24% redukcji",
-        steps: [
-          { label: "Nowy ticket", sub: "Ticket zarejestrowany", theme: "white" },
-          { label: "Analiza sentymentu AI", sub: "Wykrycie negatywnych trendów", theme: "yellow" },
-          { label: "Aktualizacja health score", sub: "Zapis wyniku ryzyka", theme: "blue" },
-          { label: "Alert dla Success Teamu", sub: "Slack, email lub zadanie", theme: "red" },
-        ],
-        successMessage: "Ryzyko oflagowane",
-      },
-      {
-        id: "task-routing",
-        navTitle: "Routing zadań",
-        title: "Orkiestracja wsparcia",
-        description:
-          "Koniec z naruszaniem SLA i gubieniem ticketów. Automatyczna kategoryzacja i routing sprawiają, że każde zgłoszenie ma właściciela od razu.",
-        roiLabel: "Naruszenia SLA",
-        roiValue: "0% pominięć",
-        steps: [
-          { label: "Nowy ticket", sub: "Kategoryzacja po intencie", theme: "white" },
-          { label: "Priorytetyzacja", sub: "Pilność + historia", theme: "orange" },
-          { label: "Automatyczny routing", sub: "Do właściwego zespołu", theme: "purple" },
-          { label: "Monitoring SLA", sub: "Masz widoczność twojego performancu", theme: "red" },
-          { label: "Domknięcie pętli informacyjnej", sub: "Tagi i notatki dodane", theme: "green" },
-        ],
-        successMessage: "Zadanie przejęte i wysłane",
-      },
-      {
-        id: "deal-desk",
-        navTitle: "Deal Desk",
-        title: "Automatyzacja Deal Desku",
-        description:
-          "Szybsze akceptacje, czystsze oferty, zero ping-pongu. Walidujemy ceny i automatycznie powiadamiamy decydentów, żeby odblokować przychód.",
-        roiLabel: "Czas akceptacji",
-        roiValue: "-80% szybciej",
-        steps: [
-          { label: "Prośba od handlowca", sub: "Niestandardowe warunki", theme: "white" },
-          { label: "Walidacja AI", sub: "Sprawdzenie zgodności cen", theme: "blue" },
-          { label: "Powiadom przełożonych", sub: "Kontekst do Slacka", theme: "yellow" },
-          { label: "Ścieżka akceptacji", sub: "Akcept jednym kliknięciem", theme: "green" },
-          { label: "Aktualizacja kontraktu", sub: "Autogeneracja CPQ/PDF", theme: "purple" },
-        ],
-        successMessage: "Deal odblokowany",
-      },
-    ],
-  },
+  logoPicker: { label: "Logo", open: "Wybierz logo", close: "Zamknij", allLogos: "Zobacz wszystkie logotypy" },
 };
 
 export default pl;

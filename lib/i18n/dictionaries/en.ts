@@ -3,279 +3,224 @@ import type { Dictionary } from "./types";
 const en: Dictionary = {
   locale: "en",
   metadata: {
-    title: "The Rundown | CRM, Automation & Operational Excellence",
+    title: "The Rundown · Jakub Krukowski · Independent operations consulting",
     description:
-      "We set up CRMs, automate the repetitive work, and help sales and ops teams stop running on spreadsheets, scattered tools, and things that keep falling through the cracks.",
+      "I make businesses easier to run. CRMs, organised work, automation and practical AI for construction firms, service companies and software teams. Independent, so I'll also tell you when to buy nothing.",
     ogLocale: "en_US",
   },
-  navigation: {
-    services: "Services",
-    demos: "Demos",
-    contact: "Contact",
-    cta: "Let's talk!",
-    switcherLabel: "Language",
+  nav: {
+    work: "What I do",
+    how: "How I work",
+    about: "About",
+    cta: "Write to me",
+    languageLabel: "Language",
+    otherLanguage: "Polski",
+    skip: "Skip to content",
+    home: "The Rundown, home",
   },
   hero: {
-    badge: "Operational Excellence",
-    heading: "We help growing teams sort out their",
-    highlight: "CRM and operations.",
-    description:
-      "We pick the right CRM, set it up properly, automate the repetitive work, and put the processes in place that should have been there from the start. Most of our clients have never had a dedicated ops person before — they had spreadsheets, a few tools, and a growing sense that something wasn't quite working.",
-    primaryCta: "Let's have a free chat",
+    titleStart: "I make businesses",
+    titleAccent: "easier to run.",
+    body: "Construction firm, cleaning company, software house. If your week goes on chasing people for updates and copying the same details between spreadsheets, there's a calmer way to run it. I'm independent, so sometimes the answer is to buy nothing at all.",
+    cta: "Write to me",
+    emailPrefix: "or email",
+    replyNote: "I reply within one working day.",
   },
-  systemPanel: {
-    fileLabel: "crm_setup_v2.sh",
-    typedLines: [
-      "> System Check: THE RUNDOWN v2.0",
-      "> Scanning CRM Configuration.......[FOUND GAPS]",
-      "> Detecting Manual Handoffs........[ELIMINATED]",
-      "> Configuring HubSpot Pipelines....[DONE]",
-      "> Syncing CRM to Support Stack.....[ACTIVE]",
-      "> Deploying AI Automations.........[ONLINE]",
-      "> STATUS: READY TO OPERATE",
+  clients: {
+    label: "Teams I've worked with",
+    names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
+  },
+  example: {
+    title: "What this looks like",
+    intro:
+      "A client changes their mind halfway through a job. Here's that week at a renovation company, before and after. Swap in a software release, a cleaning contract or a catering order. The shape is the same.",
+    beforeLabel: "Before",
+    before: [
+      "Client calls the owner about the change",
+      "Owner tells the foreman on WhatsApp",
+      "Nobody tells the person ordering materials",
+      "Wrong materials arrive on Thursday",
+      "Friday is spent on the phone fixing it",
+      "The invoice still shows the old scope",
     ],
-  },
-  kitchen: {
-    heading: "Your Business Should Run Like a Michelin Kitchen",
-    subheading: "The best kitchens don't win on adrenaline - they win on preparation.",
-    leftTitle: "We build the back-of-house where:",
-    bullets: [
-      "Everyone knows what they're supposed to be doing without being chased",
-      "Leaders can trust the numbers they're looking at",
-      "New people get up to speed in days, not months",
+    beforeNote:
+      "Everyone did their job. The information just lived in four places and one person's head.",
+    afterLabel: "After",
+    after: [
+      "The change is written down once, on the job",
+      "Foreman, purchasing and invoicing see it the same minute",
+      "The updated quote goes to the client for a yes",
     ],
-    rightTitle: "The Result:",
-    quote:
-      '"Your team gets to focus on selling, supporting, and delivering — because the coordination and admin sort themselves out."',
+    afterNote:
+      "Nothing new to learn. One place where every job lives, and a few rules about who writes what down. The owner gets a short Monday summary instead of a Friday fire.",
   },
-  demos: {
-    eyebrow: "Live Examples",
-    heading: "Actual Workflows, Not Slide-Deck Promises.",
-    description: "Here's what it looks like when we build it.",
+  problems: {
+    title: "What I hear, and what changes",
+    intro:
+      "You don't need to know what a CRM, Notion or an AI agent is. You need the problem to stop. These are the ones I hear most, in owners' words, and what we'd actually set up.",
+    paths:
+      "People get here three ways: they grew faster than their setup, they always meant to fix it and never had a quiet month, or it has worked well enough since day one and it never occurred to them it could be different.",
+    pathsLink: "Any of those is enough to talk.",
+    items: [
+      {
+        quote: "Projects blow up out of nowhere.",
+        answer:
+          "They rarely do. The warning signs were there, just not in one place. We set up a single view of every job: stage, owner, what it's waiting on. You see trouble a week early instead of on the day.",
+      },
+      {
+        quote: "Nobody knows who owns what.",
+        answer:
+          "Every recurring task that matters gets one name next to it, written down where everyone can see it. No reorganisation, just a list that stays up to date.",
+      },
+      {
+        quote: "I can't tell what's actually done.",
+        answer:
+          "Status updates itself as the work moves, so there's no Friday round of “where are we on this?”. You stop asking because you can already see it.",
+      },
+      {
+        quote: "Everything feels like a fire.",
+        answer:
+          "Most fires are the same few questions on repeat: where's my order, when is it due, did anyone call them back. Those get answered automatically. Your people keep the ones that need a person.",
+      },
+      {
+        quote: "Everyone says AI. I don't know what it would do here.",
+        answer:
+          "Usually: read the call notes and draft the quote, sort the inbox, answer routine questions, write the Monday summary. I'll show you on your own work, then you decide.",
+      },
+      {
+        quote: "We've always done it this way.",
+        answer:
+          "That's fine. We keep what works and change the two or three things costing you the most. Then we stop.",
+      },
+    ],
   },
   services: {
-    heading: "What We Do",
-    description: "Four areas. We do each one properly and make sure they work together.",
-    cards: [
+    title: "What I do",
+    intro: "Most projects move through these three in order. Some clients only need the first.",
+    groups: [
       {
-        id: "crm-implementation",
-        title: "CRM Implementation",
-        description: "We pick the right CRM for your team, set it up properly, and make sure people actually use it — not just open it once and go back to their spreadsheet.",
+        title: "Sort out how work runs",
+        tools: "HubSpot, Salesforce, Attio, Notion",
         items: [
-          "CRM selection based on how your team actually works",
-          "Full setup, configuration & migration",
-          "Custom objects, pipelines & deal stages",
-          "Automations & AI workflows built in",
-          "Data hygiene & deduplication",
-          "Connected to the rest of your tools",
+          {
+            title: "Organise the work",
+            body: "Projects, jobs and requests in one place, each with an owner, a status and a next step. Everyone can see what's happening without asking.",
+          },
+          {
+            title: "A CRM people actually use",
+            body: "Every customer, quote and conversation in one system your team opens without being reminded. I've implemented HubSpot from scratch and run Salesforce for teams that outgrew their first setup.",
+          },
+          {
+            title: "Clean up the tool stack",
+            body: "Old systems nobody dares touch, three tools doing the same job, a spreadsheet holding everything together. We decide what stays, what goes and what gets connected.",
+          },
         ],
       },
       {
-        id: "support-stack",
-        title: "Support & Chat Stack",
-        description: "Live chat and support tools that handle customers properly — without relying on someone to manually check an inbox or Slack.",
+        title: "Take repeat work off people",
+        tools: "n8n, Tray.ai, Zapier, Claude, Notion AI",
         items: [
-          "Chat widget & bot implementation",
-          "Ticket routing & escalation logic",
-          "AI triage and first response",
-          "SLA monitoring & alerting",
-          "CRM sync so agents see the full history",
+          {
+            title: "Automations",
+            body: "Handoffs, reminders, reports and data entry that happen on their own. When a job is signed, the right people hear about it and the right documents already exist.",
+          },
+          {
+            title: "AI where it earns its place",
+            body: "Assistants that draft quotes from call notes, sort the inbox, answer routine questions or write the weekly summary. A person still checks anything that matters.",
+          },
+          {
+            title: "Small tools for your team",
+            body: "When off-the-shelf software doesn't fit: a quote calculator, an internal dashboard, a simple app for the crew on site. Built so your team gets more done without more people.",
+          },
         ],
       },
       {
-        id: "gtm-stack",
-        title: "GTM Stack Management",
-        description: "Too many tools, none of them talking to each other? We audit what you have, cut what you don't need, and make the rest work together.",
+        title: "Make it stick",
+        tools: "Workshops, playbooks, hiring",
         items: [
-          "Audit of what you have and what's missing",
-          "Tool selection for your team and budget",
-          "Getting the tools to talk to each other",
-          "Vendor evaluation & onboarding",
-          "Ongoing check-ins to catch issues before they break things",
-        ],
-      },
-      {
-        id: "ops-consulting",
-        title: "Operational Excellence Consulting",
-        description: "Growing fast without proper ops usually catches up with you. We've seen it enough times to know where it breaks — and how to stay ahead of it.",
-        items: [
-          "Sales and ops playbook design",
-          "Fractional RevOps / Head of Ops",
-          "Spotting problems before they get expensive",
-          "Process documentation & training",
-          "Reporting that leadership trusts",
+          {
+            title: "Training: working smarter, with AI",
+            body: "Practical sessions on your own work: how to get real use out of Claude, Notion AI and the tools you already pay for, and where not to bother. People leave with a few things they'll use on Monday.",
+          },
+          {
+            title: "Hiring and growing operations",
+            body: "Writing the role, interviewing and onboarding your first operations person. Then helping the function grow up: clear ownership, written-down processes, a few numbers worth watching.",
+          },
         ],
       },
     ],
   },
-  removal: {
-    heading: "We've Seen What Goes Wrong — So You Don't Have To",
-    description:
-      "Most operational problems at growing companies are completely predictable. Spreadsheets that get too big to trust. CRMs nobody uses. Tools that create more work than they save. We've fixed all of it before.",
-    bullets: [
-      "A CRM your team actually opens",
-      "No more \"who has the latest version of that sheet?\"",
-      "No more copying data from one tool into another by hand",
-      "Processes that survive when someone is on holiday",
+  principles: {
+    title: "Things I won't sell you",
+    intro: "And three things you can hold me to.",
+    wont: [
+      { struck: "A new system", rest: "when the one you have mostly needs cleaning up." },
+      { struck: "An AI agent", rest: "for a job a simple rule would handle." },
+      { struck: "A strategy deck", rest: "nobody opens after the meeting." },
+      { struck: "Twelve tools", rest: "where four would do." },
+      { struck: "A retainer", rest: "that keeps running after it stops being useful." },
     ],
-    footerNote: "A Michelin kitchen doesn't improvise under pressure. It's prepared. That's what we build.",
+    promises: [
+      {
+        title: "No commissions",
+        body: "I don't resell software or take a cut from vendors, so a recommendation is about fit and nothing else.",
+      },
+      {
+        title: "You own everything",
+        body: "Accounts, automations and documentation sit in your name from day one.",
+      },
+      {
+        title: "A plan before a price",
+        body: "We start with a short audit and a written plan. Then you decide what's worth doing.",
+      },
+    ],
   },
-  process: {
-    heading: "Ready to stop running your business on spreadsheets?",
-    description:
-      "Tell us what you have and where it's breaking. We'll tell you what's worth fixing first.",
-    cta: "Book an Intro",
+  work: {
+    title: "Some of the work",
+    intro: "Short write-ups. What was broken, what I changed, what happened next.",
+    draftNote: "Draft: visible on preview deployments only. Fill in before it goes live.",
+    cases: [
+      { company: "[Company]", readTime: "2 min", title: "Refunds that pay themselves out", result: "[One line on the result]" },
+      { company: "[Company]", readTime: "3 min", title: "A HubSpot setup sales actually opens", result: "[One line on the result]" },
+      { company: "[Company]", readTime: "2 min", title: "AI for a whole team, with rules people kept", result: "[One line on the result]" },
+    ],
+    quote: {
+      text: "[Two or three sentences from a client on what changed.]",
+      attribution: "[Name], [Role] at [Company]",
+    },
+  },
+  about: {
+    title: "About",
+    photoNote: "Photo of Jakub",
+    paragraphs: [
+      "I'm Jakub Krukowski. I've spent most of my career in operations, largely at software companies, in the space between sales, support, finance and the tools that connect them. The problems turn out to be the same whether you ship code or clean offices: too much lives in people's heads, and too much gets copied by hand.",
+      "I work independently, so the advice is about your business and nothing else. You deal with me from start to finish. When a job needs more hands, I bring in people I've worked with and rate highly:",
+    ],
+    teamIntro: "",
+    team: [
+      { role: "Designers", body: "Customer-facing flows, help centres and internal tools people don't hate using." },
+      { role: "Engineers", body: "Integrations and custom builds where no-code runs out." },
+      { role: "Operations specialists", body: "Support, finance and revenue operations, run at scale." },
+    ],
+    location: "Based in Poland. Working in English and Polish.",
   },
   contact: {
-    eyebrow: "Contact",
-    heading: "Tell us where your operations are breaking down",
-    description: "We usually reply within a day.",
-    labels: {
-      name: "Name",
-      email: "Email",
-      company: "Company",
-      message: "What do you need help with?",
-    },
-    placeholders: {
-      name: "Your name",
-      email: "you@company.com",
-      company: "Company name",
-      message: "Tell us about your current CRM, tools, or ops challenges.",
-    },
-    cta: "Submit",
-    sending: "Sending...",
-    success: "Received. We'll be in touch.",
-    error: "Something went wrong. Please email us directly.",
-    successInline: "Received. We'll be in touch.",
-    errorInline: "Something went wrong. Please email us directly.",
-    ledBy: "Led by",
-    person: "Jakub Krukowski",
-    experience: "CRM & RevOps implementation across Tidio, Coloplast, LiveChat, Prezi.",
-  },
-  scope: {
-    heading: "Led by",
-    description: "CRM & RevOps implementation across LiveChat, Callstack, Prezi and others.",
-  },
-  closing: {
-    heading: "If your team is outgrowing how you currently work — let's talk.",
-    description:
-      "If any of this sounds familiar — the spreadsheets, the CRM nobody uses, the tools that don't connect — it's probably worth a conversation. We start with what you have and figure out what actually needs to change.",
-    cta: "Let's have a free chat",
+    title: "Write to me like you'd write to a colleague.",
+    body: "A few lines about what's getting in the way is plenty. I reply within one working day. If I'm not the right person, I'll say so and point you to someone who is.",
+    labels: { name: "Name", email: "Email", company: "Company", message: "What's getting in the way?", optional: "optional" },
+    placeholders: { message: "A few sentences is enough." },
+    submit: "Send",
+    sending: "Sending…",
+    success: "Thanks. It's in my inbox and I'll reply within one working day.",
+    error: "That didn't go through. Please email me directly at jake@rundown.digital.",
+    orEmail: "Or email me directly:",
+    ps: "P.S. If you're not sure whether your problem is the kind I solve, write anyway. Most good projects start with an email that begins “this might be a silly question”.",
   },
   footer: {
-    toolsLabel: "Tools We Work With",
-    copyright: "(c) 2025 The Rundown. Your ops, done properly.",
+    line: "The Rundown. Independent operations consulting by Jakub Krukowski.",
+    rights: "©",
   },
-  stack: [
-    "HubSpot",
-    "Attio",
-    "Salesforce",
-    "OpenMercato",
-    "Tidio",
-    "Intercom",
-    "LiveChat",
-    "n8n",
-    "Zapier",
-    "Apollo",
-    "Clay",
-  ],
-  workflow: {
-    copy: {
-      panelTitle: "Automation Examples",
-      activeWorkflow: "Active Workflow",
-      simulate: "Simulate Workflow",
-      replay: "Replay",
-      processing: "Processing...",
-      complete: "Complete",
-      proven: "PROVEN",
-    },
-    useCases: [
-      {
-        id: "sales-crm",
-        navTitle: "CRM Hygiene",
-        title: "CRM Auto-Fill",
-        description:
-          "Your reps take a call. The CRM fills itself in — notes, deal fields, next steps — from the recording. Nobody has to type anything up afterwards.",
-        roiLabel: "Time saved",
-        roiValue: "15h+ per rep / mo",
-        steps: [
-          { label: "Sales Call Recording", sub: "Captured automatically", theme: "red" },
-          { label: "AI Transcription", sub: "Who said what, separated", theme: "blue" },
-          { label: "Pull Out Key Info", sub: "Budget, blockers, next steps", theme: "white" },
-          { label: "Rep Quick Review", sub: "Edit anything that's off", theme: "orange" },
-          { label: "Update CRM", sub: "Notes and fields logged", theme: "blue" },
-        ],
-        successMessage: "CRM Updated",
-      },
-      {
-        id: "lead-flow",
-        navTitle: "Inbound Leads",
-        title: "Lead Workflow Automation",
-        description:
-          "A new lead comes in, gets enriched with company data, ends up in front of the right rep, and a draft email is ready for them to send. Two minutes instead of four hours.",
-        roiLabel: "Speed to lead",
-        roiValue: "4h → 2min",
-        steps: [
-          { label: "New Website Lead", sub: "Form submitted", theme: "green" },
-          { label: "Enrich Profile", sub: "Company size, industry, signal", theme: "cyan" },
-          { label: "Route to Right Rep", sub: "By territory or account", theme: "purple" },
-          { label: "Draft First Email", sub: "AI writes it, rep reviews", theme: "white" },
-        ],
-        successMessage: "Ready to Send",
-      },
-      {
-        id: "support-handoff",
-        navTitle: "Chat Handoff",
-        title: "Support Chat Escalation",
-        description:
-          "The bot answers the easy questions. When someone needs a real person, the handoff happens automatically — and the full conversation lands in Intercom and your CRM, so the agent isn't asking the customer to repeat themselves.",
-        roiLabel: "Handled by bot",
-        roiValue: "~70% of chats",
-        steps: [
-          { label: "Visitor Starts Chat", sub: "Tidio or LiveChat widget", theme: "green" },
-          { label: "Bot Handles FAQ", sub: "Pricing, hours, basic help", theme: "cyan" },
-          { label: "Hand Off to Agent", sub: "With full conversation history", theme: "orange" },
-          { label: "Create Ticket", sub: "Logged in Intercom", theme: "purple" },
-          { label: "Sync to CRM", sub: "Linked to the account", theme: "blue" },
-        ],
-        successMessage: "Logged and Resolved",
-      },
-      {
-        id: "crm-onboarding",
-        navTitle: "Deal → Onboard",
-        title: "CRM Onboarding Trigger",
-        description:
-          "When a deal is marked closed, the CRM creates the onboarding tasks, assigns a CSM, sends the welcome email, and sets up the account in your support tool. Nobody has to remember to do any of it.",
-        roiLabel: "Manual handoffs",
-        roiValue: "None",
-        steps: [
-          { label: "Deal Marked Closed", sub: "Stage change in the CRM", theme: "green" },
-          { label: "Onboarding Tasks Created", sub: "Standard checklist", theme: "white" },
-          { label: "CSM Assigned", sub: "Based on the account", theme: "purple" },
-          { label: "Welcome Email Sent", sub: "Plus a Slack ping internally", theme: "yellow" },
-          { label: "Account Set Up in Support Tool", sub: "Ready in Intercom", theme: "blue" },
-        ],
-        successMessage: "Onboarding Started",
-      },
-      {
-        id: "stack-health",
-        navTitle: "Stack Health",
-        title: "CRM Health Monitor",
-        description:
-          "Left alone, your CRM quietly fills up with stale deals, missing fields, and duplicate contacts. This runs a check every week and tells your ops team what needs fixing before anyone has to ask.",
-        roiLabel: "Data hygiene",
-        roiValue: "Weekly, automatic",
-        steps: [
-          { label: "Weekly CRM Scan", sub: "Runs automatically", theme: "white" },
-          { label: "Find What's Off", sub: "Stale deals, missing fields", theme: "red" },
-          { label: "Flag Duplicates", sub: "Suggests merges", theme: "orange" },
-          { label: "Send to Ops", sub: "Slack summary with task list", theme: "yellow" },
-          { label: "Report to Leadership", sub: "Trends over time", theme: "green" },
-        ],
-        successMessage: "CRM Clean",
-      },
-    ],
-  },
+  logoPicker: { label: "Logo", open: "Choose logo", close: "Close", allLogos: "See all logos" },
 };
 
 export default en;

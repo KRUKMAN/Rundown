@@ -1,57 +1,40 @@
 import type { Metadata } from "next";
-import AIAutomationClient from "@/app/ai-automation/ai-automation-client";
+import Site from "@/components/site";
 import { defaultLocale, isLocale, locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { showDrafts } from "@/lib/env";
 
-type PageProps = {
-  params: Promise<{
-    locale: Locale;
-  }>;
-};
+type PageProps = { params: Promise<{ locale: Locale }> };
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const resolvedParams = await params;
-  const locale = isLocale(resolvedParams.locale) ? resolvedParams.locale : defaultLocale;
-  const dictionary = await getDictionary(locale);
+  const { locale: raw } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  const t = getDictionary(locale);
 
-  const languageAlternates: Record<string, string> = locales.reduce(
-    (acc, value) => ({
-      ...acc,
-      [value]: `/${value}`,
-    }),
-    {} as Record<string, string>
-  );
-
-  languageAlternates["x-default"] = `/${defaultLocale}`;
-
-  const alternateLocale = locales
-    .filter((loc) => loc !== locale)
-    .map((loc) => (loc === "pl" ? "pl_PL" : "en_US"));
+  const languages: Record<string, string> = Object.fromEntries(locales.map((l) => [l, `/${l}`]));
+  languages["x-default"] = `/${defaultLocale}`;
 
   return {
-    title: dictionary.metadata.title,
-    description: dictionary.metadata.description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: languageAlternates,
-    },
+    title: t.metadata.title,
+    description: t.metadata.description,
+    alternates: { canonical: `/${locale}`, languages },
     openGraph: {
-      title: dictionary.metadata.title,
-      description: dictionary.metadata.description,
-      locale: dictionary.metadata.ogLocale,
-      alternateLocale,
+      title: t.metadata.title,
+      description: t.metadata.description,
+      locale: t.metadata.ogLocale,
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => (l === "pl" ? "pl_PL" : "en_US")),
+      siteName: "The Rundown",
+      type: "website",
     },
   };
 }
 
 export default async function Page({ params }: PageProps) {
-  const resolvedParams = await params;
-  const locale = isLocale(resolvedParams.locale) ? resolvedParams.locale : defaultLocale;
-  const dictionary = await getDictionary(locale);
-
-  return <AIAutomationClient locale={locale} dictionary={dictionary} />;
+  const { locale: raw } = await params;
+  const locale = isLocale(raw) ? raw : defaultLocale;
+  return <Site locale={locale} t={getDictionary(locale)} showDrafts={showDrafts} />;
 }
