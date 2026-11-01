@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
+import "../globals.css";
 import HubSpotTracking from "@/components/hubspot-tracking";
 import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";
 
 const archivo = localFont({
-  src: "./fonts/archivo.woff2",
+  src: "../fonts/archivo.woff2",
   variable: "--font-archivo",
   weight: "400 800",
   display: "swap",
@@ -14,7 +14,7 @@ const archivo = localFont({
 });
 
 const newsreader = localFont({
-  src: "./fonts/newsreader-italic.woff2",
+  src: "../fonts/newsreader-italic.woff2",
   variable: "--font-newsreader",
   weight: "400 500",
   style: "italic",
@@ -22,7 +22,7 @@ const newsreader = localFont({
 });
 
 const jetbrains = localFont({
-  src: "./fonts/jetbrains-mono.woff2",
+  src: "../fonts/jetbrains-mono.woff2",
   variable: "--font-jetbrains",
   weight: "400 700",
   display: "swap",
@@ -39,12 +39,12 @@ export const viewport: Viewport = {
 export default async function RootLayout(
   props: Readonly<{
     children: React.ReactNode;
-    params?: Promise<{ locale?: Locale }>;
+    params: Promise<{ locale: string }>;
   }>
 ) {
   const { children, params } = props;
-  const resolvedParams = params ? await params : undefined;
-  const locale = isLocale(resolvedParams?.locale) ? resolvedParams.locale : defaultLocale;
+  const { locale: raw } = await params;
+  const locale: Locale = isLocale(raw) ? raw : defaultLocale;
 
   return (
     <html lang={locale} className={`${archivo.variable} ${newsreader.variable} ${jetbrains.variable}`}>
