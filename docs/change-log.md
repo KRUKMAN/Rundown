@@ -45,3 +45,12 @@
 - Photo placeholder hidden until a real photo exists (`PHOTO_SRC` in `components/site.tsx`).
 - Section spacing 56/80px. Page height at 1440px down from ~8,850px to ~7,500px; on phones from ~15,400px to ~13,000px.
 - No promises about contract terms: removed "agreed month by month", the "No lock-in" promise and "you can stop after any step"; softened "problems show up a week early".
+
+## 2026-11-01 · Overpromise pass (third review)
+- Reply time is "usually within one working day"; success message no longer promises a time; "I'll tell you who is" softened to suggesting someone if I know a better fit.
+- Hero: "train your team to use it" instead of "stay until your team uses it".
+- "Your accounts, not mine" replaces "You own everything… from day one"; struck "retainer" line replaced by "A dashboard nobody looks at".
+- Problem fixes describe what is set up, not guaranteed outcomes; "Leads wait days for a reply" back in place of "same questions".
+- Renovation example framed as typical ("how that week often goes"), present tense.
+- AI data answer: plans whose terms exclude training, checked together before starting. Ongoing support "can be arranged/agreed".
+- Layout: services headings 30px at 4 columns (no wrap or overflow in PL), CTA band without bottom rule, tighter mobile hero so the CTA clears the cookie bar at 390×844.

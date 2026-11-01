@@ -62,7 +62,7 @@ const introP = (text: string) => (text ? <p className="m-0">{text}</p> : undefin
 function CtaBand({ text, button }: Dictionary["ctaBand"]) {
   return (
     <div className="container-site pt-12 sm:pt-16">
-      <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-y border-ink py-6 sm:py-7">
+      <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-t border-ink pt-6 sm:pt-7">
         <p className="m-0 max-w-[46ch] text-[19px] font-semibold leading-snug sm:text-[21px]">{text}</p>
         <a href="#contact" className="btn-primary">
           {button}
@@ -153,12 +153,12 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
 function Hero({ t }: { t: Dictionary }) {
   return (
     <section aria-labelledby="hero-title" className="container-site">
-      <div className="pb-14 pt-12 sm:pb-20 sm:pt-20">
+      <div className="pb-14 pt-8 sm:pb-20 sm:pt-20">
         <h1 id="hero-title" className="display m-0 max-w-[1000px] text-[clamp(52px,7.6vw,104px)]">
           {t.hero.titleStart} <span className="text-accent">{t.hero.titleAccent}</span>
         </h1>
-        <p className={`mb-0 mt-8 text-[19px] leading-[1.55] sm:text-[21px] ${MEASURE}`}>{t.hero.body}</p>
-        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <p className={`mb-0 mt-6 text-[18px] sm:mt-8 leading-[1.55] sm:text-[21px] ${MEASURE}`}>{t.hero.body}</p>
+        <div className="mt-6 flex sm:mt-8 flex-wrap items-center gap-x-6 gap-y-3">
           <a href="#contact" className="btn-primary">
             {t.hero.cta}
           </a>
@@ -261,7 +261,7 @@ function Services({ t }: { t: Dictionary }) {
         {s.groups.map((group, gi) => (
           <li key={gi} className="min-w-0">
             <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(gi + 1).padStart(2, "0")}</p>
-            <h3 className="display mb-0 mt-1 text-[clamp(32px,3vw,40px)]">{group.title}</h3>
+            <h3 className="display mb-0 mt-1 text-[clamp(32px,3vw,40px)] xl:text-[30px]">{group.title}</h3>
             <p className="mb-4 mt-1.5 text-[15px] text-muted">{group.summary}</p>
             <ul className="m-0 list-none border-b border-line p-0">
               {group.items.map((item, i) => (

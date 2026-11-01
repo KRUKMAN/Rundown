@@ -22,8 +22,8 @@
 
 ## Principles
 - Independent: no software resale or vendor commissions.
-- Clients own all accounts, automations and documentation.
-- Work starts with a free 30-minute call, then a short review and a written plan with priorities and costs.
+- Accounts, automations and documentation are set up in the client's name.
+- Work usually starts with a free 30-minute call, then a short review and a written plan with priorities and costs.
 
 ## Pages
 - [English](https://rundown.digital/en)

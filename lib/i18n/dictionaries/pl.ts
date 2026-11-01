@@ -22,10 +22,10 @@ const pl: Dictionary = {
   hero: {
     titleStart: "Ułatwiam",
     titleAccent: "prowadzenie firmy.",
-    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i zostaję, dopóki zespół nie zacznie z tego korzystać.",
+    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i uczę zespół z tego korzystać.",
     cta: "Napisz do mnie",
     emailPrefix: "albo napisz na",
-    replyNote: "Odpisuję w ciągu jednego dnia roboczego. Pierwsza rozmowa jest bezpłatna.",
+    replyNote: "Zwykle odpisuję w ciągu jednego dnia roboczego. Pierwsza rozmowa jest bezpłatna.",
   },
   clients: {
     label: "Zespoły, z którymi pracowałem",
@@ -33,7 +33,7 @@ const pl: Dictionary = {
   },
   example: {
     title: "Jedna zmiana, przed i po",
-    intro: "Klient zmienia zakres prac w połowie projektu. Tak wygląda ten tydzień w firmie remontowej.",
+    intro: "Klient zmienia zakres prac w połowie projektu. Tak często wygląda ten tydzień w firmie remontowej.",
     beforeLabel: "Przed",
     before: [
       "Klient dzwoni do swojego opiekuna z prośbą o zmianę",
@@ -43,7 +43,7 @@ const pl: Dictionary = {
       "Piątek schodzi na odkręcaniu sprawy przez telefon",
       "Na fakturze wciąż jest stary zakres prac",
     ],
-    beforeNote: "Każdy zrobił swoje. Informacja leżała w czterech miejscach i w głowie jednej osoby.",
+    beforeNote: "Każdy robi swoje. Informacja leży w czterech miejscach i w głowie jednej osoby.",
     afterLabel: "Po",
     after: [
       "Zmianę zapisuje się raz, przy zleceniu",
@@ -51,7 +51,7 @@ const pl: Dictionary = {
       "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
     afterNote:
-      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Kierownik budowy i dział zaopatrzenia uzgodnili te zasady, zanim cokolwiek wdrożono.",
+      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Kierownik budowy i dział zaopatrzenia ustalają te zasady, zanim cokolwiek zostanie wdrożone.",
     elsewhereTitle: "Ten sam schemat w innych branżach",
     elsewhere: [
       {
@@ -78,7 +78,7 @@ const pl: Dictionary = {
     items: [
       {
         quote: "O problemie dowiaduję się, gdy jest już za późno.",
-        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Problem widać, zanim jest za późno, żeby zareagować.",
+        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Dzięki temu problemy widać wcześniej.",
       },
       {
         quote: "Nikt nie wie, kto za co odpowiada.",
@@ -86,19 +86,19 @@ const pl: Dictionary = {
       },
       {
         quote: "Nie ufam liczbom w lejku sprzedaży.",
-        fix: "Jedna definicja każdego etapu i kilka zasad, jak go aktualizować. Prognoza przestaje być zgadywaniem.",
+        fix: "Jedna definicja każdego etapu i kilka zasad, jak go aktualizować. Dzięki temu wszyscy prognozują tak samo.",
       },
       {
         quote: "Kupiliśmy HubSpota. Nikt z niego nie korzysta.",
         fix: "Siadam z ludźmi, którzy z niego korzystają, usuwam pola, których nikt nie wypełnia, i ustawiam go pod to, jak naprawdę sprzedają.",
       },
       {
-        quote: "Cały dzień odpowiadamy na te same pytania.",
-        fix: "Status zamówienia, terminy, prośby o oddzwonienie: odpowiedzi wychodzą same. Ludzie zajmują się wyjątkami.",
+        quote: "Leady czekają na odpowiedź po kilka dni.",
+        fix: "Reguły kierują każdy lead do właściwej osoby, razem z całym kontekstem.",
       },
       {
         quote: "Wszyscy mówią o AI. Co by nam to dało?",
-        fix: "Wybieram jedno zadanie, które zespół wykonuje codziennie, i pokazuję na twoich danych, co zrobi z nim AI. Zanim cokolwiek kupisz.",
+        fix: "Wybieram jedno zadanie, które zespół wykonuje codziennie, i pokazuję, co mogłoby z nim zrobić AI, zanim zdecydujesz się na jakiekolwiek narzędzie.",
       },
     ],
   },
@@ -170,7 +170,7 @@ const pl: Dictionary = {
           },
           {
             title: "Wdrożenie zmiany w zespole",
-            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia na ich własnej pracy, a nie na koncie demo.",
+            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia na ich własnej pracy.",
           },
           {
             title: "Rekrutacja i budowa zespołu operacyjnego",
@@ -188,7 +188,7 @@ const pl: Dictionary = {
       { title: "Przegląd", body: "Rozmawiam z ludźmi, którzy na co dzień wykonują tę pracę, i sprawdzam narzędzia, dane oraz momenty przekazywania zadań." },
       { title: "Spisany plan", body: "Priorytety, koszty i to, czego lepiej nie ruszać. Ty decydujesz, co dalej." },
       { title: "Wdrożenie z zespołem", body: "Konfiguracja, przeniesienie danych i automatyzacje, robione razem z osobami, które będą z nich korzystać." },
-      { title: "Przekazanie i szkolenie", body: "Dokumentacja, szkolenie i osoba odpowiedzialna po twojej stronie. Dalsze wsparcie, jeśli chcesz." },
+      { title: "Przekazanie i szkolenie", body: "Dokumentacja, szkolenie i osoba odpowiedzialna po twojej stronie. Dalsze wsparcie można ustalić osobno." },
     ],
     engagementsTitle: "Formy współpracy",
     engagements: [
@@ -227,16 +227,16 @@ const pl: Dictionary = {
       { struck: "Agenta AI", rest: "do zadania, które załatwi prosta reguła." },
       { struck: "Strategii w prezentacji", rest: ", której nikt nie otworzy po spotkaniu." },
       { struck: "Dwunastu narzędzi", rest: "tam, gdzie wystarczą cztery." },
-      { struck: "Abonamentu na moje usługi", rest: ", za który płacisz dalej, choć dawno przestał być potrzebny." },
+      { struck: "Raportu", rest: ", którego nikt nie czyta." },
     ],
     promises: [
       {
         title: "Bez prowizji",
-        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców, więc nie mam powodu niczego ci wciskać.",
+        body: "Nie odsprzedaję oprogramowania i nie biorę prowizji od dostawców, więc nie mam powodu wciskać ci żadnego z nich.",
       },
       {
-        title: "Wszystko należy do ciebie",
-        body: "Konta, automatyzacje i dokumentacja są od pierwszego dnia zapisane na twoją firmę.",
+        title: "Twoje konta, nie moje",
+        body: "Konta, automatyzacje i dokumentację zakładam na twoją firmę.",
       },
     ],
   },
@@ -276,11 +276,11 @@ const pl: Dictionary = {
       },
       {
         q: "Co dzieje się z naszymi danymi, gdy w grę wchodzi AI?",
-        a: "Używam tylko narzędzi zatwierdzonych przez firmę, najczęściej planów firmowych Claude lub ChatGPT albo AI wbudowanego w HubSpota czy Notion, na warunkach, które nie pozwalają uczyć modeli na twoich danych. Dostają tylko dane potrzebne do konkretnego zadania, dane poufne zostają poza nimi, chyba że zdecydujesz inaczej, a wszystko, co ważne, sprawdza człowiek.",
+        a: "Używam tylko narzędzi zatwierdzonych przez firmę, najczęściej planów firmowych Claude lub ChatGPT albo AI wbudowanego w HubSpota czy Notion, w planach, których warunki wykluczają uczenie modeli na twoich danych. Przed startem sprawdzamy razem aktualne warunki. Dostają tylko dane potrzebne do konkretnego zadania, dane poufne zostają poza nimi, chyba że zdecydujesz inaczej, a wszystko, co ważne, sprawdza człowiek.",
       },
       {
         q: "Co dzieje się po przekazaniu?",
-        a: "Twój zespół przejmuje stery. Wszystko jest opisane, zapisane na kontach twojej firmy i ma osobę odpowiedzialną po twojej stronie. Jeśli chcesz, mogę dalej pomagać w ramach stałego wsparcia.",
+        a: "Twój zespół przejmuje stery. Całość jest opisana, działa na kontach twojej firmy i ma osobę odpowiedzialną po twojej stronie. Jeśli chcesz, możemy ustalić stałe wsparcie.",
       },
     ],
   },
@@ -300,12 +300,12 @@ const pl: Dictionary = {
   },
   contact: {
     title: "Napisz do mnie jak do kogoś z zespołu.",
-    body: "Wystarczy kilka zdań o tym, co spowalnia firmę. Odpisuję w ciągu jednego dnia roboczego, a jeśli to nie ja jestem właściwą osobą, wskażę kogoś, kto pomoże.",
+    body: "Wystarczy kilka zdań o tym, co spowalnia firmę. Zwykle odpisuję w ciągu jednego dnia roboczego. Jeśli to nie ja jestem właściwą osobą, powiem to wprost, a jeśli znam kogoś lepiej dopasowanego, podam kontakt.",
     labels: { name: "Imię", email: "E-mail", company: "Firma", message: "Co nie działa tak, jak powinno?", optional: "opcjonalnie" },
     placeholders: { message: "Kilka zdań wystarczy." },
     submit: "Wyślij",
     sending: "Wysyłam…",
-    success: "Dzięki. Wiadomość dotarła, odpiszę w ciągu jednego dnia roboczego.",
+    success: "Dzięki, wiadomość dotarła. Odpiszę najszybciej, jak to możliwe.",
     error: "Nie udało się wysłać wiadomości. Napisz bezpośrednio na jake@rundown.digital.",
     orEmail: "Albo napisz bezpośrednio:",
     ps: "PS Nie wiesz, czy twój problem należy do tych, którymi się zajmuję? I tak napisz. Większość dobrych projektów zaczyna się od maila w stylu „to może głupie pytanie, ale…”.",

@@ -22,10 +22,10 @@ const en: Dictionary = {
   hero: {
     titleStart: "I make businesses",
     titleAccent: "easier to run.",
-    body: "Operations, CRM and AI help for teams of 5 to 500. Usually after fast growth or a rough stretch left behind too many tools, unclear ownership and processes that live in a few people's heads. I sort out how work moves, set up the CRM, automate the repetitive parts and stay until your team uses it.",
+    body: "Operations, CRM and AI help for teams of 5 to 500. Usually after fast growth or a rough stretch left behind too many tools, unclear ownership and processes that live in a few people's heads. I sort out how work moves, set up the CRM, automate the repetitive parts and train your team to use it.",
     cta: "Write to me",
     emailPrefix: "or email",
-    replyNote: "I reply within one working day. The first call is free.",
+    replyNote: "I usually reply within one working day. The first call is free.",
   },
   clients: {
     label: "Teams I've worked with",
@@ -33,7 +33,7 @@ const en: Dictionary = {
   },
   example: {
     title: "One change, before and after",
-    intro: "A client changes the scope halfway through a project. Here's that week at a renovation company.",
+    intro: "A client changes the scope halfway through a project. Here's how that week often goes at a renovation company.",
     beforeLabel: "Before",
     before: [
       "The client calls their usual contact about the change",
@@ -43,7 +43,7 @@ const en: Dictionary = {
       "Friday goes on fixing it by phone",
       "The invoice still shows the old scope",
     ],
-    beforeNote: "Everyone did their job. The information lived in four places and one person's head.",
+    beforeNote: "Everyone does their job. The information lives in four places and one person's head.",
     afterLabel: "After",
     after: [
       "The change is recorded once, on the job",
@@ -51,7 +51,7 @@ const en: Dictionary = {
       "The client gets the updated quote to approve",
     ],
     afterNote:
-      "One place per job, a few rules on who records what, and a weekly summary for management. The site lead and purchasing agreed the rules before anything was built.",
+      "One place per job, a few rules on who records what, and a weekly summary for management. The site lead and purchasing agree the rules before anything is built.",
     elsewhereTitle: "The same pattern in other industries",
     elsewhere: [
       {
@@ -78,7 +78,7 @@ const en: Dictionary = {
     items: [
       {
         quote: "Projects go wrong without warning.",
-        fix: "One list of every job with its stage, owner and blocker. Problems are visible while there's still time to act.",
+        fix: "One list of every job with its stage, owner and blocker, so problems show up sooner.",
       },
       {
         quote: "Nobody knows who owns what.",
@@ -86,19 +86,19 @@ const en: Dictionary = {
       },
       {
         quote: "I can't trust the pipeline numbers.",
-        fix: "One definition for each deal stage and a few rules for keeping it current. The forecast stops being a guess.",
+        fix: "One definition for each deal stage and a few rules for keeping it current, so everyone forecasts the same way.",
       },
       {
         quote: "We bought HubSpot. Nobody uses it.",
         fix: "I sit with the people who use it, cut the fields nobody fills in and set it up around how they actually sell.",
       },
       {
-        quote: "We answer the same questions all day.",
-        fix: "Order status, deadlines, call-back requests: answered automatically. People handle the exceptions.",
+        quote: "Leads wait days for a reply.",
+        fix: "Routing rules send each lead to the right person, with the context attached.",
       },
       {
         quote: "Everyone talks about AI. What would it do here?",
-        fix: "I pick one task your team does every day and show what AI does with it, on your own data, before anything is bought.",
+        fix: "I pick one task your team does every day and show what AI could do with it, before you commit to any tool.",
       },
     ],
   },
@@ -116,7 +116,7 @@ const en: Dictionary = {
           },
           {
             title: "CRM implementation and clean-up",
-            body: "HubSpot, Salesforce or Attio, set up or rebuilt around how you sell and deliver. Data migrated, duplicates gone, pipeline defined.",
+            body: "HubSpot, Salesforce or Attio, set up or rebuilt around how you sell and deliver. Data migrated, duplicates cleaned up, pipeline defined.",
           },
           {
             title: "Tool stack and tech debt clean-up",
@@ -170,7 +170,7 @@ const en: Dictionary = {
           },
           {
             title: "Adoption and change",
-            body: "The people who'll use the new setup help design it. Then short training sessions on their own work, not a demo account.",
+            body: "The people who'll use the new setup help design it. Then short training sessions on their own work.",
           },
           {
             title: "Hiring and building the ops function",
@@ -188,7 +188,7 @@ const en: Dictionary = {
       { title: "Review", body: "I talk to the people doing the work and look at your tools, data and handoffs." },
       { title: "Written plan", body: "Priorities, costs and what to leave alone. You decide what happens next." },
       { title: "Build with your team", body: "Setup, migration and automation, done alongside the people who'll use them." },
-      { title: "Handover and training", body: "Documentation, training and an owner on your side. Support afterwards if you want it." },
+      { title: "Handover and training", body: "Documentation, training and an owner on your side. Ongoing support can be arranged." },
     ],
     engagementsTitle: "Ways to work together",
     engagements: [
@@ -227,16 +227,16 @@ const en: Dictionary = {
       { struck: "An AI agent", rest: "for a job a simple rule would handle." },
       { struck: "A strategy deck", rest: "nobody opens after the meeting." },
       { struck: "Twelve tools", rest: "where four would do." },
-      { struck: "A retainer", rest: "that keeps running after it stops being useful." },
+      { struck: "A dashboard", rest: "nobody looks at." },
     ],
     promises: [
       {
         title: "No commissions",
-        body: "I don't resell software or take a cut from vendors, so I've no reason to push one.",
+        body: "I don't resell software or take a cut from vendors, so I've no reason to push any of them.",
       },
       {
-        title: "You own everything",
-        body: "Accounts, automations and documentation are in your company's name from day one.",
+        title: "Your accounts, not mine",
+        body: "Accounts, automations and documentation are set up in your company's name.",
       },
     ],
   },
@@ -276,11 +276,11 @@ const en: Dictionary = {
       },
       {
         q: "What happens to our data when AI is involved?",
-        a: "Only tools your company approves, usually business plans of Claude or ChatGPT or the AI built into HubSpot or Notion, on terms that don't use your data for training. They get only the data a task needs, confidential data stays out unless you decide otherwise, and a person checks anything that matters.",
+        a: "Only tools your company approves, usually business plans of Claude or ChatGPT or the AI built into HubSpot or Notion, on plans whose terms exclude training on your data. We check the current terms together before starting. They get only the data a task needs, confidential data stays out unless you decide otherwise, and a person checks anything that matters.",
       },
       {
         q: "What happens after the handover?",
-        a: "Your team runs it. Everything is documented, sits in your company's accounts and has an owner on your side. If you want, I stay on for monthly help.",
+        a: "Your team runs it. The setup is documented, sits in your company's accounts and has an owner on your side. Ongoing monthly help can be agreed if you want it.",
       },
     ],
   },
@@ -300,12 +300,12 @@ const en: Dictionary = {
   },
   contact: {
     title: "Write to me like you'd write to a colleague.",
-    body: "A few lines about what's slowing you down is enough. I reply within one working day, and if I'm not the right person, I'll tell you who is.",
+    body: "A few lines about what's slowing you down is enough. I usually reply within one working day. If I'm not the right person, I'll say so, and suggest someone if I know a better fit.",
     labels: { name: "Name", email: "Email", company: "Company", message: "What's getting in the way?", optional: "optional" },
     placeholders: { message: "A few sentences is enough." },
     submit: "Send",
     sending: "Sending…",
-    success: "Thanks. It's in my inbox and I'll reply within one working day.",
+    success: "Thanks, it's arrived. I'll get back to you as soon as I can.",
     error: "That didn't go through. Please email me directly at jake@rundown.digital.",
     orEmail: "Or email me directly:",
     ps: "P.S. Not sure your problem is the kind I solve? Write anyway. Most good projects start with an email that begins “this might be a silly question”.",
