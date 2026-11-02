@@ -6,6 +6,7 @@ import HeaderLogo from "./header-logo";
 import LanguageSwitcher from "./language-switcher";
 import ContactForm from "./contact-form";
 import MobileMenu from "./mobile-menu";
+import { allLogosReady, clientLogos } from "@/lib/clients";
 import { CookieSettingsButton } from "./consent";
 
 export const EMAIL = business.email;
@@ -178,13 +179,31 @@ function Hero({ t }: { t: Dictionary }) {
 function Clients({ t }: { t: Dictionary }) {
   return (
     <section aria-label={t.clients.label} className="container-site">
-      <div className="flex flex-wrap items-baseline gap-x-10 gap-y-3 border-t border-line pt-6">
+      <div className={`flex flex-wrap ${allLogosReady ? "items-center" : "items-baseline"} gap-x-10 gap-y-3 border-t border-line pt-6`}>
         <p className="m-0 text-[15px] text-muted">{t.clients.label}</p>
-        <ul className="m-0 flex list-none flex-wrap gap-x-9 gap-y-2 p-0 text-[19px] font-bold sm:text-[20px]">
-          {t.clients.names.map((name) => (
-            <li key={name}>{name}</li>
-          ))}
-        </ul>
+        {allLogosReady ? (
+          <ul className="m-0 flex list-none flex-wrap items-center gap-x-10 gap-y-5 p-0">
+            {clientLogos.map((c) => (
+              <li key={c.name} className="flex items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.src}
+                  alt={c.name}
+                  width={Math.round(((c.w ?? 1) / (c.h ?? 1)) * (c.size ?? 28))}
+                  height={c.size ?? 28}
+                  className="block w-auto opacity-85"
+                  style={{ height: c.size ?? 28 }}
+                />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="m-0 flex list-none flex-wrap gap-x-9 gap-y-2 p-0 text-[19px] font-bold sm:text-[20px]">
+            {t.clients.names.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );
