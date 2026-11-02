@@ -33,7 +33,7 @@ export type Dictionary = {
     emailPrefix: string;
     replyNote: string;
   };
-  clients: { label: string; names: string[]; note: string };
+  clients: { label: string; names: string[] };
   example: {
     title: string;
     intro: string;

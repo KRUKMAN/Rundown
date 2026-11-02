@@ -30,7 +30,6 @@ const pl: Dictionary = {
   clients: {
     label: "Zespoły, z którymi pracowałem",
     names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
-    note: "Logotypy są znakami towarowymi ich właścicieli i pokazuję je tylko po to, by wskazać, z kim pracowałem. Nie oznaczają rekomendacji.",
   },
   example: {
     title: "Jedna zmiana, przed i po",

@@ -201,7 +201,6 @@ function Clients({ t }: { t: Dictionary }) {
             </li>
           ))}
         </ul>
-        <p className="m-0 basis-full text-[13px] leading-snug text-muted">{t.clients.note}</p>
       </div>
     </section>
   );
