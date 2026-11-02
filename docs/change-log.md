@@ -54,3 +54,7 @@
 - Renovation example framed as typical ("how that week often goes"), present tense.
 - AI data answer: plans whose terms exclude training, checked together before starting. Ongoing support "can be arranged/agreed".
 - Layout: services headings 30px at 4 columns (no wrap or overflow in PL), CTA band without bottom rule, tighter mobile hero so the CTA clears the cookie bar at 390×844.
+
+## 2026-11-02 · Client logos
+- "Teams I've worked with" shows logos for LiveChat, Prezi, Callstack and Infogram (`lib/clients.ts`, files in `public/clients`); KODO shows its name as text until a logo file is added.
+- Sources: official black files from the LiveChat and Callstack brand kits, Prezi press-kit vector flattened to one colour, Infogram traced from the supplied logo. Shapes and proportions untouched; logos unlinked, with alt text and a trademark note under the strip.

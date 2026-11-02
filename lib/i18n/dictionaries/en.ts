@@ -30,6 +30,7 @@ const en: Dictionary = {
   clients: {
     label: "Teams I've worked with",
     names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
+    note: "Logos are trademarks of their respective owners, shown to say where I’ve worked. No endorsement is implied.",
   },
   example: {
     title: "One change, before and after",
