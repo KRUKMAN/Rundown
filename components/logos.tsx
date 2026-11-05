@@ -257,7 +257,7 @@ const logos: Record<number, { name: string; note: string; text?: string; render:
             fontSize: "0.38em",
             letterSpacing: "0.05em",
             padding: "0.24em 0.32em 0.16em",
-            marginBottom: "0.1em",
+            marginBottom: "0.36em",
           }}
         >
           .digital
