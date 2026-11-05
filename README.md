@@ -33,3 +33,9 @@ Placeholder content (case studies, client quote) and the floating logo picker re
 - One accent (`--color-accent`, deep red), used as ink only: the headline phrase, strikethroughs, one result line.
 - Condensed caps for H1/H2 and wordmarks only. Serif italic only for the quote and the P.S.
 - One tinted band per page (`bg-paper-deep/60`, the before/after example). Don't add more; it stops meaning anything.
+
+## Balance check (required before any visual change ships)
+Anything uneven must be on purpose. Before committing a layout, logo or graphic change:
+1. Measure with Playwright at 390, 768, 1024 and 1440: left/right page margins equal, section spacing from one scale, aligned columns share an edge or baseline, diagram lanes evenly spaced, nodes of the same step on the same x/y, labels equally offset, nothing cramped against an edge.
+2. Look at 2× crops of the header, hero, each diagram and one card grid for few-pixel errors: lopsided whitespace, lines stopping short or overshooting, uneven strokes, optical centring of text in buttons and the logo tag, orphaned words in headings.
+3. Fix unintended unevenness, re-screenshot, and note any asymmetry kept on purpose in the commit message.
