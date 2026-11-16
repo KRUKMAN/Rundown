@@ -11,11 +11,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   languageAlternates["x-default"] = `${siteUrl}/${defaultLocale}`;
 
-  return locales.map((locale) => ({
+  const home = locales.map((locale) => ({
     url: `${siteUrl}/${locale}`,
     lastModified: new Date(),
-    alternates: {
-      languages: languageAlternates,
-    },
+    alternates: { languages: languageAlternates },
   }));
+  const legal = (["privacy", "terms"] as const).flatMap((kind) =>
+    locales.map((locale) => ({
+      url: `${siteUrl}/${locale}/${kind}`,
+      lastModified: new Date(),
+      alternates: { languages: Object.fromEntries(locales.map((l) => [l, `${siteUrl}/${l}/${kind}`])) },
+    }))
+  );
+  return [...home, ...legal];
 }
