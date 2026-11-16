@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries/types";
 import { business, hasPlaceholders } from "@/lib/business";
@@ -96,13 +96,45 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
 /* ---------- Hero: the one drawing on the page ---------- */
 
 // Six channels cross and merge into the red line. Coordinates are in a 560 × 560 box; the red line leaves at the right edge.
+// Each channel starts at a small line icon (24-unit grid, drawn for this page); its name is in the dictionary for titles and the alt text.
+const CHANNEL_ICONS: ReactNode[] = [
+  // WhatsApp
+  <Fragment key="whatsapp">
+    <path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" />
+    <path d="M9.2 8.2c-.3 2.9 3.6 6.8 6.5 6.6l.9-1.6-2.1-1-1 .9c-1-.4-2-1.5-2.4-2.4l.9-1-1-2.1z" />
+  </Fragment>,
+  // phone
+  <path key="phone" d="M7 3.5h2.6l1.5 4.2-2 1.4a11 11 0 0 0 5.8 5.8l1.4-2 4.2 1.5V17a2.5 2.5 0 0 1-2.5 2.5A14.5 14.5 0 0 1 4.5 6 2.5 2.5 0 0 1 7 3.5z" />,
+  // email
+  <Fragment key="email">
+    <rect x="3.2" y="5.5" width="17.6" height="13" rx="1.2" />
+    <path d="M3.6 6.3 12 12.6l8.4-6.3" />
+  </Fragment>,
+  // spreadsheet
+  <Fragment key="sheet">
+    <rect x="4" y="3.5" width="16" height="17" rx="1" />
+    <path d="M4 9h16M4 14.5h16M10 3.5v17" />
+  </Fragment>,
+  // a meeting
+  <Fragment key="meeting">
+    <circle cx="8" cy="8.5" r="2.8" />
+    <circle cx="16.4" cy="8.5" r="2.8" />
+    <path d="M2.8 19.5a5.2 5.2 0 0 1 10.4 0M13.6 14.6a5.2 5.2 0 0 1 7.6 4.9" />
+  </Fragment>,
+  // someone's head
+  <Fragment key="head">
+    <path d="M8.6 20.8v-3.6A7.2 7.2 0 1 1 18.7 9.9l1.7 3.4-1.9.6v2.3a1.6 1.6 0 0 1-1.6 1.6h-1.8v3" />
+    <path d="M9.4 10.2h.01M12 10.2h.01M14.6 10.2h.01" strokeWidth={2.4} />
+  </Fragment>,
+];
+
 const STRANDS = [
-  "M130 120 C 240 120, 290 375, 330 375 S 440 290, 470 290",
-  "M130 180 C 282 180, 332 318, 372 318 S 440 290, 470 290",
-  "M130 240 C 220 240, 270 311, 310 311 S 440 290, 470 290",
-  "M130 300 C 266 300, 316 276, 356 276 S 440 290, 470 290",
-  "M130 360 C 232 360, 282 231, 322 231 S 440 290, 470 290",
-  "M130 420 C 274 420, 324 235, 364 235 S 440 290, 470 290",
+  "M76 120 C 240 120, 290 375, 330 375 S 440 290, 470 290",
+  "M76 180 C 282 180, 332 318, 372 318 S 440 290, 470 290",
+  "M76 240 C 220 240, 270 311, 310 311 S 440 290, 470 290",
+  "M76 300 C 266 300, 316 276, 356 276 S 440 290, 470 290",
+  "M76 360 C 232 360, 282 231, 322 231 S 440 290, 470 290",
+  "M76 420 C 274 420, 324 235, 364 235 S 440 290, 470 290",
 ];
 
 function Hero({ t }: { t: Dictionary }) {
@@ -137,9 +169,10 @@ function Hero({ t }: { t: Dictionary }) {
           <path className="r" vectorEffect="non-scaling-stroke" d="M470 290 H 556 V 560" />
           <g className="tl" aria-hidden="true">
             {h.channels.map((label, i) => (
-              <text key={label} x={118} y={124 + 60 * i} textAnchor="end">
-                {label}
-              </text>
+              <g key={label} className="ic" transform={`translate(28 ${105 + 60 * i}) scale(1.25)`}>
+                <title>{label}</title>
+                {CHANNEL_ICONS[i]}
+              </g>
             ))}
           </g>
         </svg>

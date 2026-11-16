@@ -27,7 +27,7 @@ h1,h2,h3,h4{font-weight:700;text-wrap:balance}
 .hero .cta{margin-top:28px;display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;font-size:16px}
 .hero .note{margin-top:12px;color:var(--muted);font-size:15px}
 .tangle{width:100%;height:auto;display:block;overflow:visible}
-.tangle .tl text{font-family:var(--mono);font-size:13px;fill:var(--muted)}
+.tangle .ic{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .tangle .t path{fill:none;stroke:var(--ghost);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:rd-draw 1.3s cubic-bezier(.2,.7,.2,1) forwards}
 .tangle .t path:nth-child(2){animation-delay:.06s}.tangle .t path:nth-child(3){animation-delay:.12s}.tangle .t path:nth-child(4){animation-delay:.18s}
 .tangle .t path:nth-child(5){animation-delay:.24s}.tangle .t path:nth-child(6){animation-delay:.3s}
@@ -145,8 +145,6 @@ section.s.end::before{content:"";position:absolute;left:calc(-1 * var(--gutter)/
 @media (max-width:1100px){
   .hero h1{font-size:84px}
   &:lang(pl) .hero h1{font-size:80px}
-  /* the drawing is scaled down here: keep its labels at about 12px on screen */
-  .tangle .tl text{font-size:15px}
   .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
   &{--huge:44px;--h2:48px;--quote:32px;--area:48px}
   .steps{grid-template-columns:1fr;border-bottom:1px solid var(--rule)}
@@ -162,8 +160,7 @@ section.s.end::before{content:"";position:absolute;left:calc(-1 * var(--gutter)/
   &:lang(pl) .hero h1{font-size:54px}
   .hero .lede{font-size:18px}
   .hero-rule{height:60px}
-  .tangle{height:auto;width:calc(100% - 40px);margin-left:40px}
-  .tangle .tl text{font-size:22px}
+  .tangle{height:auto;width:100%}
   section.s .body{margin-top:32px}
   .said li,.two,.halves,.contact,.cols,.areas>li,.steps li{grid-template-columns:minmax(0,1fr)}
   .said li{row-gap:8px;padding:16px 0 24px}
