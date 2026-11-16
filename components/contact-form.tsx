@@ -7,7 +7,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries/types";
 type Status = "idle" | "sending" | "success" | "error";
 
 const field =
-  "w-full border border-ink/25 bg-white/60 px-4 text-[17px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-accent";
+  "w-full border border-ink bg-paper px-3 text-[18px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-accent";
 
 export default function ContactForm({ copy, privacyHref }: { copy: Dictionary["contact"]; privacyHref: string }) {
   const [status, setStatus] = useState<Status>("idle");

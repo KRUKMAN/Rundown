@@ -1,6 +1,6 @@
 # The Rundown
 
-> The Rundown is the independent operations, CRM and RevOps consultancy of Jakub Krukowski, based in Szczecin, Poland, and working remotely in English and Polish. It works with teams of 5 to 500 people in any industry, usually after fast growth or a rough stretch left too many tools, unclear ownership and processes that live in a few people's heads. Typical clients are founders and operating directors who know they need a CRM or better information flow but not the best approach, and ops, sales or RevOps leaders who need an outside view or senior hands for a backlog or project.
+> The Rundown is the independent operations, CRM and RevOps consultancy of Jakub Krukowski, based in Europe and working remotely in English and Polish. It works with teams of 5 to 500 people in any industry, usually after fast growth or a rough stretch left too many tools, unclear ownership and processes that live in a few people's heads. Typical clients are founders and operating directors who know they need a CRM or better information flow but not the best approach, ops, sales or RevOps leaders who need an outside view or help with a backlog or project, and leaders of specialist teams who want their people to work smarter with AI and automation.
 
 ## Services
 - Process and ownership mapping: who does what, in what order, in which tool; each process documented on one page.

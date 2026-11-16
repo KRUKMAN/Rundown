@@ -71,13 +71,14 @@
     letter-spacing: -0.01em;
   }
 
+  /* One page grid for the header, the home page and the legal pages. */
   .container-site {
-    max-width: 1200px;
+    max-width: 1240px;
     margin-inline: auto;
-    padding-inline: 20px;
+    padding-inline: 16px;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 901px) {
     .container-site {
       padding-inline: 40px;
     }

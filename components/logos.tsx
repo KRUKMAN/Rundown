@@ -246,18 +246,24 @@ const logos: Record<number, { name: string; note: string; text?: string; render:
     text: "Rundown .digital",
     name: "Domain tag",
     note: "The name stays open; .digital sits in a small red tag.",
-    render: (fg) => (
-      <span style={{ ...row, alignItems: "flex-end", gap: "0.14em" }}>
-        <span style={{ ...disp(), color: fg, lineHeight: 0.9 }}>Rundown</span>
+    // Archivo cap height is 0.687em and the condensed stem is 0.156em: the tag is exactly cap height,
+    // aligned with the caps top and bottom, and sits one stem away. Its text takes the background colour.
+    render: (fg, bg) => (
+      <span style={{ display: "inline-flex", alignItems: "flex-start", lineHeight: 1 }}>
+        <span style={{ ...disp(), color: fg, marginLeft: "-0.05em" }}>Rundown</span>
         <span
           style={{
-            ...disp(80, 700),
+            ...disp(),
+            display: "inline-flex",
+            alignItems: "center",
             background: RED,
-            color: "#f6f4ee",
-            fontSize: "0.38em",
-            letterSpacing: "0.05em",
-            padding: "0.24em 0.32em 0.16em",
-            marginBottom: "0.36em",
+            color: bg,
+            fontSize: "0.43em",
+            height: "calc(0.687em / 0.43)",
+            marginTop: "calc(0.148em / 0.43)",
+            marginLeft: "calc(0.156em / 0.43)",
+            padding: "0.05em 0.36em 0",
+            letterSpacing: "0.04em",
           }}
         >
           .digital

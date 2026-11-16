@@ -39,3 +39,6 @@ Anything uneven must be on purpose. Before committing a layout, logo or graphic 
 1. Measure with Playwright at 390, 768, 1024 and 1440: left/right page margins equal, section spacing from one scale, aligned columns share an edge or baseline, diagram lanes evenly spaced, nodes of the same step on the same x/y, labels equally offset, nothing cramped against an edge.
 2. Look at 2× crops of the header, hero, each diagram and one card grid for few-pixel errors: lopsided whitespace, lines stopping short or overshooting, uneven strokes, optical centring of text in buttons and the logo tag, orphaned words in headings.
 3. Fix unintended unevenness, re-screenshot, and note any asymmetry kept on purpose in the commit message.
+
+## Page design (November 2026)
+The home page follows one drawn idea: six channels tangle into one red line in the hero, and that line runs down the page with a stop at every section. Layout and type for `<main>` live in `app/rd.css` (scoped to `.rd`); the rules are at the top of that file. In short: the hero drawing is the only drawing, red is only the line, its stops, the strike-throughs and the logo tag, and there is one black section. The header, footer, legal pages, form and cookie banner use Tailwind utilities.

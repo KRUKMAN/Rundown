@@ -13,65 +13,9 @@ export const EMAIL = business.email;
 
 type SiteProps = { locale: Locale; t: Dictionary; showDrafts: boolean };
 
-/* ---------- Layout system ----------
-   Spacing: 56px between sections on mobile, 80px on desktop; 40px from heading block to content.
-   Reading measure: running text capped at ~62–68 characters (Baymard: 50–75; WCAG 1.4.8: ≤80).
-   Type scale: H1 52–104 · H2 30–46 · card title 20 · body 18 · secondary 16 · meta 14–15.
-   One tinted band (the before/after example) breaks the page rhythm once; everything else sits on paper. */
-
-const MEASURE = "max-w-[64ch]";
-const PHOTO_SRC: string | null = null;
-
-function Section({
-  id,
-  title,
-  intro,
-  band = false,
-  children,
-}: {
-  id: string;
-  title: string;
-  intro?: ReactNode;
-  band?: boolean;
-  children: ReactNode;
-}) {
-  const inner = (
-    <div className="border-t border-ink pt-6 sm:pt-8">
-      <h2 id={`${id}-title`} className="display m-0 max-w-[22ch] text-[clamp(30px,3.4vw,46px)] leading-[0.95]">
-        {title}
-      </h2>
-      {intro && <div className={`mt-4 flex flex-col gap-3 text-[17px] leading-relaxed text-muted sm:text-[18px] ${MEASURE}`}>{intro}</div>}
-      <div className="mt-8 sm:mt-10">{children}</div>
-    </div>
-  );
-  if (band) {
-    return (
-      <section id={id} aria-labelledby={`${id}-title`} className="mt-16 bg-paper-deep/60 pb-14 pt-10 sm:mt-20 sm:pb-20 sm:pt-14">
-        <div className="container-site">{inner}</div>
-      </section>
-    );
-  }
-  return (
-    <section id={id} aria-labelledby={`${id}-title`} className="container-site pt-14 sm:pt-20">
-      {inner}
-    </section>
-  );
-}
-
-const introP = (text: string) => (text ? <p className="m-0">{text}</p> : undefined);
-
-function CtaBand({ text, button }: Dictionary["ctaBand"]) {
-  return (
-    <div className="container-site pt-12 sm:pt-16">
-      <div className="flex flex-wrap items-center justify-between gap-x-10 gap-y-4 border-t border-ink pt-6 sm:pt-7">
-        <p className="m-0 max-w-[46ch] text-[19px] font-semibold leading-snug sm:text-[21px]">{text}</p>
-        <a href="#contact" className="btn-primary">
-          {button}
-        </a>
-      </div>
-    </div>
-  );
-}
+/* ---------- The page ----------
+   Layout and type for everything inside <main> live in app/rd.css (scoped to .rd); read the rules at the top of that file.
+   The header and footer below are shared with the legal pages and use Tailwind utilities. */
 
 /* ---------- Header and footer (shared with the legal pages) ---------- */
 
@@ -149,359 +93,332 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
   );
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero: the one drawing on the page ---------- */
+
+// Six channels cross and merge into the red line. Coordinates are in a 560 × 560 box; the red line leaves at the right edge.
+const STRANDS = [
+  "M130 120 C 240 120, 290 375, 330 375 S 440 290, 470 290",
+  "M130 180 C 282 180, 332 318, 372 318 S 440 290, 470 290",
+  "M130 240 C 220 240, 270 311, 310 311 S 440 290, 470 290",
+  "M130 300 C 266 300, 316 276, 356 276 S 440 290, 470 290",
+  "M130 360 C 232 360, 282 231, 322 231 S 440 290, 470 290",
+  "M130 420 C 274 420, 324 235, 364 235 S 440 290, 470 290",
+];
 
 function Hero({ t }: { t: Dictionary }) {
+  const h = t.hero;
   return (
-    <section aria-labelledby="hero-title" className="container-site">
-      <div className="pb-14 pt-8 sm:pb-20 sm:pt-20">
-        <h1 id="hero-title" className="display m-0 max-w-[1000px] text-[clamp(52px,7.6vw,104px)]">
-          {t.hero.titleStart} <span className="text-accent">{t.hero.titleAccent}</span>
-        </h1>
-        <p className={`mb-0 mt-6 text-[18px] sm:mt-8 leading-[1.55] sm:text-[21px] ${MEASURE}`}>{t.hero.body}</p>
-        <div className="mt-6 flex sm:mt-8 flex-wrap items-center gap-x-6 gap-y-3">
-          <a href="#contact" className="btn-primary">
-            {t.hero.cta}
-          </a>
-          <p className="m-0 text-[16px]">
-            {t.hero.emailPrefix}{" "}
-            <a className="link-quiet font-semibold" href={`mailto:${EMAIL}`}>
-              {EMAIL}
+    <>
+      <section className="hero" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title" className="display">
+            {h.title}
+          </h1>
+          <p className="lede">{h.body}</p>
+          <div className="cta">
+            <a className="btn-primary" href="#contact">
+              {h.cta}
             </a>
-          </p>
+            <span>
+              {h.emailPrefix}{" "}
+              <a className="link-quiet font-semibold" href={`mailto:${EMAIL}`}>
+                {EMAIL}
+              </a>
+            </span>
+          </div>
+          <p className="note">{h.replyNote}</p>
         </div>
-        <p className="mb-0 mt-3 text-[15px] text-muted">{t.hero.replyNote}</p>
+        <svg className="tangle" viewBox="0 0 560 560" preserveAspectRatio="xMaxYMax meet" role="img" aria-label={h.figureAlt}>
+          <g className="t">
+            {STRANDS.map((d) => (
+              <path key={d} d={d} pathLength={1} />
+            ))}
+          </g>
+          <path className="r" vectorEffect="non-scaling-stroke" d="M470 290 H 556 V 560" />
+          <g className="tl" aria-hidden="true">
+            {h.channels.map((label, i) => (
+              <text key={label} x={118} y={124 + 60 * i} textAnchor="end">
+                {label}
+              </text>
+            ))}
+          </g>
+        </svg>
+      </section>
+      {/* The red line turns down, crosses to the left and becomes the spine. */}
+      <div className="hero-rule" aria-hidden="true">
+        <svg viewBox="0 0 1124 110" preserveAspectRatio="none">
+          <path d="M1120 0 V 70 H 0 V 110" vectorEffect="non-scaling-stroke" />
+        </svg>
       </div>
+    </>
+  );
+}
+
+/* ---------- Sections: each one is a stop on the red line ---------- */
+
+function Sec({
+  id,
+  title,
+  intro,
+  variant = "",
+  children,
+}: {
+  id: string;
+  title: ReactNode;
+  intro?: string;
+  variant?: "" | "dark" | "end";
+  children: ReactNode;
+}) {
+  return (
+    <section id={id} className={`s ${variant}`} aria-labelledby={`${id}-title`}>
+      <span className="stop" aria-hidden="true" />
+      <h2 id={`${id}-title`} className="display">
+        {title}
+      </h2>
+      {intro && <p className="intro">{intro}</p>}
+      <div className="body">{children}</div>
     </section>
   );
 }
 
 function Clients({ t }: { t: Dictionary }) {
   return (
-    <section aria-label={t.clients.label} className="container-site">
-      <div className={`flex flex-wrap items-center gap-x-10 gap-y-3 border-t border-line pt-6`}>
-        <p className="m-0 text-[15px] text-muted">{t.clients.label}</p>
-        <ul className="m-0 flex list-none flex-wrap items-center gap-x-10 gap-y-5 p-0">
-          {clientLogos.map((c) => (
-            <li key={c.name} className="flex items-center">
-              {c.src ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={c.src}
-                  alt={c.name}
-                  width={Math.round(((c.w ?? 1) / (c.h ?? 1)) * (c.size ?? 28))}
-                  height={c.size ?? 28}
-                  className="block w-auto"
-                  style={{ height: c.size ?? 28 }}
-                />
-              ) : (
-                // Placeholder until the official logo file is added in lib/clients.ts.
-                <span className="text-[20px] font-bold leading-none">{c.name}</span>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className="clients" aria-label={t.clients.label}>
+      <p className="lab">{t.clients.label}</p>
+      <ul>
+        {clientLogos.map((c) => (
+          <li key={c.name}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={c.src}
+              alt={c.name}
+              width={Math.round((c.w / c.h) * c.size)}
+              height={c.size}
+              style={{ height: c.size, marginTop: c.dy ?? 0 }}
+            />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
 
-/* ---------- Content sections ---------- */
-
-function Problems({ t }: { t: Dictionary }) {
-  const p = t.problems;
-  const [open, close] = t.locale === "pl" ? ["„", "”"] : ["“", "”"];
+function Problems({ locale, t }: { locale: Locale; t: Dictionary }) {
+  const [open, close] = locale === "pl" ? ["„", "”"] : ["“", "”"];
   return (
-    <Section id="problems" title={p.title} intro={introP(p.intro)}>
-      <ul className="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
-        {p.items.map((item, i) => (
-          <li key={i} className="border-t border-line pb-7 pt-5">
-            <h3 className="m-0 text-[20px] font-bold leading-[1.3]">
+    <Sec id="problems" title={t.problems.title}>
+      <ul className="said" role="list">
+        {t.problems.items.map((item) => (
+          <li key={item.quote}>
+            <h3 className="big">
               {open}
               {item.quote}
               {close}
             </h3>
-            <p className="mb-0 mt-2 text-[16px] leading-relaxed text-muted">{item.fix}</p>
+            <p>{item.fix}</p>
           </li>
         ))}
       </ul>
-    </Section>
+    </Sec>
+  );
+}
+
+function Who({ t }: { t: Dictionary }) {
+  return (
+    <Sec id="who" title={t.who.title} intro={t.who.intro}>
+      <div className="two">
+        {t.who.kinds.map((kind) => (
+          <div key={kind.title}>
+            <h3 className="big">{kind.title}</h3>
+            <p>{kind.body}</p>
+          </div>
+        ))}
+      </div>
+    </Sec>
   );
 }
 
 function Example({ t }: { t: Dictionary }) {
   const e = t.example;
-  const step = (text: string, i: number, list: string[], after: boolean) => {
-    const last = i === list.length - 1;
-    return (
-      <li key={i} className={`flex gap-4 border-t py-3 ${after ? "border-ink" : "border-line"} ${last ? "border-b" : ""}`}>
-        <span className="w-5 flex-none font-mono text-[15px] font-medium leading-[1.7]">{i + 1}</span>
-        {after && last ? <strong className="font-semibold text-accent">{text}</strong> : <span>{text}</span>}
-      </li>
-    );
-  };
+  const title = e.title.map((line) => <span key={line}>{line} </span>);
   return (
-    <Section id="example" title={e.title} intro={introP(e.intro)} band>
-      <div className="grid gap-x-14 gap-y-10 md:grid-cols-2">
-        <div>
-          <h3 className="mb-3 mt-0 text-[20px] font-bold text-muted">{e.beforeLabel}</h3>
-          <ol className="m-0 list-none p-0 text-[17px] text-muted">{e.before.map((s, i) => step(s, i, e.before, false))}</ol>
-          <p className="mb-0 mt-4 text-[16px] leading-relaxed text-muted">{e.beforeNote}</p>
-        </div>
-        <div>
-          <h3 className="mb-3 mt-0 text-[20px] font-bold">{e.afterLabel}</h3>
-          <ol className="m-0 list-none p-0 text-[17px]">{e.after.map((s, i) => step(s, i, e.after, true))}</ol>
-          <p className="mb-0 mt-4 text-[16px] leading-relaxed">{e.afterNote}</p>
-        </div>
-      </div>
-      <div className="mt-12 sm:mt-14">
-        <h3 className="mb-0 mt-0 text-[20px] font-bold">{e.elsewhereTitle}</h3>
-        <ul className="m-0 mt-3 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-4">
-          {e.elsewhere.map((item) => (
-            <li key={item.industry} className="border-t border-ink/70 pb-5 pt-4">
-              <h4 className="m-0 text-[18px] font-bold leading-snug">{item.industry}</h4>
-              <p className="mb-0 mt-1.5 text-[16px] leading-relaxed sm:text-[17px]">{item.text}</p>
+    <Sec id="example" title={title}>
+      {/* The same week told twice on one grid: six small lines against three large ones. */}
+      <div className="story">
+        <p className="lab a">{e.beforeLabel}</p>
+        <ol className="quiet" role="list">
+          {e.before.map((step, i) => (
+            <li key={step}>
+              <span className="lab" aria-hidden="true">
+                {i + 1}
+              </span>
+              <span>{step}</span>
             </li>
           ))}
-        </ul>
+        </ol>
+        <p className="aside a">
+          <span>{e.beforeNote}</span>
+        </p>
+        <p className="lab b">{e.afterLabel}</p>
+        <ol className="loud" role="list">
+          {e.after.map((step, i) => (
+            <li key={step} className="big">
+              <span className="lab" aria-hidden="true">
+                {i + 1}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+        <p className="aside b">
+          <span>{e.afterNote}</span>
+        </p>
       </div>
-    </Section>
+    </Sec>
   );
 }
 
 function Services({ t }: { t: Dictionary }) {
   const s = t.services;
   return (
-    <Section id="what" title={s.title} intro={introP(s.intro)}>
-      <ol className="m-0 grid list-none gap-x-14 gap-y-14 p-0 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
-        {s.groups.map((group, gi) => (
-          <li key={gi} className="min-w-0">
-            <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(gi + 1).padStart(2, "0")}</p>
-            <h3 className="display mb-0 mt-1 text-[clamp(32px,3vw,40px)] xl:text-[30px]">{group.title}</h3>
-            <p className="mb-4 mt-1.5 text-[15px] text-muted">{group.summary}</p>
-            <ul className="m-0 list-none border-b border-line p-0">
-              {group.items.map((item, i) => (
-                <li key={i} className="border-t border-ink/70 pb-5 pt-4">
-                  <h4 className="m-0 text-[17px] font-bold leading-snug">{item.title}</h4>
-                  <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{item.body}</p>
-                </li>
+    <Sec id="what" title={s.title} intro={s.intro}>
+      <ul className="areas" role="list">
+        {s.groups.map((group) => (
+          <li key={group.title}>
+            <h3 className="display">{group.title}</h3>
+            <ul role="list">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </li>
         ))}
-      </ol>
-    </Section>
+      </ul>
+    </Sec>
   );
 }
 
 function Process({ t }: { t: Dictionary }) {
   const p = t.process;
   return (
-    <Section id="how" title={p.title} intro={introP(p.intro)}>
-      <ol className="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-5 xl:gap-x-8">
+    <Sec id="how" title={p.title}>
+      <ol className="steps" role="list">
         {p.steps.map((step, i) => (
-          <li key={i} className="border-t border-ink pb-6 pt-4">
-            <p className="m-0 font-mono text-[14px] font-medium text-accent-ink">{String(i + 1).padStart(2, "0")}</p>
-            <h3 className="mb-0 mt-1.5 text-[18px] font-bold leading-snug">{step.title}</h3>
-            <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{step.body}</p>
+          <li key={step.title}>
+            <span className="lab" aria-hidden="true">
+              0{i + 1}
+            </span>
+            <h3>
+              <span className="sr">{i + 1}. </span>
+              {step.title}
+            </h3>
+            <p>{step.body}</p>
           </li>
         ))}
       </ol>
-      <h3 className="mb-0 mt-10 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted sm:mt-12">{p.engagementsTitle}</h3>
-      <ul className="m-0 mt-3 grid list-none gap-x-10 p-0 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
+      <h3 className="sub">{p.engagementsTitle}</h3>
+      <ul className="cols" role="list">
         {p.engagements.map((item) => (
-          <li key={item.title} className="border-t border-ink pb-5 pt-4">
-            <h4 className="m-0 text-[18px] font-bold leading-snug">{item.title}</h4>
-            <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{item.body}</p>
+          <li key={item.title}>
+            <h4>{item.title}</h4>
+            <p>{item.body}</p>
           </li>
         ))}
       </ul>
-    </Section>
-  );
-}
-
-function Fit({ t }: { t: Dictionary }) {
-  const f = t.fit;
-  const list = (label: string, items: string[], good: boolean) => (
-    <div>
-      <h3 className="mb-3 mt-0 text-[20px] font-bold">{label}</h3>
-      <ul className="m-0 list-none border-b border-line p-0">
-        {items.map((item) => (
-          <li key={item} className="flex gap-3 border-t border-line py-3.5 text-[17px] leading-snug">
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" className="mt-[3px] flex-none">
-              {good ? (
-                <path d="M2.5 9.5l4 4 9-10" stroke="currentColor" strokeWidth="2.2" fill="none" className="text-ink" />
-              ) : (
-                <path d="M3.5 3.5l11 11M14.5 3.5l-11 11" stroke="currentColor" strokeWidth="2.2" fill="none" className="text-accent" />
-              )}
-            </svg>
-            <span className={good ? "" : "text-muted"}>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-  return (
-    <Section id="fit" title={f.title}>
-      <div className="grid gap-x-14 gap-y-10 md:grid-cols-[3fr_2fr]">
-        {list(f.goodLabel, f.good, true)}
-        {list(f.badLabel, f.bad, false)}
+      <div className="ask">
+        <p>{t.ctaBand.text}</p>
+        <a className="btn-primary" href="#contact">
+          {t.ctaBand.button}
+        </a>
       </div>
-    </Section>
+    </Sec>
   );
 }
 
 function Principles({ t }: { t: Dictionary }) {
   const p = t.principles;
   return (
-    <Section id="principles" title={p.title} intro={introP(p.intro)}>
-      <div className="grid gap-x-14 gap-y-10 lg:grid-cols-[3fr_2fr]">
-        <ul className="m-0 list-none border-b border-line p-0 text-[19px] leading-snug sm:text-[22px]">
-          {p.wont.map((item, i) => (
-            <li key={i} className="border-t border-line py-4">
-              {/* Sentence punctuation (e.g. a Polish comma) stays outside the strike. */}
-              <s className="font-bold decoration-accent decoration-[3px]">{item.struck}</s>
-              {/^[,;:.]/.test(item.rest) ? "" : " "}
-              <span className="text-muted">{item.rest}</span>
-            </li>
-          ))}
-        </ul>
-        <div>
-          <h3 className="mb-3 mt-0 text-[15px] font-semibold uppercase tracking-[0.06em] text-muted">{p.promisesTitle}</h3>
-          <ul className="m-0 list-none p-0">
-            {p.promises.map((promise) => (
-              <li key={promise.title} className="border-t border-ink pb-5 pt-4">
-                <h4 className="m-0 text-[18px] font-bold">{promise.title}</h4>
-                <p className="mb-0 mt-1.5 text-[16px] leading-relaxed text-muted">{promise.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-function Work({ t }: { t: Dictionary }) {
-  const w = t.work;
-  return (
-    <Section
-      id="work"
-      title={w.title}
-      intro={
-        <>
-          <p className="m-0">{w.intro}</p>
-          <p className="m-0 inline-block border border-dashed border-accent px-2 py-1 font-mono text-[12px] text-accent-ink">
-            {w.draftNote}
-          </p>
-        </>
-      }
-    >
-      <div className="outline-dashed outline-1 outline-offset-8 outline-accent/50">
-        <ul className="m-0 grid list-none gap-x-10 p-0 md:grid-cols-3">
-          {w.cases.map((c, i) => (
-            <li key={i} className="border-t border-ink pb-6 pt-5">
-              <p className="m-0 text-[14px] text-muted">
-                {c.company} · {c.readTime}
-              </p>
-              <h3 className="mb-0 mt-2 text-[20px] font-bold leading-[1.3]">{c.title}</h3>
-              <p className="mb-0 mt-1.5 text-[16px] text-muted">{c.result}</p>
-            </li>
-          ))}
-        </ul>
-        <figure className="m-0 mt-6">
-          <blockquote className={`m-0 font-serif text-[24px] italic leading-snug sm:text-[26px] ${MEASURE}`}>{w.quote.text}</blockquote>
-          <figcaption className="mt-3 text-[15px] text-muted">{w.quote.attribution}</figcaption>
-        </figure>
-      </div>
-    </Section>
-  );
-}
-
-function Faq({ t }: { t: Dictionary }) {
-  const f = t.faq;
-  return (
-    <Section id="faq" title={f.title} intro={<p className="m-0">{f.intro}</p>}>
-      {/* Answers stay in the HTML (and in the FAQPage JSON-LD); only the display is collapsed. */}
-      <div className="grid items-start gap-x-14 md:grid-cols-2">
-        {[f.items.slice(0, Math.ceil(f.items.length / 2)), f.items.slice(Math.ceil(f.items.length / 2))].map((col, ci) => (
-          <ul key={ci} className="m-0 list-none border-b border-line p-0">
-            {col.map((item) => (
-              <li key={item.q} className="border-t border-line">
-                <details className="group">
-                  <summary className="flex min-h-14 cursor-pointer list-none items-start justify-between gap-4 py-4 [&::-webkit-details-marker]:hidden">
-                    <h3 className="m-0 text-[18px] font-bold leading-[1.35] sm:text-[19px]">{item.q}</h3>
-                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" className="mt-[6px] flex-none transition-transform group-open:rotate-45">
-                      <path d="M7 0v14M0 7h14" stroke="currentColor" strokeWidth="2" fill="none" />
-                    </svg>
-                  </summary>
-                  <p className={`mb-0 mt-0 pb-5 text-[16px] leading-relaxed text-muted ${MEASURE}`}>{item.a}</p>
-                </details>
-              </li>
-            ))}
-          </ul>
+    <Sec id="principles" title={p.title} variant="dark">
+      <ul className="wont" role="list">
+        {p.wont.map((item) => (
+          <li key={item.struck}>
+            <s>{item.struck}</s>
+            {/* A clause that opens with a comma stays attached to the struck words. */}
+            {item.rest.startsWith(",") ? "" : " "}
+            <span>{item.rest}</span>
+          </li>
         ))}
+      </ul>
+      <p className="wrong">{p.wrong}</p>
+      <div className="hold">
+        <h3 className="big">{p.promisesTitle}</h3>
+        <ul className="promises" role="list">
+          {p.promises.map((promise) => (
+            <li key={promise.title}>
+              <h4>{promise.title}</h4>
+              <p>{promise.body}</p>
+            </li>
+          ))}
+        </ul>
       </div>
-    </Section>
+    </Sec>
   );
 }
 
 function About({ t }: { t: Dictionary }) {
   const a = t.about;
   return (
-    <Section id="about" title={a.title}>
-      <div className="flex flex-wrap gap-x-12 gap-y-8">
-        {/* Set PHOTO_SRC (a file in /public) once a real photo exists; until then the bio runs alone. */}
-        {PHOTO_SRC && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={PHOTO_SRC} alt={a.photoNote} width={240} height={300} className="aspect-[4/5] w-full max-w-[240px] flex-none object-cover" />
-        )}
-        <div className="min-w-0 flex-[1_1_440px]">
-          {a.paragraphs.map((para, i) => (
-            <p key={i} className={`mb-4 mt-0 text-[18px] leading-relaxed sm:text-[19px] ${MEASURE}`}>
-              {para}
-            </p>
-          ))}
-          <ul className="m-0 mt-6 grid list-none gap-x-8 p-0 sm:grid-cols-3">
-            {a.team.map((member) => (
-              <li key={member.role} className="border-t border-line pb-4 pt-4">
-                <h3 className="m-0 text-[17px] font-bold">{member.role}</h3>
-                <p className="mb-0 mt-1 text-[15px] leading-relaxed text-muted">{member.body}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="mb-0 mt-3 text-[15px] text-muted">{a.location}</p>
+    <Sec id="about" title={a.title}>
+      <div className="halves about">
+        <p>{a.paragraphs[0]}</p>
+        <div>
+          <p>{a.paragraphs[1]}</p>
+          <p className="lab loc">{a.location}</p>
         </div>
       </div>
-    </Section>
+    </Sec>
+  );
+}
+
+function Faq({ t }: { t: Dictionary }) {
+  return (
+    <Sec id="faq" title={t.faq.title}>
+      {/* Answers stay in the HTML (and in the FAQPage JSON-LD); only the display is collapsed. */}
+      <div className="faq">
+        {t.faq.items.map((item) => (
+          <details key={item.q}>
+            <summary>
+              <h3>{item.q}</h3>
+              <span aria-hidden="true">+</span>
+            </summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </Sec>
   );
 }
 
 function Contact({ locale, t }: { locale: Locale; t: Dictionary }) {
   const c = t.contact;
   return (
-    <section id="contact" aria-labelledby="contact-title" className="container-site pb-16 pt-14 sm:pb-24 sm:pt-20">
-      <div className="border-t border-ink pt-6 sm:pt-8">
-        <h2 id="contact-title" className="display m-0 max-w-[1100px] text-[clamp(40px,6vw,88px)]">
-          {c.title}
-        </h2>
-        <div className="mt-10 grid gap-x-16 gap-y-10 lg:grid-cols-[5fr_7fr]">
-          <div className="min-w-0">
-            <p className="m-0 max-w-[48ch] text-[19px] leading-relaxed">{c.body}</p>
-            <p className="mb-0 mt-5 text-[16px] text-muted">
-              {c.orEmail}{" "}
-              <a className="link-quiet font-semibold text-ink" href={`mailto:${EMAIL}`}>
-                {EMAIL}
-              </a>
-            </p>
-            <p className="mb-0 mt-8 max-w-[48ch] font-serif text-[20px] italic leading-relaxed">{c.ps}</p>
-          </div>
-          <div className="min-w-0">
-            <ContactForm copy={c} privacyHref={`/${locale}/privacy`} />
-          </div>
+    <Sec id="contact" title={c.title} variant="end">
+      <div className="contact">
+        <div>
+          <p className="lede">{c.body}</p>
+          <p className="or">
+            {c.orEmail}{" "}
+            <a className="link-quiet font-semibold text-ink" href={`mailto:${EMAIL}`}>
+              {EMAIL}
+            </a>
+          </p>
+          <p className="ps">{c.ps}</p>
+        </div>
+        <div>
+          <ContactForm copy={c} privacyHref={`/${locale}/privacy`} />
         </div>
       </div>
-    </section>
+    </Sec>
   );
 }
 
@@ -516,25 +433,27 @@ export function SkipLink({ label }: { label: string }) {
 }
 
 export default function Site(props: SiteProps) {
-  const { locale, t, showDrafts } = props;
+  const { locale, t } = props;
   return (
     <>
       <SkipLink label={t.nav.skip} />
       <Header {...props} />
-      <main id="main">
-        <Hero t={t} />
-        <Clients t={t} />
-        <Problems t={t} />
-        <Example t={t} />
-        <Services t={t} />
-        <CtaBand {...t.ctaBand} />
-        <Process t={t} />
-        <Fit t={t} />
-        <Principles t={t} />
-        {showDrafts && <Work t={t} />}
-        <Faq t={t} />
-        <About t={t} />
-        <Contact locale={locale} t={t} />
+      <main id="main" className="rd" lang={locale}>
+        <div className="container-site">
+          <Hero t={t} />
+          <div className="spine">
+            <Clients t={t} />
+            <Problems locale={locale} t={t} />
+            <Who t={t} />
+            <Example t={t} />
+            <Services t={t} />
+            <Process t={t} />
+            <Principles t={t} />
+            <About t={t} />
+            <Faq t={t} />
+            <Contact locale={locale} t={t} />
+          </div>
+        </div>
       </main>
       <Footer locale={locale} t={t} />
     </>

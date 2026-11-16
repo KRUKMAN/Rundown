@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
+import "../rd.css";
 import ConsentManager from "@/components/consent";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config";

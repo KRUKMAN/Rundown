@@ -1,15 +1,11 @@
 import type { Locale } from "../config";
 
 export type Problem = { quote: string; fix: string };
-export type ServiceItem = { title: string; body: string };
-export type ServiceGroup = { title: string; summary: string; items: ServiceItem[] };
+export type ServiceGroup = { title: string; items: string[] };
 export type StruckItem = { struck: string; rest: string };
 export type PromiseItem = { title: string; body: string };
-export type CaseStudy = { company: string; readTime: string; title: string; result: string };
-export type TeamRole = { role: string; body: string };
 export type FaqItem = { q: string; a: string };
 export type TitledText = { title: string; body: string };
-export type IndustryExample = { industry: string; text: string };
 
 export type Dictionary = {
   locale: Locale;
@@ -26,41 +22,34 @@ export type Dictionary = {
     close: string;
   };
   hero: {
-    titleStart: string;
-    titleAccent: string;
+    title: string;
     body: string;
     cta: string;
     emailPrefix: string;
     replyNote: string;
+    /** Labels on the six grey lines of the hero drawing, top to bottom. */
+    channels: string[];
+    figureAlt: string;
   };
   clients: { label: string; names: string[] };
+  problems: { title: string; items: Problem[] };
+  who: { title: string; intro: string; kinds: TitledText[] };
   example: {
-    title: string;
-    intro: string;
+    /** Heading lines, each kept on its own line. */
+    title: string[];
     beforeLabel: string;
     before: string[];
     beforeNote: string;
     afterLabel: string;
     after: string[];
     afterNote: string;
-    elsewhereTitle: string;
-    elsewhere: IndustryExample[];
   };
-  problems: { title: string; intro: string; items: Problem[] };
   services: { title: string; intro: string; groups: ServiceGroup[] };
-  process: { title: string; intro: string; steps: TitledText[]; engagementsTitle: string; engagements: TitledText[] };
-  fit: { title: string; goodLabel: string; good: string[]; badLabel: string; bad: string[] };
+  process: { title: string; steps: TitledText[]; engagementsTitle: string; engagements: TitledText[] };
   ctaBand: { text: string; button: string };
-  principles: { title: string; intro: string; promisesTitle: string; wont: StruckItem[]; promises: PromiseItem[] };
-  work: {
-    title: string;
-    intro: string;
-    draftNote: string;
-    cases: CaseStudy[];
-    quote: { text: string; attribution: string };
-  };
-  faq: { title: string; intro: string; items: FaqItem[] };
-  about: { title: string; photoNote: string; paragraphs: string[]; team: TeamRole[]; location: string };
+  principles: { title: string; wont: StruckItem[]; wrong: string; promisesTitle: string; promises: PromiseItem[] };
+  about: { title: string; paragraphs: string[]; location: string };
+  faq: { title: string; items: FaqItem[] };
   contact: {
     title: string;
     body: string;

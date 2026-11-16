@@ -20,21 +20,56 @@ const pl: Dictionary = {
     close: "Zamknij menu",
   },
   hero: {
-    titleStart: "Ułatwiam",
-    titleAccent: "prowadzenie firmy.",
-    body: "Porządkuję procesy, CRM i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i uczę zespół z tego korzystać.",
+    title: "Ułatwiam prowadzenie firmy.",
+    body: "Porządkuję procesy i CRM, wprowadzam AI i automatyzacje w zespołach od 5 do 500 osób. Zwykle trafiam do firm po szybkim wzroście albo trudniejszym okresie: narzędzi jest za dużo, nie wiadomo, kto za co odpowiada, a część procesów zna tylko kilka osób. Wdrażam CRM, automatyzuję powtarzalną pracę i uczę zespół z tego korzystać.",
     cta: "Napisz do mnie",
     emailPrefix: "albo napisz na",
     replyNote: "Zwykle odpisuję w ciągu jednego dnia roboczego. Pierwsza rozmowa jest bezpłatna.",
+    channels: ["WhatsApp", "telefon", "e-mail", "arkusz", "spotkanie", "czyjaś głowa"],
+    figureAlt: "Sześć linii podpisanych: WhatsApp, telefon, e-mail, arkusz, spotkanie i czyjaś głowa. Biegną od lewej, krzyżują się i łączą w jedną czerwoną linię, która skręca w dół i dalej biegnie wzdłuż całej strony.",
   },
   clients: {
     label: "Zespoły, z którymi pracowałem",
     names: ["LiveChat", "Prezi", "KODO", "Callstack", "Infogram"],
   },
+  problems: {
+    title: "Co z tego brzmi znajomo?",
+    items: [
+      { quote: "O problemie dowiaduję się, gdy jest już za późno.", fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje." },
+      { quote: "Nikt nie wie, kto za co odpowiada.", fix: "Każde powtarzalne zadanie ma jedną osobę, która za nie odpowiada. Wiedzą o tym wszyscy." },
+      { quote: "Nie ufam liczbom w lejku sprzedaży.", fix: "Jedna definicja każdego etapu i kilka zasad, jak go aktualizować." },
+      {
+        quote: "Kupiliśmy HubSpota. Nikt z niego nie korzysta.",
+        fix: "Siadam z ludźmi, którzy z niego korzystają, i usuwam pola, których nikt nie wypełnia.",
+      },
+      { quote: "Leady czekają na odpowiedź po kilka dni.", fix: "Reguły kierują każdy lead do właściwej osoby, razem z kontekstem." },
+      {
+        quote: "Wszyscy mówią o AI. Co by nam to dało?",
+        fix: "Wybieram jedno zadanie, które zespół wykonuje codziennie, i pokazuję, jak mogłoby to wyglądać z AI. Zanim cokolwiek kupisz.",
+      },
+    ],
+  },
+  who: {
+    title: "Pracuję z trzema rodzajami ludzi.",
+    intro: "Dowolna branża. Od 5 do 500 osób.",
+    kinds: [
+      {
+        title: "Prowadzisz firmę.",
+        body: "Praca ciągle gubi się między ludźmi a narzędziami. Myślisz, że CRM by pomógł, ale nie masz czasu ustalać, jaki wybrać i jak go wdrożyć. Od tego jestem ja. Jeden warunek: po twojej stronie musi być ktoś, kto odpowiada za efekt.",
+      },
+      {
+        title: "Odpowiadasz za operacje lub RevOps.",
+        body: "Masz więcej zaległości niż godzin albo projekt, któremu przyda się spojrzenie z zewnątrz. Oddaj mi projekt albo część zaległości. Pracuję razem z twoim zespołem.",
+      },
+      {
+        title: "Kierujesz zespołem specjalistów.",
+        body: "Dobrzy ludzie, którzy tracą godziny na pracę, którą załatwiłaby reguła albo narzędzie. Uczę ich pracować sprytniej, z AI tam, gdzie pomaga, i automatyzuję to, co się powtarza.",
+      },
+    ],
+  },
   example: {
-    title: "Jedna zmiana, przed i po",
-    intro: "Klient zmienia zakres prac w połowie projektu. Tak często wygląda ten tydzień w firmie remontowej.",
-    beforeLabel: "Przed",
+    title: ["Klient zmienia zakres prac.", "I co dalej?"],
+    beforeLabel: "zwykły tydzień w firmie remontowej",
     before: [
       "Klient dzwoni do swojego opiekuna z prośbą o zmianę",
       "Opiekun przekazuje to kierownikowi budowy na WhatsAppie",
@@ -43,185 +78,79 @@ const pl: Dictionary = {
       "Piątek schodzi na odkręcaniu sprawy przez telefon",
       "Na fakturze wciąż jest stary zakres prac",
     ],
-    beforeNote: "Każdy robi swoje. Informacja leży w czterech miejscach i w głowie jednej osoby.",
-    afterLabel: "Po",
+    beforeNote: "Każdy robi swoje. Informacja jest w czterech miejscach i w głowie jednej osoby.",
+    afterLabel: "jak bym to ustawił",
     after: [
       "Zmianę zapisuje się raz, przy zleceniu",
       "Kierownik, zaopatrzenie i księgowość widzą ją w tej samej minucie",
       "Klient dostaje zaktualizowaną wycenę do akceptacji",
     ],
-    afterNote:
-      "Jedno miejsce na każde zlecenie, kilka zasad (kto co zapisuje) i cotygodniowe podsumowanie dla zarządu. Kierownik budowy i dział zaopatrzenia ustalają te zasady, zanim cokolwiek zostanie wdrożone.",
-    elsewhereTitle: "Ten sam schemat w innych branżach",
-    elsewhere: [
-      {
-        industry: "Software i SaaS",
-        text: "Warunki transakcji zmieniają się w CRM. Wdrożenie klienta, fakturowanie i wsparcie widzą je od razu, bez osobnego spotkania.",
-      },
-      {
-        industry: "Agencje i firmy usługowe",
-        text: "Klient dokłada zakres w trakcie projektu. Wycena, plan obłożenia zespołu i faktura aktualizują się jednocześnie.",
-      },
-      {
-        industry: "E-commerce i handel",
-        text: "Klient po złożeniu zamówienia zmienia adres dostawy. Magazyn i etykieta kurierska aktualizują się, zanim paczka zostanie spakowana.",
-      },
-      {
-        industry: "Produkcja i dystrybucja",
-        text: "Zamówienie się zmienia. Plan produkcji i termin dostawy dla klienta aktualizują się w jednym kroku.",
-      },
-    ],
-  },
-  problems: {
-    title: "Problemy, które rozwiązuję",
-    intro: "Słowami osób, które kierują zespołami. Nie musisz wiedzieć, czym jest CRM, żeby je rozpoznać.",
-    items: [
-      {
-        quote: "O problemie dowiaduję się, gdy jest już za późno.",
-        fix: "Jedna lista wszystkich zleceń: etap, osoba odpowiedzialna, co blokuje. Dzięki temu problemy widać wcześniej.",
-      },
-      {
-        quote: "Nikt nie wie, kto za co odpowiada.",
-        fix: "Każde powtarzalne zadanie ma jedną osobę, która za nie odpowiada. Wiedzą o tym wszyscy.",
-      },
-      {
-        quote: "Nie ufam liczbom w lejku sprzedaży.",
-        fix: "Jedna definicja każdego etapu i kilka zasad, jak go aktualizować. Dzięki temu wszyscy prognozują tak samo.",
-      },
-      {
-        quote: "Kupiliśmy HubSpota. Nikt z niego nie korzysta.",
-        fix: "Siadam z ludźmi, którzy z niego korzystają, usuwam pola, których nikt nie wypełnia, i ustawiam go pod to, jak naprawdę sprzedają.",
-      },
-      {
-        quote: "Leady czekają na odpowiedź po kilka dni.",
-        fix: "Reguły kierują każdy lead do właściwej osoby, razem z całym kontekstem.",
-      },
-      {
-        quote: "Wszyscy mówią o AI. Co by nam to dało?",
-        fix: "Wybieram jedno zadanie, które zespół wykonuje codziennie, i pokazuję, co mogłoby z nim zrobić AI, zanim zdecydujesz się na jakiekolwiek narzędzie.",
-      },
-    ],
+    afterNote: "Potrzeba do tego kilku zasad (kto co zapisuje) i cotygodniowego podsumowania dla zarządu. Kierownik budowy i dział zaopatrzenia ustalają te zasady, zanim cokolwiek zbuduję.",
   },
   services: {
-    title: "Co robię",
-    intro: "Cztery obszary. Większość projektów łączy dwa albo trzy z nich.",
+    title: "Tym się zajmuję.",
+    intro: "Większość projektów łączy dwa albo trzy z tych obszarów.",
     groups: [
       {
         title: "Porządek",
-        summary: "Procesy, odpowiedzialność, narzędzia",
         items: [
-          {
-            title: "Mapowanie procesów i odpowiedzialności",
-            body: "Kto robi co, w jakiej kolejności i w jakim narzędziu. Każdy proces spisany na jednej stronie.",
-          },
-          {
-            title: "Wdrożenie i porządkowanie CRM",
-            body: "HubSpot, Salesforce albo Attio, ustawione od zera lub przebudowane pod to, jak sprzedajesz i realizujesz zlecenia. Przenoszę dane, usuwam duplikaty i ustalam etapy sprzedaży.",
-          },
-          {
-            title: "Przegląd narzędzi i starych systemów",
-            body: "Sprawdzam każdy abonament i stary system: zostawić, wymienić, połączyć albo wyłączyć.",
-          },
+          "Mapowanie procesów i odpowiedzialności",
+          "Wdrożenie i porządkowanie CRM",
+          "Przegląd narzędzi i starych systemów",
         ],
       },
       {
         title: "Sprzedaż i RevOps",
-        summary: "Dla zespołów sprzedaży, marketingu i RevOps",
         items: [
-          {
-            title: "Obsługa i przydzielanie leadów",
-            body: "Reguły, które szybko kierują każdy lead do właściwej osoby, i sprawne przekazywanie leadów między marketingiem a sprzedażą.",
-          },
-          {
-            title: "Lejek sprzedaży i raportowanie",
-            body: "Etapy z jasnymi kryteriami wejścia i wyjścia oraz prognozy i raporty, które pokazują sprzedaży i finansom te same liczby.",
-          },
-          {
-            title: "Administracja CRM i zaległe zadania",
-            body: "Doświadczone wsparcie przy integracjach, poprawkach danych i raportach, na które zespół nie miał czasu.",
-          },
+          "Obsługa i przydzielanie leadów",
+          "Lejek sprzedaży i raportowanie",
+          "Administracja CRM i zaległe zadania",
         ],
       },
       {
         title: "Automatyzacja",
-        summary: "Automatyzacje, AI, własne narzędzia",
         items: [
-          {
-            title: "Automatyzacja procesów",
-            body: "Przekazywanie zadań, przypomnienia, raporty i wpisywanie danych dzieją się same. Buduję to w n8n, Tray.ai albo Zapierze.",
-          },
-          {
-            title: "AI do powtarzalnych zadań",
-            body: "Szkice wycen z notatek po rozmowach, sortowanie maili, odpowiedzi na rutynowe pytania, cotygodniowe podsumowania. Ważne rzeczy zatwierdza człowiek.",
-          },
-          {
-            title: "Narzędzia wewnętrzne i proste aplikacje",
-            body: "Kalkulatory wycen, raporty na jednym ekranie, proste aplikacje dla ekip w terenie. Robię je wtedy, gdy gotowe oprogramowanie nie wystarcza.",
-          },
+          "Automatyzacja procesów",
+          "AI do powtarzalnych zadań",
+          "Narzędzia wewnętrzne i proste aplikacje",
         ],
       },
       {
         title: "Zespół",
-        summary: "Szkolenia, wdrożenie zmian, zespół operacyjny",
         items: [
-          {
-            title: "Szkolenia z AI dla zespołów",
-            body: "Warsztaty na codziennych zadaniach zespołu, w narzędziach takich jak Claude i Notion AI oraz w tych, za które firma już płaci.",
-          },
-          {
-            title: "Wdrożenie zmiany w zespole",
-            body: "Osoby, które będą korzystać z nowych rozwiązań, pomagają je zaprojektować. Potem krótkie szkolenia na ich własnej pracy.",
-          },
-          {
-            title: "Rekrutacja i budowa zespołu operacyjnego",
-            body: "Opis stanowiska, rozmowy i wdrożenie do pracy pierwszej osoby od operacji, a potem jasny podział odpowiedzialności, spisane procesy i kilka wskaźników.",
-          },
+          "Szkolenia z AI dla zespołów",
+          "Wdrożenie zmiany w zespole",
+          "Rekrutacja i budowa zespołu operacyjnego",
         ],
       },
     ],
   },
   process: {
-    title: "Jak pracuję",
-    intro: "Pięć kroków, od pierwszej rozmowy do przekazania.",
+    title: "Zaczynamy od bezpłatnej rozmowy.",
     steps: [
-      { title: "Bezpłatna rozmowa", body: "30 minut. Opowiadasz, co spowalnia firmę, ja dopytuję i mówię, czy to coś, czego się podejmę." },
-      { title: "Przegląd", body: "Rozmawiam z ludźmi, którzy na co dzień wykonują tę pracę, i sprawdzam narzędzia, dane oraz momenty przekazywania zadań." },
+      { title: "Bezpłatna rozmowa", body: "30 minut. Opowiadasz, co spowalnia firmę. Mówię, czy się tego podejmę." },
+      {
+        title: "Przegląd",
+        body: "Rozmawiam z ludźmi, którzy na co dzień wykonują tę pracę, i sprawdzam narzędzia, dane oraz momenty przekazywania zadań.",
+      },
       { title: "Spisany plan", body: "Priorytety, koszty i to, czego lepiej nie ruszać. Ty decydujesz, co dalej." },
-      { title: "Wdrożenie z zespołem", body: "Konfiguracja, przeniesienie danych i automatyzacje, robione razem z osobami, które będą z nich korzystać." },
-      { title: "Przekazanie i szkolenie", body: "Dokumentacja, szkolenie i osoba odpowiedzialna po twojej stronie. Dalsze wsparcie można ustalić osobno." },
+      { title: "Wdrożenie z zespołem", body: "Konfiguruję, przenoszę dane i buduję automatyzacje razem z osobami, które będą z nich korzystać." },
+      { title: "Przekazanie i szkolenie", body: "Dokumentacja, szkolenie i osoba odpowiedzialna po twojej stronie. Mogę zostać dłużej, jeśli chcesz." },
     ],
-    engagementsTitle: "Formy współpracy",
+    engagementsTitle: "Cztery sposoby pracy ze mną.",
     engagements: [
-      { title: "Przegląd i plan", body: "Tylko pierwsze trzy kroki. Dostajesz plan i możesz go wdrożyć sam albo z kimś innym." },
-      { title: "Projekt o ustalonym zakresie", body: "Konkretne zadanie, np. wdrożenie CRM albo zbudowanie automatyzacji, z uzgodnionym zakresem i ceną." },
-      { title: "Stałe wsparcie co miesiąc", body: "Ustalona liczba godzin w miesiącu, w roli zewnętrznego lidera operacji lub RevOps albo do pracy nad zaległościami." },
-      { title: "Warsztaty", body: "Praktyczne szkolenie z AI i efektywnej pracy dla zespołu, oparte na jego własnych zadaniach." },
+      { title: "Przegląd i plan", body: "Pierwsze trzy kroki i nic więcej. Plan jest twój, ze mną albo beze mnie." },
+      { title: "Projekt o ustalonym zakresie", body: "Jedno konkretne zadanie, np. wdrożenie CRM. Zakres i cenę ustalamy, zanim zacznę." },
+      {
+        title: "Stałe wsparcie co miesiąc",
+        body: "Ustalona liczba godzin w miesiącu: jako lider operacji lub RevOps na część etatu albo do pracy nad zaległościami.",
+      },
+      { title: "Warsztaty", body: "Praktyczne warsztaty z AI i organizacji pracy, na zadaniach twojego zespołu." },
     ],
   },
-  fit: {
-    title: "Z kim pracuję",
-    goodLabel: "Dobrze się dopasujemy, jeśli",
-    good: [
-      "masz zespół od 5 do 500 osób, w dowolnej branży",
-      "firma rośnie szybciej niż jej systemy albo porządkuje się po trudniejszym okresie",
-      "po twojej stronie jest osoba, która weźmie odpowiedzialność za efekt",
-      "w firmie jest lider operacji, sprzedaży lub RevOps, który ma więcej zaległości niż godzin",
-    ],
-    badLabel: "Raczej się nie dopasujemy, jeśli",
-    bad: [
-      "potrzebujesz zespołu programistów na pełen etat",
-      "chcesz strategii w prezentacji bez zmiany sposobu pracy",
-      "potrzebujesz nowego systemu działającego od przyszłego tygodnia",
-    ],
-  },
-  ctaBand: {
-    text: "Nie wiesz, czego z tego potrzebujesz? Od tego jest pierwsza, bezpłatna rozmowa.",
-    button: "Napisz do mnie",
-  },
+  ctaBand: { text: "Nie wiesz, czego z tego potrzebujesz? Od tego jest pierwsza, bezpłatna rozmowa.", button: "Napisz, co ci przeszkadza" },
   principles: {
     title: "Czego ci nie sprzedam",
-    intro: "",
-    promisesTitle: "Czego możesz ode mnie wymagać",
     wont: [
       { struck: "Nowego systemu", rest: "tam, gdzie wystarczy uporządkować ten, który już masz." },
       { struck: "Agenta AI", rest: "do zadania, które załatwi prosta reguła." },
@@ -229,6 +158,8 @@ const pl: Dictionary = {
       { struck: "Dwunastu narzędzi", rest: "tam, gdzie wystarczą cztery." },
       { struck: "Raportu", rest: ", którego nikt nie czyta." },
     ],
+    wrong: "Jeśli potrzebujesz zespołu programistów na pełen etat albo nowego systemu na przyszły tydzień, to też nie do mnie.",
+    promisesTitle: "Czego możesz ode mnie wymagać",
     promises: [
       {
         title: "Bez prowizji",
@@ -240,23 +171,16 @@ const pl: Dictionary = {
       },
     ],
   },
-  work: {
-    title: "Wybrane projekty",
-    intro: "Co nie działało, co się zmieniło, co było dalej.",
-    draftNote: "Szkic: widoczny tylko w wersjach podglądowych. Uzupełnij przed publikacją.",
-    cases: [
-      { company: "[Firma]", readTime: "2 min", title: "Zwroty pieniędzy, które wypłacają się same", result: "[Jedno zdanie o efekcie]" },
-      { company: "[Firma]", readTime: "3 min", title: "HubSpot, który handlowcy otwierają codziennie", result: "[Jedno zdanie o efekcie]" },
-      { company: "[Firma]", readTime: "2 min", title: "AI dla całego zespołu, z zasadami, których ludzie się trzymają", result: "[Jedno zdanie o efekcie]" },
+  about: {
+    title: "Jestem Jakub Krukowski.",
+    paragraphs: [
+      "Przez większość kariery zajmowałem się organizacją pracy w firmach, głównie technologicznych, na styku sprzedaży, obsługi klienta, finansów i systemów, które je łączą. W każdej branży są te same dwa problemy. Za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
+      "Pracuję sam. Od początku do końca rozmawiasz ze mną. Gdy projekt wymaga więcej rąk do pracy, włączam do niego projektantów, programistów i specjalistów od procesów, z którymi już pracowałem.",
     ],
-    quote: {
-      text: "[Dwa, trzy zdania od klienta o tym, co się zmieniło.]",
-      attribution: "[Imię i nazwisko], [stanowisko], [firma]",
-    },
+    location: "Jestem w Europie. Pracuję po polsku i po angielsku.",
   },
   faq: {
-    title: "Pytania",
-    intro: "O to ludzie najczęściej pytają przed pierwszą rozmową.",
+    title: "O co ludzie pytają przed pierwszą rozmową.",
     items: [
       {
         q: "Czym zajmuje się konsultant ds. procesów i CRM?",
@@ -283,20 +207,6 @@ const pl: Dictionary = {
         a: "Twój zespół przejmuje stery. Całość jest opisana, działa na kontach twojej firmy i ma osobę odpowiedzialną po twojej stronie. Jeśli chcesz, możemy ustalić stałe wsparcie.",
       },
     ],
-  },
-  about: {
-    title: "O mnie",
-    photoNote: "Zdjęcie Jakuba",
-    paragraphs: [
-      "Jestem Jakub Krukowski. Przez większość kariery zajmowałem się organizacją pracy w firmach, głównie technologicznych, na styku sprzedaży, obsługi klienta, finansów i systemów, które je łączą. Te same problemy widać w każdej branży: za dużo siedzi w głowach ludzi i za dużo przepisuje się ręcznie.",
-      "Pracuję niezależnie. Od początku do końca rozmawiasz ze mną. Gdy projekt wymaga więcej rąk do pracy, włączam do niego projektantów, programistów i specjalistów od procesów, z którymi już pracowałem.",
-    ],
-    team: [
-      { role: "Projektanci aplikacji i stron", body: "Portale dla klientów, formularze, centra pomocy i narzędzia wewnętrzne." },
-      { role: "Programiści", body: "Połączenia między systemami i kod pisany od zera tam, gdzie gotowe narzędzia przestają wystarczać." },
-      { role: "Specjaliści od procesów", body: "Procesy w obsłudze klienta, finansach i sprzedaży, także w dużych firmach." },
-    ],
-    location: "Działam z Polski. Pracuję po polsku i po angielsku.",
   },
   contact: {
     title: "Napisz do mnie jak do kogoś z zespołu.",

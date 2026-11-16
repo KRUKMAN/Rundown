@@ -58,3 +58,12 @@
 ## 2026-11-02 · Client logos
 - "Teams I've worked with" shows logos for all five clients (`lib/clients.ts`, files in `public/clients`).
 - Sources: official black files from the LiveChat and Callstack kits, Prezi press-kit vector flattened to one colour, Infogram and KODO traced from supplied logos. Shapes untouched; logos unlinked, with alt text.
+
+## 2026-11-16 · New page design: one red line
+- Hero drawing (six channels into one red line) and the line running down the page with a stop per section. No other drawings.
+- New order and copy: problems as large client quotes, three kinds of reader (company, ops or RevOps, specialist team), the scope-change story as six small lines against three large ones, four service areas with service names only, five steps and four ways to work, one black section for "Things I won't sell you", about, questions, contact.
+- Cut: other-industry examples, fit lists, service descriptions, section intros. "Based in Europe."
+- Voice rewritten to be direct and first person in both languages; Polish reviewed separately.
+- Logo 17 rebuilt: the red tag is exactly cap height and aligned with the caps; tag text takes the background colour.
+- Polish typography: one-letter words no longer end a line (`lib/i18n/get-dictionary.ts`); stacked headings get more line height.
+- English copy uses typographic apostrophes.
