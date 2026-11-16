@@ -3,9 +3,9 @@ import type { Dictionary } from "./types";
 const en: Dictionary = {
   locale: "en",
   metadata: {
-    title: "Operations, CRM and AI consultant for growing teams · The Rundown",
+    title: "Operations and CRM consultant: HubSpot, automation, AI · The Rundown",
     description:
-      "Independent operations and RevOps consultant for teams of 5 to 500: CRM implementation (HubSpot, Salesforce), process clean-up, automation and AI training.",
+      "I’m Jakub Krukowski, an independent operations and CRM consultant for companies of 5 to 500 people. HubSpot and Salesforce setup, automation and AI training. The first call is free.",
     ogLocale: "en_US",
   },
   nav: {
@@ -13,7 +13,7 @@ const en: Dictionary = {
     how: "How I work",
     faq: "FAQ",
     about: "About",
-    cta: "Write to me",
+    cta: "Send me a message",
     skip: "Skip to content",
     home: "home page",
     menu: "Menu",
@@ -21,12 +21,12 @@ const en: Dictionary = {
   },
   hero: {
     title: "I make businesses easier to run.",
-    body: "Operations, CRM and AI help for teams of 5 to 500. Usually after fast growth or a rough stretch left behind too many tools, unclear ownership and processes that live in a few people’s heads. I sort out how work moves, set up the CRM, automate the repetitive parts and train your team to use it.",
-    cta: "Write to me",
+    body: "I’m an independent operations and CRM consultant for companies of 5 to 500 people. I usually come in after a fast year or a hard one, when the tools have piled up and it’s no longer clear who does what. I set up the CRM, automate the repetitive work and teach your team to use it, AI included.",
+    cta: "Send me a message",
     emailPrefix: "or email",
     replyNote: "I usually reply within one working day. The first call is free.",
-    channels: ["WhatsApp", "phone", "email", "spreadsheet", "a meeting", "someone’s head"],
-    figureAlt: "Six lines labelled WhatsApp, phone, email, spreadsheet, a meeting and someone’s head run from the left, cross and merge into one red line, which turns down and continues as the line running down this page.",
+    channels: ["WhatsApp", "phone", "email", "spreadsheet", "meeting", "someone’s head"],
+    figureAlt: "Six lines labelled WhatsApp, phone, email, spreadsheet, meeting and someone’s head run from the left, cross and merge into one red line, which turns down and continues as the line running down this page.",
   },
   clients: {
     label: "Teams I’ve worked with",
@@ -35,11 +35,11 @@ const en: Dictionary = {
   problems: {
     title: "Which one is yours?",
     items: [
-      { quote: "Projects go wrong without warning.", fix: "One list of every job: stage, owner, blocker." },
-      { quote: "Nobody knows who owns what.", fix: "Every recurring task gets one named owner, visible to everyone." },
-      { quote: "I can’t trust the pipeline numbers.", fix: "One definition for each deal stage, and a few rules for keeping it current." },
-      { quote: "We bought HubSpot. Nobody uses it.", fix: "I sit with the people who use it and cut the fields nobody fills in." },
-      { quote: "Leads wait days for a reply.", fix: "Routing rules send each lead to the right person, with the context attached." },
+      { quote: "I find out something’s wrong when it’s too late.", fix: "One list of everything in progress, with who’s on it and what’s stuck." },
+      { quote: "Nobody knows who owns what.", fix: "Every recurring task has a name next to it, and everyone can see whose." },
+      { quote: "I can’t trust the pipeline numbers.", fix: "Each deal stage means one thing, and a few simple rules keep deals up to date." },
+      { quote: "We bought HubSpot. Nobody uses it.", fix: "I sit with the people who were meant to use it and find out why they don’t. Often it’s a form full of fields nobody needs." },
+      { quote: "Leads wait days for a reply.", fix: "Each new enquiry goes straight to the right person, with what they need to reply." },
       {
         quote: "Everyone talks about AI. What would it do here?",
         fix: "I pick one task your team does every day and show what AI could do with it. Before you buy anything.",
@@ -47,20 +47,20 @@ const en: Dictionary = {
     ],
   },
   who: {
-    title: "I work with three kinds of people.",
+    title: "Usually it’s one of you.",
     intro: "Any industry. 5 to 500 people.",
     kinds: [
       {
         title: "You run the company.",
-        body: "Work keeps getting lost between people and tools. You think a CRM would help and have no time to work out which one, or how. That’s my job. One condition: somebody on your side owns the result.",
+        body: "Requests get lost between email, WhatsApp and someone’s spreadsheet. You think a CRM would help and have no time to work out which one, or how. That’s my job. One condition: someone on your side looks after it once I’m done.",
       },
       {
-        title: "You run ops or RevOps.",
-        body: "More backlog than hours, or a project that needs an outside eye. Hand me the project, or a slice of the backlog. I work alongside your team.",
+        title: "You’re in charge of ops or RevOps.",
+        body: "Your backlog is longer than your week, or there’s a project you’d like a second pair of eyes on. Give me either. I work with your team, in your tools.",
       },
       {
         title: "You run a team of specialists.",
-        body: "Good people, losing hours to work a rule or a tool could do. I train them to work smarter, with AI where it helps, and automate the parts that repeat.",
+        body: "Good people losing hours on things a simple rule or tool could do. I show them where AI actually helps in their own work, and automate the bits that repeat.",
       },
     ],
   },
@@ -72,77 +72,77 @@ const en: Dictionary = {
       "The contact tells the site lead on WhatsApp",
       "Nobody tells purchasing",
       "Wrong materials arrive on Thursday",
-      "Friday goes on fixing it by phone",
+      "Friday is spent fixing it over the phone",
       "The invoice still shows the old scope",
     ],
     beforeNote: "Everyone does their job. The information lives in four places and one person’s head.",
     afterLabel: "what I’d set up instead",
     after: [
-      "The change is recorded once, on the job",
+      "The change goes into the job record once",
       "Site lead, purchasing and invoicing see it the same minute",
       "The client gets the updated quote to approve",
     ],
-    afterNote: "That takes a few rules on who records what and a weekly summary for management. The site lead and purchasing agree the rules before I build anything.",
+    afterNote: "That takes a few rules on who records what and a weekly summary for the owner. The site lead and purchasing agree the rules before I build anything.",
   },
   services: {
     title: "Here’s what I do.",
-    intro: "Most projects need two or three of these.",
+    intro: "Most projects touch two or three of these areas.",
     groups: [
       {
         title: "Organise",
         items: [
-          "Process and ownership mapping",
-          "CRM implementation and clean-up",
-          "Tool stack and tech debt clean-up",
+          "Work out who does what, and write it down",
+          "Set up or clean up your CRM",
+          "Cut the tools you pay for and don’t use",
         ],
       },
       {
         title: "Sales and RevOps",
-        items: ["Lead routing and follow-up", "Pipeline and reporting", "CRM admin and backlog"],
+        items: ["Get new leads answered fast", "Pipeline reports sales and finance agree on", "Take CRM admin off your plate"],
       },
       {
         title: "Automate",
-        items: ["Workflow automation", "AI for repeatable tasks", "Internal tools"],
+        items: ["Stop copying data between tools", "AI on the tasks your team repeats every day", "A small internal tool when nothing off the shelf fits"],
       },
       {
         title: "People",
         items: [
-          "AI and productivity training",
-          "Adoption and change",
-          "Hiring and building the ops function",
+          "AI training on your team’s real tasks",
+          "Help the team actually switch to the new way of working",
+          "Hire your first ops person, or build the team",
         ],
       },
     ],
   },
   process: {
-    title: "It starts with a free call.",
+    title: "What happens after you write.",
     steps: [
       { title: "Free call", body: "30 minutes. You tell me what’s slowing you down. I say whether I’d take it on." },
       { title: "Review", body: "I talk to the people doing the work and look at your tools, data and handoffs." },
       { title: "Written plan", body: "Priorities, costs and what to leave alone. You decide what happens next." },
-      { title: "Build with your team", body: "Setup, migration and automation, done alongside the people who’ll use them." },
-      { title: "Handover and training", body: "Documentation, training and an owner on your side. I can stay on if you want." },
+      { title: "Build with your team", body: "I set things up, move the data over and build the automations, with the people who’ll use them every day." },
+      { title: "Handover and training", body: "Everything written down, and someone on your side who knows how it works. I can stay on if you want." },
     ],
-    engagementsTitle: "Four ways to hire me.",
+    engagementsTitle: "Start small if you like.",
     engagements: [
-      { title: "Review and plan", body: "The first three steps and nothing more. The plan is yours, with me or without." },
+      { title: "Review and plan", body: "The first three steps and nothing more. The plan is yours, with or without me." },
       { title: "Fixed-scope project", body: "One defined piece of work, say a CRM implementation. Scope and price agreed before I start." },
-      { title: "Ongoing monthly help", body: "A set amount of my time each month, as your fractional ops or RevOps lead or on the backlog." },
-      { title: "Workshops", body: "Hands-on AI and productivity training, built around your team’s own tasks." },
+      { title: "Ongoing monthly help", body: "A set amount of my time each month. I can be your part-time head of ops or RevOps, or just work through the backlog." },
+      { title: "Workshops", body: "Hands-on sessions where your team tries AI on its own work." },
     ],
   },
-  ctaBand: { text: "Not sure which of these you need? That’s what the free first call is for.", button: "Tell me what’s in the way" },
+  ctaBand: { text: "Can’t tell which of these you need? That’s normal. Write a few lines and I’ll suggest where to start.", button: "Tell me what’s going on" },
   principles: {
-    title: "Things I won’t sell you",
+    title: "Things I won’t sell you.",
     wont: [
       { struck: "A new system", rest: "when the one you have mostly needs cleaning up." },
       { struck: "An AI agent", rest: "for a job a simple rule would handle." },
       { struck: "A strategy deck", rest: "nobody opens after the meeting." },
       { struck: "Twelve tools", rest: "where four would do." },
-      { struck: "A dashboard", rest: "nobody looks at." },
+      { struck: "A dashboard", rest: "you’ll check twice and forget." },
     ],
     wrong: "I’m also the wrong person if you need a full-time development team, or a new system live by next week.",
-    promisesTitle: "What you can hold me to",
+    promisesTitle: "What you can hold me to.",
     promises: [
       {
         title: "No commissions",
@@ -150,28 +150,28 @@ const en: Dictionary = {
       },
       {
         title: "Your accounts, not mine",
-        body: "Accounts, automations and documentation are set up in your company’s name.",
+        body: "Everything I build lives in your company’s accounts. If we stop working together, you keep all of it.",
       },
     ],
   },
   about: {
     title: "I’m Jakub Krukowski.",
     paragraphs: [
-      "I’ve spent most of my career in operations, mostly at software companies, working between sales, support, finance and the systems that connect them. Every industry has the same two problems. Too much lives in people’s heads and too much gets retyped.",
+      "My career has been in operations, mostly at software companies, between sales, support, finance and the systems that connect them. What breaks is usually the same: too much lives in a few people’s heads, and too much gets typed in twice.",
       "I work on my own. You deal with me from start to finish. When a project needs more hands, I bring in designers, engineers and operations specialists I’ve worked with before.",
     ],
     location: "Based in Europe. Working in English and Polish.",
   },
   faq: {
-    title: "What people ask before the first call.",
+    title: "Questions I get a lot.",
     items: [
       {
         q: "What does an operations consultant do?",
-        a: "An operations consultant looks at how work moves through your company (sales, delivery, support, invoicing) and fixes where it gets stuck: unclear ownership, data retyped by hand, tools that don’t talk to each other. In practice that means organising processes, setting up a CRM, automating repetitive steps and training the team.",
+        a: "I follow how a piece of work gets from the first email to the invoice and fix the places where it stalls. Sometimes that takes a CRM or an automation. Sometimes it’s just a name next to a task.",
       },
       {
         q: "Which CRM should a growing company use?",
-        a: "HubSpot suits most service and B2B companies that want marketing and sales in one place. Salesforce fits complex sales with many custom rules and someone to administer it. Attio works well for small, flexible teams. The right choice depends on how you sell and who will maintain it.",
+        a: "HubSpot suits most service and B2B companies that want marketing and sales in one place. Salesforce makes sense for complex sales with lots of custom rules, if you have someone to run it. Attio works well for small, flexible teams. The right choice depends on how you sell and who will maintain it.",
       },
       {
         q: "Can AI help a company that isn’t in tech?",
@@ -183,26 +183,26 @@ const en: Dictionary = {
       },
       {
         q: "What happens to our data when AI is involved?",
-        a: "Only tools your company approves, usually business plans of Claude or ChatGPT or the AI built into HubSpot or Notion, on plans whose terms exclude training on your data. We check the current terms together before starting. They get only the data a task needs, confidential data stays out unless you decide otherwise, and a person checks anything that matters.",
+        a: "I only use tools your company has approved. Usually that’s a business plan of Claude or ChatGPT, or the AI already built into HubSpot or Notion, on terms that don’t allow training on your data. We read the current terms together before we start. The AI only sees the data a task needs, confidential data stays out unless you decide otherwise, and a person checks anything that matters.",
       },
       {
         q: "What happens after the handover?",
-        a: "Your team runs it. The setup is documented, sits in your company’s accounts and has an owner on your side. Ongoing monthly help can be agreed if you want it.",
+        a: "Your team runs it. Everything is written down and lives in your accounts. If you want me around after that, we can agree monthly help.",
       },
     ],
   },
   contact: {
-    title: "Write to me like you’d write to a colleague.",
-    body: "A few lines about what’s slowing you down is enough. I usually reply within one working day. If I’m not the right person, I’ll say so, and suggest someone if I know a better fit.",
-    labels: { name: "Name", email: "Email", company: "Company", message: "What’s getting in the way?", optional: "optional" },
+    title: "Write like you’d write to a colleague.",
+    body: "Your own words are fine, no need to prepare anything. If I’m not the right person, I’ll say so, and point you to someone better if I know one.",
+    labels: { name: "Name", email: "Email", company: "Company", message: "What’s going on?", optional: "optional" },
     placeholders: { message: "A few sentences is enough." },
     submit: "Send",
     sending: "Sending…",
     success: "Thanks, it’s arrived. I’ll get back to you as soon as I can.",
     error: "That didn’t go through. Please email me directly at jake@rundown.digital.",
     orEmail: "Or email me directly:",
-    ps: "P.S. Not sure your problem is the kind I solve? Write anyway. Most good projects start with an email that begins “this might be a silly question”.",
-    notice: "I use your details to reply and, if you ask, to prepare an offer.",
+    ps: "P.S. Not sure your problem is the kind I solve? Write anyway. Plenty of good projects start with an email that begins “this might be a silly question”.",
+    notice: "I use your details to reply and, if you ask, to prepare a proposal.",
     noticeLink: "Privacy policy",
   },
   footer: {

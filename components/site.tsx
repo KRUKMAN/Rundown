@@ -48,7 +48,7 @@ export function Header({ locale, t, showDrafts }: SiteProps) {
           <LanguageSwitcher
             target={other}
             label={other.toUpperCase()}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center text-muted no-underline hover:text-ink"
+            className="inline-flex min-h-11 items-center justify-center px-2 text-muted no-underline hover:text-ink"
           />
           <a href={cta.href} className="btn-primary hidden min-h-11 whitespace-nowrap px-5 text-[16px] sm:inline-flex">
             {cta.label}
@@ -63,8 +63,8 @@ export function Header({ locale, t, showDrafts }: SiteProps) {
 export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
   const link = "inline-flex min-h-11 items-center text-ink underline decoration-[#9b9a95] underline-offset-4 hover:decoration-accent";
   return (
-    <footer className="container-site mt-4">
-      <div className="grid gap-x-10 gap-y-4 border-t border-line pb-10 pt-6 text-[15px] text-muted md:grid-cols-[1fr_auto]">
+    <footer className="container-site">
+      <div className="grid gap-x-10 gap-y-4 border-t border-line pb-12 pt-8 text-[15px] text-muted md:grid-cols-[1fr_auto]">
         <div className="space-y-1">
           <p className="m-0">{t.footer.line}</p>
           {!hasPlaceholders && (
@@ -79,7 +79,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
             </a>
           </p>
         </div>
-        <nav aria-label="Legal" className="flex flex-wrap items-start gap-x-6">
+        <nav aria-label="Legal" className="flex flex-wrap items-start gap-x-6 md:-mt-[10px]">
           <a className={link} href={`/${locale}/privacy`}>
             {t.footer.privacy}
           </a>
@@ -414,18 +414,24 @@ function About({ t }: { t: Dictionary }) {
 }
 
 function Faq({ t }: { t: Dictionary }) {
+  const half = Math.ceil(t.faq.items.length / 2);
   return (
     <Sec id="faq" title={t.faq.title}>
       {/* Answers stay in the HTML (and in the FAQPage JSON-LD); only the display is collapsed. */}
+      {/* Two fixed columns, filled in reading order, so opening one question never moves another. */}
       <div className="faq">
-        {t.faq.items.map((item) => (
-          <details key={item.q}>
-            <summary>
-              <h3>{item.q}</h3>
-              <span aria-hidden="true">+</span>
-            </summary>
-            <p>{item.a}</p>
-          </details>
+        {[t.faq.items.slice(0, half), t.faq.items.slice(half)].map((column, ci) => (
+          <div key={ci}>
+            {column.map((item) => (
+              <details key={item.q}>
+                <summary>
+                  <h3>{item.q}</h3>
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
         ))}
       </div>
     </Sec>

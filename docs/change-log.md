@@ -67,3 +67,13 @@
 - Logo 17 rebuilt: the red tag is exactly cap height and aligned with the caps; tag text takes the background colour.
 - Polish typography: one-letter words no longer end a line (`lib/i18n/get-dictionary.ts`); stacked headings get more line height.
 - English copy uses typographic apostrophes.
+
+## 2026-11-16 · Adversarial copy and layout review
+- Copy (EN and PL): fixed the HubSpot line that contradicted its quote, rewrote the hero body around "independent operations and CRM consultant", plain verb lines in the services grid, free call mentioned twice instead of five times, fewer counted headings, no "work smarter" / "sprytniej", no "ds.", no "na część etatu". Polish rewrites checked by a separate Sonnet review.
+- Layout: everything below the hero sits on one two-column line (steps as rows, ways to hire 2 x 2, CTA button on the second column, promises and reader rows 2-up on tablets).
+- Hero headline sized from its own column (container units), so the Polish headline no longer overflows at 901-960 and 1101-1200.
+- FAQ in two fixed columns: opening a question no longer moves another one across. Anchor jumps land 32px under the header.
+- Contact: form rises beside the heading on desktop; contact heading 64px on tablets.
+- Tablet (641-900): 32px page margins, two-column rows, hero drawing capped at 420px wide.
+- Client logo strip on a grid (label first quarter, logos across the rest; 3 + 2 on phones). Off-scale spacing values moved onto 8 16 24 32 48 64 96.
+- Cookie bar shorter on phones; footer spacing and link alignment tidied.

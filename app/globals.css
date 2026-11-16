@@ -78,6 +78,12 @@
     padding-inline: 16px;
   }
 
+  @media (min-width: 640px) {
+    .container-site {
+      padding-inline: 32px;
+    }
+  }
+
   @media (min-width: 901px) {
     .container-site {
       padding-inline: 40px;

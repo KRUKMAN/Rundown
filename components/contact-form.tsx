@@ -7,7 +7,7 @@ import type { Dictionary } from "@/lib/i18n/dictionaries/types";
 type Status = "idle" | "sending" | "success" | "error";
 
 const field =
-  "w-full border border-ink bg-paper px-3 text-[18px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-accent";
+  "w-full border border-ink bg-paper px-4 text-[18px] text-ink outline-none transition-colors placeholder:text-muted/70 focus:border-ink focus-visible:outline-2 focus-visible:outline-accent";
 
 export default function ContactForm({ copy, privacyHref }: { copy: Dictionary["contact"]; privacyHref: string }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -50,8 +50,8 @@ export default function ContactForm({ copy, privacyHref }: { copy: Dictionary["c
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} className="@container flex flex-col gap-6">
+      <div className="grid gap-6 @min-[560px]:grid-cols-2">
         <label className="flex flex-col gap-2 text-[15px] font-semibold">
           {copy.labels.name}
           <input name="name" type="text" autoComplete="name" required className={`${field} h-[52px]`} />

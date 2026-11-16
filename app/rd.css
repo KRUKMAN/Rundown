@@ -5,7 +5,12 @@
    - One red line runs from the hero down the left of the page, with one ring stop per section heading.
    - Red appears only in that line, its stops, the strike-throughs and the logo tag.
    - One black section (the "won't sell" list). Don't add a second.
-   - One spacing scale: 8 16 24 32 48 64 96. */
+   - One spacing scale: 8 16 24 32 48 64 96.
+   - One column line: below the hero, second columns start at the middle of the content
+     (two equal columns, 32px gap). Rows put the short thing left and the longer text right.
+   Breakpoints: 1100 (tablet type sizes, rows instead of narrow columns), 900 (one-column hero,
+   tighter spacing), 640 (phone: everything stacks). .container-site margins: 16 / 32 from 640 / 40 from 901.
+   Tailwind's sm (640) and lg (1024) are used only in the header, footer, form and cookie bar. */
 @layer components {
 .rd{
 --paper:var(--color-paper);--ink:var(--color-ink);--muted:var(--color-muted);--line:var(--color-line);--ghost:#8f8d87;
@@ -19,13 +24,17 @@ h1,h2,h3,h4{font-weight:700;text-wrap:balance}
 .display{line-height:var(--lh)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* hero */
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-top:56px;align-items:end}
-.hero h1{margin:0;font-size:104px;max-width:8ch}
-/* The longest Polish word in the headline (PROWADZENIE) has to fit the column. */
-&:lang(pl) .hero h1{font-size:100px}
-.hero .lede{margin-top:28px;max-width:56ch;font-size:21px;line-height:1.5}
-.hero .cta{margin-top:28px;display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;font-size:16px}
-.hero .note{margin-top:12px;color:var(--muted);font-size:15px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:64px;align-items:end}
+/* The headline is sized from its own column, so the longest word always fits:
+   BUSINESSES is 4.79em wide, the Polish PROWADZENIE 5.45em. */
+.hero>div{container-type:inline-size}
+.hero h1{margin:0;font-size:min(104px,19cqi);max-width:8ch}
+&:lang(pl) .hero h1{font-size:min(100px,17.5cqi)}
+.hero .lede{margin-top:32px;max-width:56ch;font-size:21px;line-height:1.5}
+.hero .cta{margin-top:32px;display:flex;align-items:center;gap:16px 24px;flex-wrap:wrap;font-size:16px}
+/* The email is the second way to get in touch: give it a full-height tap target. */
+.hero .cta .link-quiet{display:inline-block;padding:13px 0;margin:-13px 0}
+.hero .note{margin-top:16px;color:var(--muted);font-size:15px}
 .tangle{width:100%;height:auto;display:block;overflow:visible}
 .tangle .ic{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .tangle .t path{fill:none;stroke:var(--ghost);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:rd-draw 1.3s cubic-bezier(.2,.7,.2,1) forwards}
@@ -44,12 +53,13 @@ h1,h2,h3,h4{font-weight:700;text-wrap:balance}
 &{--rule:#cfccc5;--g:32px;--sp:96px;--h2:56px;--big:26px;--quote:40px;--loud:30px;--huge:56px;--area:64px}
 .stop{position:absolute;left:calc(-1 * var(--gutter)/2 - 11px);top:calc(var(--sp) + var(--h2) * (var(--lh) / 2 - .01) - 12px);width:22px;height:22px;border-radius:50%;background:var(--paper);border:4px solid var(--red);z-index:1}
 .lab{font-family:var(--mono);font-size:13px;line-height:20px;color:var(--muted)}
-.clients{position:relative;padding:32px 0 0;display:flex;gap:16px 40px;align-items:center;flex-wrap:wrap}
-.clients ul{list-style:none;margin:0;padding:0;display:flex;gap:20px 40px;flex-wrap:wrap;align-items:center}
+/* client logos: label in the first quarter, logos spread across the other three */
+.clients{position:relative;padding:32px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);row-gap:16px;align-items:center}
+.clients ul{grid-column:2/-1;list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;align-items:center}
 .clients li{display:flex;align-items:center}
 .clients img{display:block;width:auto}
-section.s{position:relative;padding-top:var(--sp)}
-section.s h2{margin:0;font-size:var(--h2);max-width:24ch}
+section.s{position:relative;padding-top:var(--sp);scroll-margin-top:calc(8px - var(--sp))}
+section.s h2{margin:0;font-size:var(--h2);max-width:30ch}
 section.s h2 span{display:block}
 section.s h2:has(span){max-width:none}
 section.s .intro{margin-top:16px;color:var(--muted);max-width:60ch}
@@ -59,21 +69,19 @@ section.s .body{margin-top:48px}
 .spine p,.areas span{text-wrap:pretty}
 /* 1 said */
 .said{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
-.said li{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:baseline;border-top:1px solid var(--rule);padding:24px 0}
+.said li{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:baseline;border-top:1px solid var(--rule);padding:32px 0}
 .said h3{margin:0;font-size:var(--quote);line-height:1.1;letter-spacing:-.02em}
-.said li{padding:32px 0}
 .said p{color:var(--muted);max-width:46ch}
-/* 2 two readers */
-.two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--g)}
-.two{grid-template-rows:auto auto}
+/* 2 three readers */
+.two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto;column-gap:var(--g)}
 .two>div{border-top:1px solid var(--rule);padding-top:24px;display:grid;grid-template-rows:subgrid;grid-row:span 2;row-gap:0}
 .two h3{margin:0;font-size:24px;text-wrap:balance}
 .two p{margin-top:16px;max-width:46ch}
 /* 3 the week, told twice on one grid: six small rows against three big ones */
 .story{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);grid-auto-rows:auto}
 .story ol{display:contents;list-style:none}
-.story .lab{padding-bottom:12px}
-.story li{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule);padding:12px 0;min-height:66px}
+.story .lab{padding-bottom:16px}
+.story li{display:flex;gap:16px;align-items:baseline;border-top:1px solid var(--rule);padding:16px 0;min-height:64px}
 .story .loud li{font-size:var(--loud)}
 .story li .lab{flex:none;width:16px;padding:0}
 .story .a{grid-column:1}.story .b{grid-column:2}
@@ -86,23 +94,27 @@ section.s .body{margin-top:48px}
 .story .aside{grid-row:8;border-top:1px solid var(--rule);padding-top:16px}
 .story .aside span{display:block;max-width:46ch}
 .story .aside.b{color:var(--muted)}
-.cols{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px var(--g)}
+/* ways to hire: 2 x 2 on the column line */
+.cols{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px var(--g)}
 .cols li{border-top:1px solid var(--rule);padding-top:16px}
 .cols h4{margin:0;font-size:20px;line-height:1.3}
-.cols p{margin-top:8px;color:var(--muted);font-size:16px}
+.cols p{margin-top:8px;color:var(--muted);font-size:16px;max-width:46ch}
 /* 4 what: big area names, service names only */
 .areas{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
 .areas>li{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:center;border-top:1px solid var(--rule);padding:32px 0}
 .areas h3{margin:0;font-size:var(--area);line-height:.95}
 .areas ul{list-style:none;margin:0;padding:0}
-.areas ul li{font-size:20px;line-height:32px;font-weight:600}
-/* 5 how */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:var(--g)}
-.steps li{border-top:1px solid var(--rule);padding-top:16px}
-.steps h3{margin:8px 0 0;font-size:24px;line-height:1.2;letter-spacing:-.01em}
-.steps p{margin-top:8px;color:var(--muted);font-size:16px}
-.ask{margin-top:64px;border-top:1px solid var(--rule);padding-top:32px;display:flex;justify-content:space-between;align-items:center;gap:24px var(--g);flex-wrap:wrap}
+.areas ul li{font-size:20px;line-height:1.4;font-weight:600}
+.areas ul li+li{margin-top:8px}
+/* 5 how: one row per step, title left, what happens right */
+.steps{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:baseline;border-top:1px solid var(--rule);padding:16px 0}
+.steps .lab{grid-column:1;grid-row:1;width:32px}
+.steps h3{grid-column:1;grid-row:1;margin:0 0 0 32px;font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.steps p{grid-column:2;margin:0;color:var(--muted);font-size:16px;max-width:46ch}
+.ask{margin-top:64px;border-top:1px solid var(--rule);padding-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px var(--g);align-items:center}
 .ask p{font-size:20px;font-weight:600;line-height:1.3;max-width:40ch}
+.ask .btn-primary{justify-self:start}
 /* 6 won't */
 .halves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:start}
 .wont,.promises{list-style:none;margin:0;padding:0}
@@ -111,7 +123,7 @@ section.s .body{margin-top:48px}
 .wont s{font-weight:700;text-decoration-color:var(--red);text-decoration-thickness:4px}
 .wont span{color:var(--muted)}
 .wrong{margin-top:24px;max-width:46ch}
-.hold{margin-top:64px;border-top:1px solid var(--rule);padding-top:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);align-items:baseline}
+.hold{margin-top:64px;border-top:1px solid var(--rule);padding-top:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);row-gap:24px;align-items:baseline}
 .hold h3{margin:0;grid-column:span 2}
 .promises{display:contents}
 .promises h4{margin:0;font-size:18px;line-height:1.3}
@@ -126,9 +138,10 @@ section.s.dark .wrong{font-size:20px;line-height:1.45}
 /* 7 about */
 .about p{font-size:20px;line-height:1.45;max-width:46ch}
 .about .loc{margin-top:24px;font-size:13px;line-height:20px;max-width:none}
-/* 8 faq */
-.faq{columns:2;column-gap:var(--g)}
-.faq details{break-inside:avoid;border-top:1px solid var(--rule)}
+/* 8 faq: two fixed columns, so opening a question never moves another one across */
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:start}
+.faq>div{border-bottom:1px solid var(--rule)}
+.faq details{border-top:1px solid var(--rule)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;cursor:pointer}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary h3{margin:0;font-size:18px;line-height:1.3}
@@ -142,49 +155,65 @@ section.s.end::before{content:"";position:absolute;left:calc(-1 * var(--gutter)/
 .contact .lede{font-size:20px;line-height:1.45;max-width:40ch}
 .contact .or{margin-top:24px;color:var(--muted);font-size:16px}
 .contact .ps{margin-top:32px;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;max-width:40ch}
+.contact form>p:last-child{max-width:60ch}
+/* Desktop: the form rises beside the heading; heading, text and P.S. stack on the left. */
+@media (min-width:901px){
+  section.s.end{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:start}
+  section.s.end>h2{grid-column:1;grid-row:1}
+  section.s.end .body,section.s.end .contact{display:contents}
+  .contact>div:first-child{grid-column:1;grid-row:2;margin-top:48px}
+  .contact>div:last-child{grid-column:2;grid-row:1/span 2}
+}
 @media (max-width:1100px){
-  .hero h1{font-size:84px}
-  &:lang(pl) .hero h1{font-size:80px}
-  .cols{grid-template-columns:repeat(2,minmax(0,1fr))}
   &{--huge:44px;--h2:48px;--quote:32px;--area:48px}
-  .steps{grid-template-columns:1fr;border-bottom:1px solid var(--rule)}
-  .steps li{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--g);align-items:baseline;padding:16px 0}
-  .steps .lab{grid-column:1;grid-row:1;width:32px}
-  .steps h3{grid-column:1;grid-row:1;margin:0 0 0 32px}
-  .steps p{grid-column:2/-1;margin:0;max-width:60ch}
+  section.s.end{--h2:64px}
+  .clients{grid-template-columns:minmax(0,1fr)}
+  .clients ul{grid-column:1}
+  /* rows instead of three narrow columns */
+  .two{grid-template-columns:minmax(0,1fr);grid-template-rows:none;border-bottom:1px solid var(--rule)}
+  .two>div{grid-row:auto;grid-template-rows:auto;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--g);align-items:baseline;padding:24px 0}
+  .two p{margin-top:0}
+  .hold{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hold h3{grid-column:1/-1}
 }
 @media (max-width:900px){
-  &{--gutter:36px;--sp:64px;--h2:36px;--big:22px;--quote:28px;--loud:24px;--huge:30px;--area:40px}
-  .hero{grid-template-columns:1fr;padding-top:24px;gap:20px}
-  .hero h1{font-size:56px}
-  &:lang(pl) .hero h1{font-size:54px}
+  &{--gutter:36px;--sp:64px;--h2:clamp(36px,2.5vw + 26px,48px);--big:22px;--quote:28px;--loud:24px;--huge:clamp(30px,2.5vw + 20px,44px);--area:clamp(40px,2vw + 32px,48px)}
+  .hero{grid-template-columns:1fr;padding-top:24px;gap:24px}
+  .hero h1{font-size:min(64px,19cqi)}
+  &:lang(pl) .hero h1{font-size:min(64px,17.5cqi)}
   .hero .lede{font-size:18px}
   .hero-rule{height:60px}
-  .tangle{height:auto;width:100%}
+  /* The drawing keeps a sensible size on tablets; the red exit stays on the right edge. */
+  .tangle{width:min(100% - 40px,420px);margin-left:auto}
   section.s .body{margin-top:32px}
-  .said li,.two,.halves,.contact,.cols,.areas>li,.steps li{grid-template-columns:minmax(0,1fr)}
-  .said li{row-gap:8px;padding:16px 0 24px}
-  .two{row-gap:32px}
+  .clients ul{justify-content:flex-start;gap:24px 48px}
+  .contact,.halves,.steps li{grid-template-columns:minmax(0,1fr)}
+  .said li{row-gap:8px;padding:24px 0}
   .story{display:block}.story ol{display:block;margin:0;padding:0}
-  .story .aside.a{margin-bottom:48px}.story ol{border-bottom:0}
-  .cols{gap:24px}
-  .areas>li{row-gap:16px;padding:24px 0}
+  .story .aside.a{margin-bottom:48px}
   .story li{min-height:48px}
-  .said li{padding:20px 0 24px}
+  .cols{gap:24px}
+  .areas>li{row-gap:16px;padding:24px 0;align-items:start}
   section.s.dark .wont s{text-decoration-thickness:4px}
-  .steps h3{font-size:20px}
-  .areas>li{align-items:start}
   .steps li{row-gap:8px}
-  .steps h3{grid-column:1;grid-row:1}
-  .steps p{grid-column:1}
+  .steps h3{font-size:20px}
+  .steps p{grid-column:1;margin-left:32px}
   .halves{row-gap:16px}
-  .hold{grid-template-columns:minmax(0,1fr);row-gap:16px;margin-top:48px}
-  .hold h3{grid-column:1}
-  .faq{columns:1}
+  .hold{margin-top:48px}
+  .faq{grid-template-columns:minmax(0,1fr)}
+  .faq>div:first-child{border-bottom:0}
   .sub{margin-top:48px}
   .ask{margin-top:48px}
-  section.s.end{--h2:44px;padding-bottom:64px}
+  section.s.end{--h2:clamp(44px,3vw + 32px,64px);padding-bottom:64px}
+  section.s.end h2{max-width:none}
   .contact{row-gap:32px}
+}
+/* phone: everything stacks */
+@media (max-width:640px){
+  .said li,.two>div,.cols,.areas>li,.hold,.ask{grid-template-columns:minmax(0,1fr)}
+  .two>div{row-gap:16px}
+  .tangle{width:100%}
+  .clients ul{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:24px 16px}
 }
 }
 }
